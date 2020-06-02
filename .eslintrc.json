@@ -1,0 +1,11 @@
+{
+  "extends": "@inkohx/eslint-config-codestyle/react",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/member-naming": "off",
+    "react/prop-types": "off"
+  }
+}
