@@ -6,7 +6,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ignore-path ./.gitignore .",
-    "check": "npm run lint && prettier --check .",
+    "check": "prettier --check .",
     "format": "prettier --write . && npm run lint -- --fix"
   },
   "dependencies": {
