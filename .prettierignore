@@ -1,0 +1,6 @@
+/dist/
+/dist-ssr/
+/package*.json
+/public
+
+assets/
