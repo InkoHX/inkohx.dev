@@ -52,7 +52,7 @@ const media: readonly Media[] = [
 
 export const Hero: React.FC = () => {
   return (
-    <div id="hero" className={styles.root}>
+    <div className={styles.root}>
       <div className="container relative z-10 mx-auto flex min-h-screen flex-col items-center justify-center px-4">
         <picture>
           <source srcSet="/logo.png" type="image/png" />
