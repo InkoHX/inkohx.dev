@@ -6,8 +6,8 @@ import { SocialMediaLinkIcon } from './SocialMediaLinkIcon'
 
 export const AppFooter: React.FC = () => {
   return (
-    <footer className="bg-slate-200 py-4">
-      <nav className="container mx-auto flex flex-wrap justify-center gap-x-4 gap-y-2 px-4">
+    <footer className="h-[var(--footer-height)] bg-slate-200 py-4">
+      <nav className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-4 gap-y-2 px-4">
         <Link
           className="text-sm text-slate-600 transition-opacity hover:opacity-80"
           href="/"
@@ -45,7 +45,7 @@ export const AppFooter: React.FC = () => {
           ライセンス表記
         </Link>
       </nav>
-      <div className="container mx-auto mt-4 flex flex-col items-center justify-between gap-2 px-4 sm:flex-row">
+      <div className="mx-auto mt-4 flex max-w-7xl flex-col items-center justify-between gap-2 px-4 sm:flex-row">
         <small>Copyright &copy; {new Date().getUTCFullYear()} InkoHX</small>
         <ul className="flex gap-x-4">
           {(
