@@ -1,6 +1,11 @@
-/dist/
-/dist-ssr/
-/package*.json
-/public
+# pnpm
+/pnpm-lock.yaml
 
-assets/
+# Next.js
+/.next/
+/public/
+/out/
+/build/
+
+# Vercel CLI
+.vercel
