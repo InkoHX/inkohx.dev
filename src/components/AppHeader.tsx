@@ -41,7 +41,7 @@ const MobileNavbar: React.FC = () => {
         )}
       </button>
       <nav
-        className="data-mobile-nav-open:translate-x-0 container fixed right-0 top-[var(--header-height)] z-50 mx-auto h-[calc(100vh-var(--header-height))] w-full translate-x-full space-y-2 overflow-x-hidden bg-slate-100 p-4 transition-transform ease-in-out sm:hidden"
+        className="fixed right-0 top-[var(--header-height)] z-50 h-[calc(100vh-var(--header-height))] w-full translate-x-full space-y-2 overflow-x-hidden bg-slate-100 p-4 transition-transform ease-in-out data-[mobile-nav-open=true]:translate-x-0 sm:hidden"
         data-mobile-nav-open={isOpen}
       >
         {navLinks.map(({ text, href }) => (
