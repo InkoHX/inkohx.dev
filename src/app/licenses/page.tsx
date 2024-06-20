@@ -1,9 +1,11 @@
-import licenses from '@/generated/license.json' with { type: 'json' }
 import Link from 'next/link'
 
+import licenses from '@/generated/license.json' with { type: 'json' }
+
 export default function Licenses() {
-  return <article className="py-8">
-      <main className="max-w-7xl mx-auto px-4">
+  return (
+    <article className="py-8">
+      <main className="mx-auto max-w-7xl px-4">
         <section className="py-24">
           <h1 className="text-7xl font-bold">ライセンス表記</h1>
           <p className="mt-8 max-w-prose text-2xl text-slate-700">
@@ -125,4 +127,5 @@ export default function Licenses() {
         </section>
       </main>
     </article>
+  )
 }

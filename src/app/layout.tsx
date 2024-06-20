@@ -1,7 +1,9 @@
 import './globals.css'
+
+import type { Metadata } from 'next'
+
 import { AppFooter } from '@/components/AppFooter'
 import { AppHeader } from '@/components/AppHeader'
-import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "InkoHX's portfolio",

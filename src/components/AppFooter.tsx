@@ -1,7 +1,8 @@
-import { socialAccounts } from '../constants'
-import { SocialMediaLinkIcon } from './SocialMediaLinkIcon'
 import Link from 'next/link'
 import React from 'react'
+
+import { socialAccounts } from '../constants'
+import { SocialMediaLinkIcon } from './SocialMediaLinkIcon'
 
 export const AppFooter: React.FC = () => {
   return (

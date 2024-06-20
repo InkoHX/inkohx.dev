@@ -1,13 +1,14 @@
-import { socialAccounts } from '../constants'
 import {
-  SiX,
   SiBluesky,
   SiGithub,
   SiKeybase,
   SiSteam,
+  SiX,
   SiZenn,
 } from '@icons-pack/react-simple-icons'
 import React from 'react'
+
+import { socialAccounts } from '../constants'
 
 export interface SocialMediaIconProps {
   name: keyof typeof socialAccounts

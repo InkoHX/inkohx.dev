@@ -1,5 +1,6 @@
-import licenses from '@/generated/license.json' with { type: 'json' }
 import { notFound } from 'next/navigation'
+
+import licenses from '@/generated/license.json' with { type: 'json' }
 
 type StaticParams = { slug: string[] }
 
@@ -9,9 +10,7 @@ export const generateStaticParams = (): StaticParams[] => {
   }))
 }
 
-export default function PackageLicense({ params }: {
-  params: StaticParams
-}) {
+export default function PackageLicense({ params }: { params: StaticParams }) {
   const packageName = decodeURIComponent(params.slug.join('/'))
   const data = licenses[packageName as keyof typeof licenses]
 
@@ -19,7 +18,7 @@ export default function PackageLicense({ params }: {
 
   return (
     <article className="py-8">
-      <main className="max-w-7xl mx-auto px-4">
+      <main className="mx-auto max-w-7xl px-4">
         <h1 className="text-4xl">
           Thanks! <span className="font-bold">{packageName}</span>
         </h1>
@@ -52,7 +51,9 @@ export default function PackageLicense({ params }: {
             <dd>{data.publisher ?? '不明'}</dd>
           </div>
         </dl>
-        <pre className="mt-4 overflow-x-auto rounded bg-slate-200 p-4">{data.licenseBody}</pre>
+        <pre className="mt-4 overflow-x-auto rounded bg-slate-200 p-4">
+          {data.licenseBody}
+        </pre>
       </main>
     </article>
   )

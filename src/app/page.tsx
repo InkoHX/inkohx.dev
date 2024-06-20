@@ -1,7 +1,8 @@
-import { SocialMediaLinkIcon } from '@/components/SocialMediaLinkIcon'
-import { mergeClassName } from '@/utils/mergeClassName'
 import Link from 'next/link'
 import React from 'react'
+
+import { SocialMediaLinkIcon } from '@/components/SocialMediaLinkIcon'
+import { mergeClassName } from '@/utils/mergeClassName'
 
 const NavigationCard: React.FC<{
   href: string
