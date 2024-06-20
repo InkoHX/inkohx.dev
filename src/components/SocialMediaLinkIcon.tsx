@@ -1,5 +1,4 @@
 import { socialAccounts } from '../constants'
-import { mergeClassName } from '../utils/mergeClassName'
 import {
   SiX,
   SiBluesky,
