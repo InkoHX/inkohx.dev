@@ -17,14 +17,14 @@ export default function PackageLicense({ params }: { params: StaticParams }) {
   if (!data) notFound()
 
   return (
-    <article className="py-8">
+    <article className="min-h-[calc(100vh-var(--header-height)-var(--footer-height))] py-8">
       <main className="mx-auto max-w-7xl px-4">
-        <h1 className="text-4xl">
+        <h1 className="py-12 text-4xl sm:text-6xl">
           Thanks! <span className="font-bold">{packageName}</span>
         </h1>
         <dl className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-3">
           <div>
-            <dt className="text-lg font-semibold">リポジトリ</dt>
+            <dt className="text-xl font-semibold">リポジトリ</dt>
             <dd>
               {data.repository ? (
                 <a
@@ -39,7 +39,7 @@ export default function PackageLicense({ params }: { params: StaticParams }) {
             </dd>
           </div>
           <div>
-            <dt className="text-lg font-semibold">ライセンスの種類</dt>
+            <dt className="text-xl font-semibold">ライセンスの種類</dt>
             <dd>
               {Array.isArray(data.licenses)
                 ? data.licenses.join(', ')
@@ -47,7 +47,7 @@ export default function PackageLicense({ params }: { params: StaticParams }) {
             </dd>
           </div>
           <div>
-            <dt className="text-lg font-semibold">作者</dt>
+            <dt className="text-xl font-semibold">作者</dt>
             <dd>{data.publisher ?? '不明'}</dd>
           </div>
         </dl>
