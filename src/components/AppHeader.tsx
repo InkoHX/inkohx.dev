@@ -62,7 +62,7 @@ const MobileNavbar: React.FC = () => {
 export const AppHeader: React.FC = () => {
   return (
     <header className="h-[var(--header-height)]">
-      <div className="container mx-auto flex h-full items-center justify-between px-4">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
         <Link
           href="/"
           className="text-2xl font-semibold transition-opacity hover:opacity-70"
