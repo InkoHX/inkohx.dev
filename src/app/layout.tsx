@@ -1,4 +1,5 @@
 import './globals.css'
+import { AppFooter } from '@/components/AppFooter'
 import { AppHeader } from '@/components/AppHeader'
 import type { Metadata } from 'next'
 
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-slate-100 antialiased">
         <AppHeader />
         {children}
+        <AppFooter />
       </body>
     </html>
   )
