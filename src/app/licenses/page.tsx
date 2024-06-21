@@ -46,7 +46,7 @@ export default function Licenses() {
               <SiJetbrains className="inline size-8" color="default" /> logo
             </h3>
             <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
-              Copyright © 2000-{new Date().getUTCFullYear()}{' '}
+              Copyright &copy; 2000-{new Date().getUTCFullYear()}{' '}
               <a
                 className="underline hover:text-primary-600"
                 href="https://www.jetbrains.com/"
