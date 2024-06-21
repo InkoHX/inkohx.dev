@@ -9,7 +9,7 @@ export default function Licenses() {
         <section className="py-24">
           <h1 className="text-7xl font-bold">ライセンス表記</h1>
           <p className="mt-8 max-w-prose text-2xl text-slate-700">
-            このWebサイトで使用されているOSSのライセンス表記と、使われてるブランドアイコンの著作権を表記しているページです。
+            このWebサイトで使用されているOSSのライセンス表記と、一部で使われてるブランドアイコンの著作権を表記しているページです。
           </p>
         </section>
         <section>
