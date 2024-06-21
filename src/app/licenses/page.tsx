@@ -1,3 +1,10 @@
+import {
+  SiGit,
+  SiJetbrains,
+  SiPhp,
+  SiRust,
+  SiVuedotjs,
+} from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
 
 import licenses from '@/generated/license.json' with { type: 'json' }
@@ -35,7 +42,9 @@ export default function Licenses() {
             </p>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold">JetBrains logo</h3>
+            <h3 className="text-2xl font-semibold">
+              <SiJetbrains className="inline size-8" color="default" /> logo
+            </h3>
             <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
               Copyright © 2000-{new Date().getUTCFullYear()}{' '}
               <a
@@ -49,7 +58,9 @@ export default function Licenses() {
             </pre>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold">PHP logo</h3>
+            <h3 className="text-2xl font-semibold">
+              <SiPhp className="inline size-8" color="default" /> logo
+            </h3>
             <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
               PHP logo by{' '}
               <a
@@ -68,7 +79,9 @@ export default function Licenses() {
             </pre>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold">Rust logo</h3>
+            <h3 className="text-2xl font-semibold">
+              <SiRust className="inline size-8" color="default" /> logo
+            </h3>
             <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
               Rust logo by{' '}
               <a
@@ -87,7 +100,9 @@ export default function Licenses() {
             </pre>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold">Git logo</h3>
+            <h3 className="text-2xl font-semibold">
+              <SiGit className="inline size-8" color="default" /> logo
+            </h3>
             <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
               Git logo by{' '}
               <a
@@ -106,7 +121,9 @@ export default function Licenses() {
             </pre>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold">Vue.js logo</h3>
+            <h3 className="text-2xl font-semibold">
+              <SiVuedotjs className="inline size-8" color="default" /> logo
+            </h3>
             <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
               Vue.js logo by{' '}
               <a
