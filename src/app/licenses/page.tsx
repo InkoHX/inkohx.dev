@@ -3,6 +3,7 @@ import {
   SiJetbrains,
   SiPhp,
   SiRust,
+  SiSteam,
   SiVuedotjs,
 } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
@@ -139,6 +140,23 @@ export default function Licenses() {
               >
                 CC BY 4.0
               </a>
+            </pre>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold">
+              <SiSteam className="inline size-8" /> logo
+            </h3>
+            <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
+              &copy; 2024{' '}
+              <a
+                href="https://www.valvesoftware.com"
+                className="underline hover:text-primary-600"
+              >
+                Valve Corporation
+              </a>
+              . Steam and the Steam logo are trademarks and/or registered
+              trademarks of Valve Corporation in the U.S. and/or other
+              countries.
             </pre>
           </div>
         </section>
