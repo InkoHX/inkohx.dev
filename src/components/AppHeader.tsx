@@ -4,6 +4,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 import React from 'react'
 
+import { NavLink } from './NavLink'
+
 const navLinks = [
   { text: 'ホーム', href: '/' },
   { text: '自己紹介', href: '/about' },
@@ -45,14 +47,14 @@ const MobileNavbar: React.FC = () => {
         data-mobile-nav-open={isOpen}
       >
         {navLinks.map(({ text, href }) => (
-          <Link
+          <NavLink
             key={text}
             href={href}
             onClick={() => setOpen(false)}
-            className="block rounded-lg p-4 text-center font-semibold transition-colors hover:bg-primary-100 data-[status=active]:bg-primary-200"
+            className="block rounded-lg p-4 text-center font-semibold transition-colors hover:bg-primary-100 data-[active=true]:bg-primary-200"
           >
             {text}
-          </Link>
+          </NavLink>
         ))}
       </nav>
     </>
@@ -71,13 +73,13 @@ export const AppHeader: React.FC = () => {
         </Link>
         <nav className="hidden gap-x-4 sm:flex">
           {navLinks.map(({ href, text }) => (
-            <Link
+            <NavLink
               key={href}
               href={href}
-              className="text-slate-700 transition-opacity hover:opacity-80 data-[status=active]:font-semibold data-[status=active]:text-primary-600"
+              className="text-slate-700 transition-opacity hover:opacity-80 data-[active=true]:font-semibold data-[active=true]:text-primary-600"
             >
               {text}
-            </Link>
+            </NavLink>
           ))}
         </nav>
         <MobileNavbar />
