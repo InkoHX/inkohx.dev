@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Website } from './Website'
 
-type CommonProjectInfo = {
+type ProjectInfo = {
   name: string
   description: string
   repository: {
@@ -15,15 +15,6 @@ type Website = {
   name: string
   link: string
   imageUrl: string
-}
-
-type Tool = {
-  name: string
-  description: string
-  repository: {
-    owner: string
-    name: string
-  }
 }
 
 const packages = [
@@ -54,7 +45,7 @@ const packages = [
       name: 'discord.js-reaction-controller',
     },
   },
-] as const satisfies ReadonlyArray<CommonProjectInfo>
+] as const satisfies ReadonlyArray<ProjectInfo>
 
 const tools = [
   {
@@ -89,7 +80,7 @@ const tools = [
       name: 'wakatime-tweet-activity',
     },
   },
-] satisfies ReadonlyArray<Tool>
+] satisfies ReadonlyArray<ProjectInfo>
 
 const minecraftPlugins = [
   {
@@ -108,7 +99,7 @@ const minecraftPlugins = [
       name: 'Chaining',
     },
   },
-] satisfies ReadonlyArray<CommonProjectInfo>
+] satisfies ReadonlyArray<ProjectInfo>
 
 const bots = [
   {
@@ -153,7 +144,7 @@ const bots = [
       name: 'volume-upper',
     },
   },
-] satisfies ReadonlyArray<CommonProjectInfo>
+] satisfies ReadonlyArray<ProjectInfo>
 
 const websites = [
   {
@@ -180,7 +171,7 @@ const websites = [
 
 const ProjectList: React.FC<{
   sectionName: string
-  projects: ReadonlyArray<CommonProjectInfo>
+  projects: ReadonlyArray<ProjectInfo>
 }> = props => {
   return (
     <section className="mt-8">
