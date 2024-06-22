@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
 
@@ -24,6 +25,10 @@ const NavigationCard: React.FC<{
       </span>
     </Link>
   )
+}
+
+export const metadata: Metadata = {
+  title: "InkoHX's portfolio",
 }
 
 export default function Home() {

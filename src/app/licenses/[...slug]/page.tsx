@@ -1,8 +1,11 @@
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import licenses from '@/generated/license.json' with { type: 'json' }
 
 type StaticParams = { slug: string[] }
+
+const parseSlug = (slug: string[]) => decodeURIComponent(slug.join('/'))
 
 export const generateStaticParams = (): StaticParams[] => {
   return Object.keys(licenses).map(packageName => ({
@@ -10,8 +13,20 @@ export const generateStaticParams = (): StaticParams[] => {
   }))
 }
 
+export const generateMetadata = ({
+  params,
+}: {
+  params: StaticParams
+}): Metadata => {
+  const slug = parseSlug(params.slug)
+
+  return {
+    title: `Thanks! ${slug}`,
+  }
+}
+
 export default function PackageLicense({ params }: { params: StaticParams }) {
-  const packageName = decodeURIComponent(params.slug.join('/'))
+  const packageName = parseSlug(params.slug)
   const data = licenses[packageName as keyof typeof licenses]
 
   if (!data) notFound()

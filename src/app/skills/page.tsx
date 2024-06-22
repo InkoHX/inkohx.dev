@@ -19,6 +19,7 @@ import {
   SiVuedotjs,
   SiWindows,
 } from '@icons-pack/react-simple-icons'
+import { Metadata } from 'next'
 import React from 'react'
 
 type SkillLevel = 1 | 2 | 3
@@ -178,6 +179,10 @@ const SkillSection: React.FC<{
       </ul>
     </section>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'スキル',
 }
 
 export default function Skills() {

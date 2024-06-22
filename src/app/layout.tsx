@@ -6,7 +6,10 @@ import { AppFooter } from '@/components/AppFooter'
 import { AppHeader } from '@/components/AppHeader'
 
 export const metadata: Metadata = {
-  title: "InkoHX's portfolio",
+  title: {
+    template: "%s | InkoHX's portfolio",
+    default: "InkoHX's portfolio",
+  },
   description: 'InkoHXのポートフォリオ的なやつ',
   twitter: {
     card: 'summary_large_image',
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: "InkoHX' portfolio",
+    siteName: "InkoHX's portfolio",
   },
 }
 

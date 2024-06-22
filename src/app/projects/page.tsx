@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import React from 'react'
 
 import { Website } from './Website'
@@ -196,6 +197,10 @@ const ProjectList: React.FC<{
       </div>
     </section>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'プロジェクト',
 }
 
 export default function Projects() {

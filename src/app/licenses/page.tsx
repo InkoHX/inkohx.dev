@@ -6,6 +6,7 @@ import {
   SiSteam,
   SiVuedotjs,
 } from '@icons-pack/react-simple-icons'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
 
@@ -24,6 +25,10 @@ const LogoCopyrightNotice: React.FC<
       </pre>
     </div>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'ライセンス表記',
 }
 
 export default function Licenses() {
