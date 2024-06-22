@@ -7,8 +7,24 @@ import {
   SiVuedotjs,
 } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
+import React from 'react'
 
 import licenses from '@/generated/license.json' with { type: 'json' }
+
+const LogoCopyrightNotice: React.FC<
+  React.PropsWithChildren<{
+    icon: React.ReactElement
+  }>
+> = props => {
+  return (
+    <div>
+      <h3 className="text-2xl font-semibold">{props.icon} logo</h3>
+      <pre className="mt-2 text-wrap rounded bg-slate-200 p-4">
+        {props.children}
+      </pre>
+    </div>
+  )
+}
 
 export default function Licenses() {
   return (
@@ -42,123 +58,102 @@ export default function Licenses() {
               このWebサイトで使われているアイコンの帰属先を記載しています。
             </p>
           </div>
-          <div>
-            <h3 className="text-2xl font-semibold">
-              <SiJetbrains className="inline size-8" color="default" /> logo
-            </h3>
-            <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
-              Copyright &copy; 2000-{new Date().getUTCFullYear()}{' '}
-              <a
-                className="underline hover:text-primary-600"
-                href="https://www.jetbrains.com/"
-              >
-                JetBrains s.r.o
-              </a>
-              . JetBrains and the JetBrains logo are registered trademarks of
-              JetBrains s.r.o.
-            </pre>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold">
-              <SiPhp className="inline size-8" color="default" /> logo
-            </h3>
-            <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
-              PHP logo by{' '}
-              <a
-                className="underline hover:text-primary-600"
-                href="https://viebrock.ca/"
-              >
-                Colin Viebrock
-              </a>{' '}
-              is licensed under{' '}
-              <a
-                href="https://creativecommons.org/licenses/by/4.0/"
-                className="underline hover:text-primary-600"
-              >
-                CC BY 4.0
-              </a>
-            </pre>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold">
-              <SiRust className="inline size-8" color="default" /> logo
-            </h3>
-            <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
-              Rust logo by{' '}
-              <a
-                className="underline hover:text-primary-600"
-                href="https://foundation.rust-lang.org/"
-              >
-                Rust Foundation
-              </a>{' '}
-              is licensed under{' '}
-              <a
-                href="https://creativecommons.org/licenses/by/4.0/"
-                className="underline hover:text-primary-600"
-              >
-                CC BY 4.0
-              </a>
-            </pre>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold">
-              <SiGit className="inline size-8" color="default" /> logo
-            </h3>
-            <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
-              Git logo by{' '}
-              <a
-                className="underline hover:text-primary-600"
-                href="https://jasonlong.me/"
-              >
-                Jason Long
-              </a>{' '}
-              is licensed under{' '}
-              <a
-                href="https://creativecommons.org/licenses/by/3.0/"
-                className="underline hover:text-primary-600"
-              >
-                CC BY 3.0
-              </a>
-            </pre>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold">
-              <SiVuedotjs className="inline size-8" color="default" /> logo
-            </h3>
-            <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
-              Vue.js logo by{' '}
-              <a
-                href="http://evanyou.me/"
-                className="underline hover:text-primary-600"
-              >
-                Evan You
-              </a>{' '}
-              is licensed under{' '}
-              <a
-                href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                className="underline hover:text-primary-600"
-              >
-                CC BY 4.0
-              </a>
-            </pre>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold">
-              <SiSteam className="inline size-8" /> logo
-            </h3>
-            <pre className="mt-2 overflow-x-auto rounded bg-slate-200 p-4">
-              &copy; 2024{' '}
-              <a
-                href="https://www.valvesoftware.com"
-                className="underline hover:text-primary-600"
-              >
-                Valve Corporation
-              </a>
-              . Steam and the Steam logo are trademarks and/or registered
-              trademarks of Valve Corporation in the U.S. and/or other
-              countries.
-            </pre>
-          </div>
+          <LogoCopyrightNotice
+            icon={<SiJetbrains className="inline size-8" color="default" />}
+          >
+            Copyright &copy; 2000-{new Date().getUTCFullYear()}{' '}
+            <a
+              className="underline hover:text-primary-600"
+              href="https://www.jetbrains.com/"
+            >
+              JetBrains s.r.o
+            </a>
+            . JetBrains and the JetBrains logo are registered trademarks of
+            JetBrains s.r.o.
+          </LogoCopyrightNotice>
+          <LogoCopyrightNotice
+            icon={<SiPhp className="inline size-8" color="default" />}
+          >
+            PHP logo by{' '}
+            <a
+              className="underline hover:text-primary-600"
+              href="https://viebrock.ca/"
+            >
+              Colin Viebrock
+            </a>{' '}
+            is licensed under{' '}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              className="underline hover:text-primary-600"
+            >
+              CC BY 4.0
+            </a>
+          </LogoCopyrightNotice>
+          <LogoCopyrightNotice
+            icon={<SiRust className="inline size-8" color="default" />}
+          >
+            Rust logo by{' '}
+            <a
+              className="underline hover:text-primary-600"
+              href="https://foundation.rust-lang.org/"
+            >
+              Rust Foundation
+            </a>{' '}
+            is licensed under{' '}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              className="underline hover:text-primary-600"
+            >
+              CC BY 4.0
+            </a>
+          </LogoCopyrightNotice>
+          <LogoCopyrightNotice
+            icon={<SiGit className="inline size-8" color="default" />}
+          >
+            Git logo by{' '}
+            <a
+              className="underline hover:text-primary-600"
+              href="https://jasonlong.me/"
+            >
+              Jason Long
+            </a>{' '}
+            is licensed under{' '}
+            <a
+              href="https://creativecommons.org/licenses/by/3.0/"
+              className="underline hover:text-primary-600"
+            >
+              CC BY 3.0
+            </a>
+          </LogoCopyrightNotice>
+          <LogoCopyrightNotice
+            icon={<SiVuedotjs className="inline size-8" color="default" />}
+          >
+            Vue.js logo by{' '}
+            <a
+              href="http://evanyou.me/"
+              className="underline hover:text-primary-600"
+            >
+              Evan You
+            </a>{' '}
+            is licensed under{' '}
+            <a
+              href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+              className="underline hover:text-primary-600"
+            >
+              CC BY 4.0
+            </a>
+          </LogoCopyrightNotice>
+          <LogoCopyrightNotice icon={<SiSteam className="inline size-8" />}>
+            &copy; 2024{' '}
+            <a
+              href="https://www.valvesoftware.com"
+              className="underline hover:text-primary-600"
+            >
+              Valve Corporation
+            </a>
+            . Steam and the Steam logo are trademarks and/or registered
+            trademarks of Valve Corporation in the U.S. and/or other countries.
+          </LogoCopyrightNotice>
         </section>
       </main>
     </article>
