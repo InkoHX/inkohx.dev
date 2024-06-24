@@ -6,7 +6,7 @@ import { SocialMediaLinkIcon } from './SocialMediaLinkIcon'
 
 export const AppFooter: React.FC = () => {
   return (
-    <footer className="h-[var(--footer-height)] bg-slate-200 py-4">
+    <footer className="min-h-[var(--footer-height)] bg-slate-200 py-4">
       <nav className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-4 gap-y-2 px-4">
         <Link
           className="text-sm text-slate-600 transition-opacity hover:opacity-80"
