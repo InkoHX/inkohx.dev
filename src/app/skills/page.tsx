@@ -163,7 +163,7 @@ const SkillSection: React.FC<{
         {props.skills.map(({ icon, name, level }) => (
           <li
             key={name}
-            className="flex h-48 flex-col items-center justify-center gap-4 bg-slate-200 shadow"
+            className="flex h-48 flex-col items-center justify-center gap-4 bg-slate-200 shadow-lg"
           >
             <div
               data-name={name}
@@ -190,7 +190,7 @@ export default function Skills() {
     <article className="py-8">
       <main className="mx-auto max-w-7xl px-4">
         <div
-          className="bg-slate-100/90 bg-contain bg-right-top bg-no-repeat py-48 bg-blend-lighten lg:bg-blend-normal"
+          className="bg-slate-100/90 bg-contain bg-right-bottom bg-no-repeat py-48 bg-blend-lighten lg:bg-blend-normal"
           style={{ backgroundImage: "url('/img/undraw/certificate.svg')" }}
         >
           <div className="max-w-prose">

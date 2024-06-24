@@ -15,7 +15,7 @@ const NavigationCard: React.FC<{
     <Link
       className={mergeClassName(
         props.className,
-        'relative h-64 rounded-md bg-slate-200 bg-[length:50%_100%] bg-right-bottom bg-no-repeat bg-origin-content p-4 shadow-md transition-opacity hover:opacity-70 sm:bg-contain'
+        'relative h-64 rounded-md bg-slate-200 bg-[length:50%_100%] bg-right-bottom bg-no-repeat bg-origin-content p-4 shadow-md transition transition-colors hover:text-primary-600 hover:shadow-lg sm:bg-contain'
       )}
       href={props.href}
       style={{ backgroundImage: `url("${props.imageSrc}")` }}

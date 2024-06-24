@@ -207,7 +207,7 @@ export default function Projects() {
   return (
     <main className="mx-auto max-w-7xl px-4 py-8">
       <div
-        className="bg-slate-100/90 bg-contain bg-right-top bg-no-repeat py-48 bg-blend-lighten lg:bg-blend-normal"
+        className="bg-slate-100/90 bg-contain bg-right-bottom bg-no-repeat py-48 bg-blend-lighten lg:bg-blend-normal"
         style={{ backgroundImage: "url('/img/undraw/projections.svg')" }}
       >
         <div className="max-w-prose">
