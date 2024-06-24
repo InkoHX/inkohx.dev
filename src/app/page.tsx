@@ -128,7 +128,7 @@ export default function Home() {
           <NavigationCard
             className="col-span-2 sm:col-span-1"
             href="/articles"
-            imageSrc="/img/undraw/posts.svg"
+            imageSrc="/img/undraw/blog-post.svg"
             text="記事一覧"
           />
         </nav>
