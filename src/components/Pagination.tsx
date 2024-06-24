@@ -22,9 +22,9 @@ const PreviousButton: React.FC<
       <NextLink
         href={props.href}
         onClick={props.onClick}
-        className="block h-8 min-w-8 rounded-lg border border-black p-2 text-center font-semibold leading-none focus:border-none"
+        className="flex h-10 min-w-10 items-center justify-center rounded-lg font-semibold leading-none ring-1 ring-slate-400 focus:border-none"
       >
-        <ArrowLeftIcon className="h-full" />
+        <ArrowLeftIcon className="h-2/3" />
         <span className="sr-only">前のページへ移動</span>
       </NextLink>
     )
@@ -32,9 +32,9 @@ const PreviousButton: React.FC<
   return (
     <button
       aria-disabled="true"
-      className="h-8 min-w-8 cursor-not-allowed rounded-lg border border-black bg-slate-300 p-2 text-center focus:border-none"
+      className="flex h-10 min-w-10 cursor-not-allowed items-center justify-center rounded-lg bg-slate-300 ring-1 ring-slate-400 focus:border-none"
     >
-      <ArrowLeftIcon className="h-full" />
+      <ArrowLeftIcon className="h-2/3" />
       <span className="sr-only">前のページへ移動</span>
     </button>
   )
@@ -49,9 +49,9 @@ const NextButton: React.FC<
       <NextLink
         href={props.href}
         onClick={props.onClick}
-        className="block h-8 min-w-8 rounded-lg border border-black p-2 text-center font-semibold leading-none focus:border-none"
+        className="flex h-10 min-w-10 items-center justify-center rounded-lg font-semibold leading-none ring-1 ring-slate-400 focus:border-none"
       >
-        <ArrowRightIcon className="h-full" />
+        <ArrowRightIcon className="h-2/3" />
         <span className="sr-only">次のページへ移動</span>
       </NextLink>
     )
@@ -59,9 +59,9 @@ const NextButton: React.FC<
   return (
     <button
       aria-disabled="true"
-      className="h-8 min-w-8 cursor-not-allowed rounded-lg border border-black bg-slate-300 p-2 text-center focus:border-none"
+      className="flex h-10 min-w-10 cursor-not-allowed items-center justify-center rounded-lg bg-slate-300 ring-1 ring-slate-400 focus:border-none"
     >
-      <ArrowRightIcon className="h-full fill-black" />
+      <ArrowRightIcon className="h-2/3" />
       <span className="sr-only">次のページへ移動</span>
     </button>
   )
@@ -75,7 +75,7 @@ const PageButton: React.FC<
     return (
       <button
         aria-disabled="true"
-        className="h-8 min-w-8 cursor-not-allowed rounded-lg border border-black bg-primary-600 p-2 text-center font-semibold leading-none text-white focus:border-none"
+        className="flex h-10 min-w-10 cursor-not-allowed items-center justify-center rounded-lg bg-primary-600 text-lg font-semibold leading-none text-white ring-1 ring-slate-400 focus:border-none"
       >
         {props.page}
         <span className="sr-only">
@@ -88,7 +88,7 @@ const PageButton: React.FC<
     <NextLink
       href={props.href}
       onClick={props.onClick}
-      className="block h-8 min-w-8 rounded-lg border border-black p-2 text-center leading-none focus:border-none"
+      className="flex h-10 min-w-10 items-center justify-center rounded-lg text-lg leading-none ring-1 ring-slate-400 focus:border-none"
     >
       {props.page}
       <span className="sr-only">ページ目</span>
