@@ -37,7 +37,6 @@ export const usePagination = (options: PaginationOptions) => {
   )
   const pages = React.useMemo(() => {
     const items: PaginationItem[] = []
-    const endPage = Math.min(startPage + options.maxPages, options.totalPages)
 
     {
       const previousPage = currentPage - 1
@@ -54,7 +53,10 @@ export const usePagination = (options: PaginationOptions) => {
       items.push({ type: 'literal', value: '...' })
     }
 
-    for (const page of range(startPage, endPage)) {
+    for (const page of range(
+      startPage,
+      Math.min(startPage + options.maxPages - 1, options.totalPages)
+    )) {
       items.push({ type: 'page', value: page, selected: currentPage === page })
     }
 
