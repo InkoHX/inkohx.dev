@@ -181,12 +181,12 @@ const ProjectList: React.FC<{
         {props.projects.map(project => (
           <article
             key={project.description}
-            className="h-full w-full rounded-md bg-slate-200 p-4 shadow-md"
+            className="relative h-full w-full rounded-md bg-slate-200 p-4 shadow-md transition-shadow hover:shadow-lg"
           >
             <h3 className="text-2xl font-semibold">
               <a
                 href={`https://github.com/${project.repository.owner}/${project.repository.name}`}
-                className="underline transition-colors hover:text-primary-600"
+                className="transition-colors before:absolute before:inset-0 before:z-10 before:content-[''] hover:text-primary-600"
               >
                 {project.name}
               </a>
