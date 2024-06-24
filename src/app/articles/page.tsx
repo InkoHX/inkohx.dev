@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
 import { Pagination } from '@/components/Pagination'
@@ -7,6 +8,10 @@ import { Article } from './Article'
 import { fetchFeed } from './feed'
 
 export const revalidate = 3_600 // every hour
+
+export const metadata: Metadata = {
+  title: '記事一覧',
+}
 
 export default async function Articles({
   searchParams,
