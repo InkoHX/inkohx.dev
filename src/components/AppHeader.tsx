@@ -18,7 +18,7 @@ const navLinks = [
     text: 'プロジェクト',
   },
   {
-    text: '記事',
+    text: '記事一覧',
     href: '/articles',
   },
 ] satisfies {
