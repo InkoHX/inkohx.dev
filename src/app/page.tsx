@@ -1,138 +1,170 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
 import React from 'react'
 
 import { SocialMediaLinkIcon } from '@/components/SocialMediaLinkIcon'
-import { mergeClassName } from '@/utils/mergeClassName'
+import { Timeline } from '@/components/Timeline'
+import { TimelineItem } from '@/components/TimelineItem'
 
-const NavigationCard: React.FC<{
-  href: string
-  text: string
-  imageSrc: string
-  className?: string
-}> = props => {
+export default function About() {
   return (
-    <Link
-      className={mergeClassName(
-        props.className,
-        'relative h-64 rounded-md bg-slate-200 bg-[length:50%_100%] bg-right-bottom bg-no-repeat bg-origin-content p-4 shadow-md transition transition-colors hover:text-primary-600 hover:shadow-lg sm:bg-contain'
-      )}
-      href={props.href}
-      style={{ backgroundImage: `url("${props.imageSrc}")` }}
-    >
-      <span className="rounded-xl bg-slate-200/70 p-2 text-3xl font-semibold">
-        {props.text}
-      </span>
-    </Link>
-  )
-}
-
-export const metadata: Metadata = {
-  title: "InkoHX's portfolio",
-}
-
-export default function Home() {
-  return (
-    <article className="py-8">
-      <main className="mx-auto max-w-7xl px-4">
-        <div className="flex flex-col items-center justify-center gap-8 pb-32 pt-24 sm:flex-row">
-          <img
-            src="/img/InkoHX.jpeg"
-            alt=""
-            width={256}
-            height={256}
-            className="size-64 rounded-full"
-          />
-          <section className="flex flex-col items-center space-y-4 sm:items-start">
-            <h1 className="text-5xl font-bold">InkoHX</h1>
-            <p className="text-center text-xl text-slate-600 sm:text-left">
-              <span className="inline-block">
-                Webが大好きな学生プログラマーです。
-              </span>
-              <span className="inline-block">
-                よく<b>インコ</b>
-                と呼ばれています！
-              </span>
-            </p>
-            <ul className="flex space-x-4">
-              <li>
-                <SocialMediaLinkIcon
-                  name="bluesky"
-                  iconProps={{
-                    className: 'size-8 transition-opacity hover:opacity-70',
-                  }}
-                />
-              </li>
-              <li>
-                <SocialMediaLinkIcon
-                  name="github"
-                  iconProps={{
-                    className: 'size-8 transition-opacity hover:opacity-70',
-                  }}
-                />
-              </li>
-              <li>
-                <SocialMediaLinkIcon
-                  name="keybase"
-                  iconProps={{
-                    className: 'size-8 transition-opacity hover:opacity-70',
-                  }}
-                />
-              </li>
-              <li>
-                <SocialMediaLinkIcon
-                  name="steam"
-                  iconProps={{
-                    className: 'size-8 transition-opacity hover:opacity-70',
-                  }}
-                />
-              </li>
-              <li>
-                <SocialMediaLinkIcon
-                  name="x"
-                  iconProps={{
-                    className: 'size-8 transition-opacity hover:opacity-70',
-                  }}
-                />
-              </li>
-              <li>
-                <SocialMediaLinkIcon
-                  name="zenn"
-                  iconProps={{
-                    className: 'size-8 transition-opacity hover:opacity-70',
-                  }}
-                />
-              </li>
-            </ul>
-          </section>
+    <main className="mx-auto max-w-7xl px-4 py-8">
+      <div className="flex flex-col items-center justify-center pb-32 pt-24">
+        <img
+          src="/img/InkoHX.jpeg"
+          alt=""
+          width={256}
+          height={256}
+          className="size-64 rounded-full"
+        />
+        <h1 className="mt-4 text-6xl font-bold">InkoHX</h1>
+        <p className="text-center text-xl text-slate-600 sm:text-left">
+          a.k.a HydraParrot
+        </p>
+        <ul className="mt-4 flex space-x-4">
+          <li>
+            <SocialMediaLinkIcon
+              name="bluesky"
+              iconProps={{
+                className: 'size-8 transition-opacity hover:opacity-70',
+              }}
+            />
+          </li>
+          <li>
+            <SocialMediaLinkIcon
+              name="github"
+              iconProps={{
+                className: 'size-8 transition-opacity hover:opacity-70',
+              }}
+            />
+          </li>
+          <li>
+            <SocialMediaLinkIcon
+              name="keybase"
+              iconProps={{
+                className: 'size-8 transition-opacity hover:opacity-70',
+              }}
+            />
+          </li>
+          <li>
+            <SocialMediaLinkIcon
+              name="steam"
+              iconProps={{
+                className: 'size-8 transition-opacity hover:opacity-70',
+              }}
+            />
+          </li>
+          <li>
+            <SocialMediaLinkIcon
+              name="x"
+              iconProps={{
+                className: 'size-8 transition-opacity hover:opacity-70',
+              }}
+            />
+          </li>
+          <li>
+            <SocialMediaLinkIcon
+              name="zenn"
+              iconProps={{
+                className: 'size-8 transition-opacity hover:opacity-70',
+              }}
+            />
+          </li>
+        </ul>
+      </div>
+      <section>
+        <h1 className="text-4xl font-semibold">私について</h1>
+        <div className="mt-4 space-y-4">
+          <p className="overflow-wrap-anywhere break-keep text-lg">
+            こんにちは！
+            <wbr />
+            <b>InkoHX（インコ・エイチ・エックス）</b>
+            <wbr />
+            という名前で活動している
+            <wbr />
+            インコが大好きな
+            <wbr />
+            学生プログラマーです。
+          </p>
+          <p className="overflow-wrap-anywhere break-keep text-lg">
+            誰かとお話する際は
+            <wbr />
+            <b>インコ</b>
+            と呼ばれることが多く、
+            <wbr />
+            末尾の<b>HX</b>
+            <wbr />
+            を発音されることはほとんどないし、
+            <wbr />
+            そう呼んでもらって構いません。
+          </p>
+          <p className="overflow-wrap-anywhere break-keep text-lg">
+            JavaScriptかTypeScriptを使って、プログラムを作ることが好きです。
+          </p>
         </div>
-        <nav className="grid grid-cols-2 gap-8">
-          <NavigationCard
-            className="col-span-2 sm:col-span-1"
-            href="/about"
-            imageSrc="/img/undraw/profile.svg"
-            text="自己紹介"
-          />
-          <NavigationCard
-            className="col-span-2 sm:col-span-1"
-            href="/projects"
-            imageSrc="/img/undraw/projections.svg"
-            text="プロジェクト"
-          />
-          <NavigationCard
-            className="col-span-2 sm:col-span-1"
-            href="/skills"
-            imageSrc="/img/undraw/certificate.svg"
-            text="スキル"
-          />
-          <NavigationCard
-            className="col-span-2 sm:col-span-1"
-            href="/articles"
-            imageSrc="/img/undraw/blog-post.svg"
-            text="記事一覧"
-          />
-        </nav>
-      </main>
-    </article>
+      </section>
+      <section className="mt-8">
+        <h2 className="text-4xl font-bold">経歴（ざっくり）</h2>
+        <div className="mt-4">
+          <Timeline>
+            <TimelineItem position="left">
+              <div className="bg-slate-200 p-4">
+                <div className="font-semibold text-slate-600">2017年〜現在</div>
+                <h3 className="text-2xl font-semibold">プログラミング</h3>
+                <p className="overflow-wrap-anywhere mt-2 break-keep">
+                  Minecraft Bedrock Edition
+                  <wbr />
+                  に熱中していた最中に、ModPEとPocketMine-MPに出会ったことがきっかけでプログラミングを始める。
+                </p>
+                <p className="overflow-wrap-anywhere mt-4 break-keep">
+                  現在は、JavaScriptかTypeScriptを用いてなにかを作ることに専念しています。
+                </p>
+              </div>
+            </TimelineItem>
+            <TimelineItem position="right">
+              <div className="bg-slate-200 p-4">
+                <div className="font-semibold text-slate-600">
+                  2017年〜2019年
+                </div>
+                <h3 className="text-2xl font-semibold">Minecraft Server</h3>
+                <p className="overflow-wrap-anywhere mt-2 break-keep">
+                  PocketMine-MPを用いて
+                  <wbr />
+                  <span className="inline-block">
+                    Minecraft Bedrock Edition
+                  </span>
+                  向けのマルチプレイサーバーを開発・運用する。
+                </p>
+                <p className="mt-4">PvPと経済を主体としたものを運営</p>
+              </div>
+            </TimelineItem>
+            <TimelineItem position="left">
+              <div className="bg-slate-200 p-4">
+                <div className="font-semibold text-slate-600">2017年〜現在</div>
+                <h3 className="text-2xl font-semibold">
+                  Discord.js Japan User Group
+                </h3>
+                <p className="overflow-wrap-anywhere mt-2 break-keep">
+                  discord.jsを使ってDiscordボットを作ることにハマった勢いで、Discord.js
+                  Japan User Groupを建てる。
+                </p>
+              </div>
+            </TimelineItem>
+            <TimelineItem position="right" ping>
+              <div className="bg-slate-200 p-4">
+                <div className="font-semibold text-slate-600">2019年〜現在</div>
+                <h3 className="text-2xl font-semibold">The NEXTERIAS</h3>
+                <p className="overflow-wrap-anywhere mt-2 break-keep">
+                  本格的に活動を始めたのは2022年あたりで、
+                  <wbr />
+                  actions-vercelやtwitter-api-fetchなどのプログラムを開発
+                </p>
+                <p className="overflow-wrap-anywhere mt-4 break-keep">
+                  一番最初はライブラリやツールを作ることを目的としていなかったが、気が変わったので作っている。
+                </p>
+              </div>
+            </TimelineItem>
+          </Timeline>
+        </div>
+      </section>
+    </main>
   )
 }

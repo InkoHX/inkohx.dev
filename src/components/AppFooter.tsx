@@ -16,12 +16,6 @@ export const AppFooter: React.FC = () => {
         </Link>
         <Link
           className="text-sm text-slate-600 transition-opacity hover:opacity-80"
-          href="/about"
-        >
-          自己紹介
-        </Link>
-        <Link
-          className="text-sm text-slate-600 transition-opacity hover:opacity-80"
           href="/skills"
         >
           スキル

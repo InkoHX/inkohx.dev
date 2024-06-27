@@ -8,7 +8,6 @@ import { NavLink } from './NavLink'
 
 const navLinks = [
   { text: 'ホーム', href: '/' },
-  { text: '自己紹介', href: '/about' },
   {
     href: '/skills',
     text: 'スキル',
