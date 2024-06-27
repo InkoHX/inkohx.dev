@@ -1,7 +1,8 @@
-import licenseChecker from 'license-checker'
-import { readFile, writeFile, mkdir } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { promisify } from 'node:util'
+
+import licenseChecker from 'license-checker'
 
 const projectRoot = new URL('..', import.meta.url)
 const analyzeProjectLicense = promisify(licenseChecker.init)
