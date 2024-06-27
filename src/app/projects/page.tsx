@@ -181,7 +181,7 @@ const ProjectList: React.FC<{
         {props.projects.map(project => (
           <article
             key={project.description}
-            className="relative h-full w-full rounded-md bg-slate-200 p-4 shadow-md transition-shadow hover:shadow-lg"
+            className="relative size-full rounded-md bg-slate-200 p-4 shadow-md transition-shadow hover:shadow-lg"
           >
             <h3 className="text-2xl font-semibold">
               <a
