@@ -1,6 +1,11 @@
 import { Metadata } from 'next'
 import React from 'react'
 
+import DJSJapanImage from '@/assets/img/websites/discordjs-japan-org.png'
+import PortfolioImage from '@/assets/img/websites/inkohx-dev.png'
+import NewsImage from '@/assets/img/websites/news-inkohx-dev.png'
+import NEXTERIASImage from '@/assets/img/websites/nexterias-dev.png'
+
 import { Website } from './Website'
 
 type ProjectInfo = {
@@ -151,22 +156,22 @@ const websites = [
   {
     name: 'Discord.js Japan User Group',
     link: 'https://discordjs-japan.org',
-    imageUrl: '/img/websites/discordjs-japan-org.png',
+    imageUrl: DJSJapanImage.src,
   },
   {
     name: 'The NEXTERIAS',
     link: 'https://nexterias.dev',
-    imageUrl: '/img/websites/nexterias-dev.png',
+    imageUrl: NEXTERIASImage.src,
   },
   {
     name: 'RSS Reader',
     link: 'https://news.inkohx.dev',
-    imageUrl: '/img/websites/news-inkohx-dev.png',
+    imageUrl: NewsImage.src,
   },
   {
     link: 'https://inkohx.dev',
     name: 'Portfolio',
-    imageUrl: '/img/websites/inkohx-dev.png',
+    imageUrl: PortfolioImage.src,
   },
 ] satisfies ReadonlyArray<Website>
 

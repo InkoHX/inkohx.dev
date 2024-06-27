@@ -1,5 +1,6 @@
 import React from 'react'
 
+import AvatarImage from '@/assets/img/InkoHX.jpeg'
 import { SocialMediaLinkIcon } from '@/components/SocialMediaLinkIcon'
 import { Timeline } from '@/components/Timeline'
 import { TimelineItem } from '@/components/TimelineItem'
@@ -9,7 +10,7 @@ export default function About() {
     <main className="mx-auto max-w-7xl px-4 py-8">
       <div className="flex flex-col items-center justify-center pb-32 pt-24">
         <img
-          src="/img/InkoHX.jpeg"
+          src={AvatarImage.src}
           alt=""
           width={256}
           height={256}
