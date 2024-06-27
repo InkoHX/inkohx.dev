@@ -8,7 +8,7 @@ export interface WebsiteProps {
   link: string
 }
 
-export const Website: React.FC<WebsiteProps> = props => {
+export const WebsiteCard: React.FC<WebsiteProps> = props => {
   const imgRef = React.useRef<HTMLImageElement>(null)
   const [imageWidth, setImageWidth] = React.useState(0)
   const [imageHeight, setImageHeight] = React.useState(0)

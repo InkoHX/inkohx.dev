@@ -6,7 +6,7 @@ import PortfolioImage from '@/assets/img/websites/inkohx-dev.png'
 import NewsImage from '@/assets/img/websites/news-inkohx-dev.png'
 import NEXTERIASImage from '@/assets/img/websites/nexterias-dev.png'
 
-import { Website } from './Website'
+import { WebsiteCard } from './WebsiteCard'
 
 type ProjectInfo = {
   name: string
@@ -234,7 +234,7 @@ export default function Projects() {
         <ul className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
           {websites.map(({ imageUrl, link, name }) => (
             <li className="w-full shadow-lg hover:shadow-xl" key={link}>
-              <Website imageUrl={imageUrl} link={link} websiteName={name} />
+              <WebsiteCard imageUrl={imageUrl} link={link} websiteName={name} />
             </li>
           ))}
         </ul>
