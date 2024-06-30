@@ -107,7 +107,7 @@ export default function About() {
         <div className="mt-4">
           <Timeline>
             <TimelineItem position="left">
-              <div className="bg-slate-200 p-4">
+              <div className="rounded bg-slate-200 p-4">
                 <div className="font-semibold text-slate-600">2017年〜現在</div>
                 <h3 className="text-2xl font-semibold">プログラミング</h3>
                 <p className="overflow-wrap-anywhere mt-2 break-keep">
@@ -121,7 +121,7 @@ export default function About() {
               </div>
             </TimelineItem>
             <TimelineItem position="right">
-              <div className="bg-slate-200 p-4">
+              <div className="rounded bg-slate-200 p-4">
                 <div className="font-semibold text-slate-600">
                   2017年〜2019年
                 </div>
@@ -138,7 +138,7 @@ export default function About() {
               </div>
             </TimelineItem>
             <TimelineItem position="left">
-              <div className="bg-slate-200 p-4">
+              <div className="rounded bg-slate-200 p-4">
                 <div className="font-semibold text-slate-600">2017年〜現在</div>
                 <h3 className="text-2xl font-semibold">
                   Discord.js Japan User Group
@@ -150,7 +150,7 @@ export default function About() {
               </div>
             </TimelineItem>
             <TimelineItem position="right" ping>
-              <div className="bg-slate-200 p-4">
+              <div className="rounded bg-slate-200 p-4">
                 <div className="font-semibold text-slate-600">2019年〜現在</div>
                 <h3 className="text-2xl font-semibold">The NEXTERIAS</h3>
                 <p className="overflow-wrap-anywhere mt-2 break-keep">
