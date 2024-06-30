@@ -1,0 +1,64 @@
+.post-body h2 {
+  @apply text-4xl font-bold;
+}
+
+.post-body h3 {
+  @apply text-3xl font-bold;
+}
+
+.post-body h4 {
+  @apply text-2xl font-semibold;
+}
+
+.post-body h5 {
+  @apply text-xl font-semibold;
+}
+
+.post-body h6 {
+  @apply text-lg font-semibold;
+}
+
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  @apply mt-8;
+}
+
+.post-body a {
+  @apply text-primary-600 hover:underline;
+}
+
+.post-body p {
+  @apply mt-4;
+}
+
+.post-body blockquote {
+  @apply bg-slate-200 py-1 pl-2;
+}
+
+.post-body ul {
+  @apply mt-4 list-inside list-disc;
+}
+
+.post-body ol {
+  @apply mt-4 list-inside list-decimal;
+}
+
+.post-body ul ul,
+.post-body ol ol {
+  @apply ml-8 list-outside;
+}
+
+.post-body ol li p {
+  @apply m-0 inline;
+}
+
+.post-body :global pre.shiki {
+  @apply overflow-x-auto p-2;
+}
+
+.post-body :not(:global pre.shiki) code {
+  @apply rounded bg-slate-200 px-1;
+}

@@ -1,11 +1,13 @@
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
+import Parser from 'rss-parser'
 
 import { Pagination } from '@/components/Pagination'
 import { chunk } from '@/utils/chunk'
 
 import { Article } from './Article'
-import { fetchFeed } from './feed'
+import { fetchFeeds, fetchFromRSS } from './feed'
+import * as Post from './posts'
 
 export const revalidate = 3_600 // every hour
 
@@ -18,21 +20,7 @@ export default async function Articles({
 }: {
   searchParams: Record<string, string | string[]>
 }) {
-  const feeds = await Promise.all([
-    fetchFeed('https://zenn.dev/inkohx/feed'),
-    //fetchFeed('https://qiita.com/inkohx/feed'),
-  ])
-  const chunkedItems = chunk(
-    feeds
-      .flatMap(feed => feed.items)
-      .sort((a, b) => {
-        if (!a.isoDate || !b.isoDate) return 0
-
-        // Sort by date in descending order
-        return Date.parse(b.isoDate) - Date.parse(a.isoDate)
-      }),
-    9 // chunk size
-  )
+  const chunkedItems = chunk(await fetchFeeds(), 9)
   const totalPages = chunkedItems.length
   const page = Array.isArray(searchParams.page)
     ? 1
@@ -55,9 +43,24 @@ export default async function Articles({
         </div>
       </div>
       <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, index) => (
-          <Article key={index} {...item} />
-        ))}
+        {items.map((item, index) =>
+          item.type === 'rss' ? (
+            <Article
+              key={index}
+              articleLink={item.value.link!}
+              title={item.value.title!}
+              imageUrl={item.value.enclosure?.url}
+              publishedAt={item.value.isoDate}
+            />
+          ) : (
+            <Article
+              key={index}
+              articleLink={`/articles/${item.value.id}`}
+              title={item.value.title}
+              publishedAt={item.value.publishedAt}
+            />
+          )
+        )}
       </div>
       <div
         className="mt-8 hidden justify-center data-[paginateable=true]:flex"

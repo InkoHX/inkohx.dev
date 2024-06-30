@@ -1,16 +1,22 @@
 import React from 'react'
-import Parser from 'rss-parser'
 
-export const Article: React.FC<Parser.Item> = props => {
+export interface ArticleProps {
+  articleLink: string
+  publishedAt?: string
+  title: string
+  imageUrl?: string
+}
+
+export const Article: React.FC<ArticleProps> = props => {
   const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', {
     dateStyle: 'long',
   })
 
   return (
     <article className="group relative overflow-hidden rounded bg-slate-200 shadow-lg transition-shadow hover:shadow-xl">
-      {props.enclosure ? (
+      {props.imageUrl ? (
         <img
-          src={props.enclosure.url}
+          src={props.imageUrl}
           alt=""
           loading="lazy"
           className="max-h-64 w-full"
@@ -27,7 +33,7 @@ export const Article: React.FC<Parser.Item> = props => {
       <div className="px-4 py-2">
         <h2 className="text-lg font-semibold">
           <a
-            href={props.link}
+            href={props.articleLink}
             className="before:absolute before:inset-0 before:z-10 before:content-[''] group-hover:text-primary-600"
           >
             {props.title}
@@ -35,8 +41,8 @@ export const Article: React.FC<Parser.Item> = props => {
         </h2>
         <p className="mt-2 text-sm text-slate-700">
           <span className="sr-only">投稿日: </span>
-          {props.isoDate
-            ? dateTimeFormatter.format(Date.parse(props.isoDate))
+          {props.publishedAt
+            ? dateTimeFormatter.format(Date.parse(props.publishedAt))
             : '不明'}
         </p>
       </div>
