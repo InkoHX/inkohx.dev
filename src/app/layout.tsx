@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className="has-[nav[data-mobile-nav-open=true]]:overflow-hidden"
+      className="scroll-smooth has-[nav[data-mobile-nav-open=true]]:overflow-hidden"
     >
       <body className="min-h-screen bg-slate-100 antialiased">
         <AppHeader />
