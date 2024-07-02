@@ -93,7 +93,7 @@ export default async function PostPage({
       </header>
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 px-4 sm:grid-cols-3 sm:gap-x-8">
         <div>
-          <nav className="top-8 order-last rounded bg-slate-200 p-4 sm:sticky sm:order-last">
+          <nav className="top-8 order-last rounded bg-slate-200 p-4 shadow-lg sm:sticky sm:order-last">
             <div className="text-2xl font-semibold">目次</div>
             <ul className="mt-2 list-inside list-disc">
               {headings.map(({ text }) => (
