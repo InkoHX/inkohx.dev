@@ -20,10 +20,9 @@ export default async function Image({
   params: ArticleStaticParams
 }) {
   const post = await read(params.articleId)
-  const siteName = 'InkoHX Blog'
   const [NotoSansJPRegular, NotoSansJPBold] = await Promise.all([
     NotoSansJP.Regular(post.metadata.categories.join('')),
-    NotoSansJP.Bold(post.metadata.title + siteName),
+    NotoSansJP.Bold(post.metadata.title),
   ])
 
   return new ImageResponse(
@@ -87,7 +86,12 @@ export default async function Image({
                 </div>
               ))}
             </div>
-            <div style={{ fontSize: 32, fontWeight: 700 }}>{siteName}</div>
+            <img
+              src="https://github.com/InkoHX.png"
+              width={96}
+              height={96}
+              style={{ borderRadius: '100%' }}
+            />
           </div>
         </div>
       </div>
