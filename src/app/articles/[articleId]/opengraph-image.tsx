@@ -26,7 +26,7 @@ export default async function Image({
           display: 'flex',
           height: '100%',
           width: '100%',
-          background: 'linear-gradient(to right bottom, #83b4ff, #2152ef)',
+          background: '#2152ef',
           padding: 64,
         }}
       >
@@ -40,6 +40,7 @@ export default async function Image({
             width: '100%',
             padding: 48,
             borderRadius: 16,
+            boxShadow: '0px 5px 15px 0px rgba(0, 0, 0, 0.35)',
           }}
         >
           <div style={{ fontSize: 64, fontWeight: 900 }}>
@@ -64,7 +65,8 @@ export default async function Image({
               {post.metadata.categories.map(category => (
                 <div
                   style={{
-                    fontSize: 16,
+                    fontSize: 24,
+                    fontWeight: 'bold',
                     padding: '0.5rem',
                     backgroundColor: '#e2e8f0',
                     display: 'flex',
