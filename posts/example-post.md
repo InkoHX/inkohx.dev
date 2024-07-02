@@ -2,7 +2,8 @@
 title: Example Post (テストページ)
 publishedAt: '1970-01-01'
 modifiedAt: '1970-01-01'
-categories: []
+categories:
+  - テスト
 ---
 
 # h1 Heading 8-)

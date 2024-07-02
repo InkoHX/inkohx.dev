@@ -16,7 +16,7 @@ export const PostMetadata = Type.Object({
   title: Type.String({ minLength: 1 }),
   publishedAt: Type.String({ pattern: datePattern }),
   modifiedAt: Type.String({ pattern: datePattern }),
-  categories: Type.Array(Type.String({ minLength: 1 })), // 将来的に予約
+  categories: Type.Array(Type.String({ minLength: 1 }), { minItems: 1 }), // 将来的に予約
 })
 
 export const PostMetadataCompiler = TypeCompiler.Compile(PostMetadata)
