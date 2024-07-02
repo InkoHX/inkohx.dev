@@ -8,7 +8,7 @@ import { isSystemError } from '@/utils/system-error'
 import * as Post from '../posts'
 import { extractHeadings, markdownToHtml } from './markdown-parser'
 
-interface StaticParams {
+export interface ArticleStaticParams {
   articleId: string
 }
 
@@ -29,16 +29,16 @@ const readPost = async (id: string) => {
   }
 }
 
-export async function generateStaticParams(): Promise<StaticParams[]> {
+export async function generateStaticParams(): Promise<ArticleStaticParams[]> {
   const posts = await Post.findAll()
 
-  return posts.map((id): StaticParams => ({ articleId: id }))
+  return posts.map((id): ArticleStaticParams => ({ articleId: id }))
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: StaticParams
+  params: ArticleStaticParams
 }): Promise<Metadata> {
   const post = await readPost(params.articleId)
 
@@ -56,7 +56,11 @@ export async function generateMetadata({
   }
 }
 
-export default async function PostPage({ params }: { params: StaticParams }) {
+export default async function PostPage({
+  params,
+}: {
+  params: ArticleStaticParams
+}) {
   const post = await readPost(params.articleId)
   const html = await markdownToHtml(post.content)
   const isUpdated = post.metadata.publishedAt !== post.metadata.modifiedAt

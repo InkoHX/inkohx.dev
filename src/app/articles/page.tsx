@@ -57,6 +57,7 @@ export default async function Articles({
               key={index}
               articleLink={`/articles/${item.value.id}`}
               title={item.value.title}
+              imageUrl={`/articles/${item.value.id}/opengraph-image`}
               publishedAt={item.value.publishedAt}
             />
           )
