@@ -1,5 +1,7 @@
 import { ImageResponse } from 'next/og'
 
+import { NotoSansJP } from '@/utils/fonts'
+
 import { read } from '../posts'
 import { ArticleStaticParams } from './page'
 
@@ -18,6 +20,11 @@ export default async function Image({
   params: ArticleStaticParams
 }) {
   const post = await read(params.articleId)
+  const siteName = 'InkoHX Blog'
+  const [NotoSansJPRegular, NotoSansJPBold] = await Promise.all([
+    NotoSansJP.Regular(post.metadata.categories.join('')),
+    NotoSansJP.Bold(post.metadata.title + siteName),
+  ])
 
   return new ImageResponse(
     (
@@ -28,6 +35,7 @@ export default async function Image({
           width: '100%',
           background: '#2152ef',
           padding: 64,
+          fontFamily: "'Noto Sans JP'",
         }}
       >
         <div
@@ -43,7 +51,7 @@ export default async function Image({
             boxShadow: '0px 5px 15px 0px rgba(0, 0, 0, 0.35)',
           }}
         >
-          <div style={{ fontSize: 64, fontWeight: 900 }}>
+          <div style={{ fontSize: 64, fontWeight: 700 }}>
             {post.metadata.title}
           </div>
           <div
@@ -66,7 +74,7 @@ export default async function Image({
                 <div
                   style={{
                     fontSize: 24,
-                    fontWeight: 'bold',
+                    fontWeight: 400,
                     padding: '0.5rem',
                     backgroundColor: '#e2e8f0',
                     display: 'flex',
@@ -79,13 +87,27 @@ export default async function Image({
                 </div>
               ))}
             </div>
-            <div style={{ fontSize: 32, fontWeight: 600 }}>InkoHX Blog</div>
+            <div style={{ fontSize: 32, fontWeight: 700 }}>{siteName}</div>
           </div>
         </div>
       </div>
     ),
     {
       ...size,
+      fonts: [
+        {
+          data: Buffer.from(NotoSansJPRegular),
+          name: 'Noto Sans JP',
+          weight: 400,
+          style: 'normal',
+        },
+        {
+          data: Buffer.from(NotoSansJPBold),
+          name: 'Noto Sans JP',
+          weight: 700,
+          style: 'normal',
+        },
+      ],
     }
   )
 }
