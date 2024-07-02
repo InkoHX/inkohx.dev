@@ -7,7 +7,8 @@ import grayMatter from 'gray-matter'
 
 import { TypeboxValidationError } from '@/errors/TypeboxValidationError'
 
-const postDir = path.join(process.cwd(), 'posts')
+// const postDir = path.join(process.cwd(), 'posts')
+const postDir = path.resolve(__dirname, '../../../posts')
 const datePattern = '^\\d\\d\\d\\d-\\d\\d-\\d\\d$'
 
 export type PostMetadata = Static<typeof PostMetadata>
