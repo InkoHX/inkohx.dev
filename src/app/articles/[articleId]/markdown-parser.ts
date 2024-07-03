@@ -8,7 +8,7 @@ import { unified } from 'unified'
 
 export const extractHeadings = (markdown: string) => {
   const root = unified().use(remarkParse).parse(markdown)
-  const tmp: Array<{ depth: number; text: string }> = []
+  const headings: Array<{ depth: number; text: string }> = []
 
   const extractHeadingText = (node: Node | PhrasingContent): string => {
     if (node.type === 'text') return (node as TextNode).value
@@ -25,10 +25,10 @@ export const extractHeadings = (markdown: string) => {
 
     const text = extractHeadingText(node)
 
-    tmp.push({ text, depth: node.depth })
+    headings.push({ text, depth: node.depth })
   }
 
-  return tmp
+  return headings
 }
 
 export const markdownToHtml = (markdown: string) =>
