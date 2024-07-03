@@ -4,46 +4,28 @@ import React from 'react'
 import { socialAccounts } from '../constants'
 import { SocialMediaLinkIcon } from './SocialMediaLinkIcon'
 
+const navLinks = [
+  { text: 'ホーム', href: '/' },
+  { text: 'スキル', href: '/skills' },
+  { text: 'プロジェクト', href: '/projects' },
+  { text: '記事', href: '/articles' },
+  { text: 'ライセンス表記', href: '/licenses' },
+  { text: 'プライバシーポリシー', href: '/privacy-policy' },
+] satisfies { text: string; href: string }[]
+
 export const AppFooter: React.FC = () => {
   return (
     <footer className="min-h-[var(--footer-height)] bg-slate-200 py-4">
       <nav className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-4 gap-y-2 px-4">
-        <Link
-          className="text-sm text-slate-600 transition-opacity hover:opacity-80"
-          href="/"
-        >
-          ホーム
-        </Link>
-        <Link
-          className="text-sm text-slate-600 transition-opacity hover:opacity-80"
-          href="/skills"
-        >
-          スキル
-        </Link>
-        <Link
-          className="text-sm text-slate-600 transition-opacity hover:opacity-80"
-          href="/projects"
-        >
-          プロジェクト
-        </Link>
-        <Link
-          className="text-sm text-slate-600 transition-opacity hover:opacity-80"
-          href="/articles"
-        >
-          記事
-        </Link>
-        <Link
-          className="text-sm text-slate-600 transition-opacity hover:opacity-80"
-          href="/licenses"
-        >
-          ライセンス表記
-        </Link>
-        <Link
-          href="/privacy-policy"
-          className="text-sm text-slate-600 transition-opacity hover:opacity-80"
-        >
-          プライバシーポリシー
-        </Link>
+        {navLinks.map(({ text, href }) => (
+          <Link
+            className="text-sm text-slate-600 transition-opacity hover:opacity-80"
+            href={href}
+            key={href}
+          >
+            {text}
+          </Link>
+        ))}
       </nav>
       <div className="mx-auto mt-4 flex max-w-7xl flex-col items-center justify-between gap-2 px-4 sm:flex-row">
         <small>Copyright &copy; {new Date().getUTCFullYear()} InkoHX</small>
