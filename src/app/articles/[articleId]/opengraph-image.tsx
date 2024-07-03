@@ -3,7 +3,7 @@
 
 import { ImageResponse } from 'next/og'
 
-import { NotoSansJP } from '@/utils/fonts'
+import { NotoSansJP } from '@/utils/google-fonts'
 
 import { read } from '../posts'
 import { ArticleStaticParams } from './page'
