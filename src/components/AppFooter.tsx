@@ -38,6 +38,12 @@ export const AppFooter: React.FC = () => {
         >
           ライセンス表記
         </Link>
+        <Link
+          href="/privacy-policy"
+          className="text-sm text-slate-600 transition-opacity hover:opacity-80"
+        >
+          プライバシーポリシー
+        </Link>
       </nav>
       <div className="mx-auto mt-4 flex max-w-7xl flex-col items-center justify-between gap-2 px-4 sm:flex-row">
         <small>Copyright &copy; {new Date().getUTCFullYear()} InkoHX</small>
