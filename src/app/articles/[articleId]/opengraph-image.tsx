@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
+
 import { ImageResponse } from 'next/og'
 
 import { NotoSansJP } from '@/utils/fonts'
