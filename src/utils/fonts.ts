@@ -8,7 +8,8 @@ const fetchGoogleFont = async (family: string, text: string) => {
         cache: 'force-cache',
         headers: {
           'User-Agent':
-            'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1',
+            // HACK: Satoriがwoff2に対応していないため、代わりにTrueTypeを取得する為のHACK
+            'Mozilla/5.0',
         },
       }
     )
@@ -18,9 +19,8 @@ const fetchGoogleFont = async (family: string, text: string) => {
     css = await response.text()
   }
 
-  const fontUrl =
-    /src:\surl\((?<fontUrl>.+)\)\sformat\('(opentype|truetype)'\);/.exec(css)
-      ?.groups?.fontUrl
+  const fontUrl = /src:\surl\((?<fontUrl>.+)\)\sformat\('truetype'\);/.exec(css)
+    ?.groups?.fontUrl
 
   if (!fontUrl) throw new TypeError('"fontUrl" is undefined.')
 
