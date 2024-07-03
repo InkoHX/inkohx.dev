@@ -7,9 +7,8 @@ const fetchGoogleFont = async (family: string, text: string) => {
       {
         cache: 'force-cache',
         headers: {
-          'User-Agent':
-            // HACK: Satoriがwoff2に対応していないため、代わりにTrueTypeを取得する為のHACK
-            'Mozilla/5.0',
+          // HACK: Satoriがwoff2に対応していないため、代わりにTrueTypeを取得する為のHACK
+          'User-Agent': 'Mozilla/5.0',
         },
       }
     )
