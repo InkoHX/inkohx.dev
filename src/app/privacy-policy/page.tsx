@@ -74,8 +74,12 @@ export default function PrivacyPolicy() {
           </caption>
           <thead>
             <tr>
-              <th className="border-2 border-slate-300 px-4 py-2">項目</th>
-              <th className="border-2 border-slate-300 px-4 py-2">値の例</th>
+              <th className="border-2 border-slate-300 bg-slate-200 px-4 py-2">
+                項目
+              </th>
+              <th className="border-2 border-slate-300 bg-slate-200 px-4 py-2">
+                値の例
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -128,8 +132,12 @@ export default function PrivacyPolicy() {
           </caption>
           <thead>
             <tr>
-              <th className="border-2 border-slate-300 px-4 py-2">項目</th>
-              <th className="border-2 border-slate-300 px-4 py-2">値の例</th>
+              <th className="border-2 border-slate-300 bg-slate-200 px-4 py-2">
+                項目
+              </th>
+              <th className="border-2 border-slate-300 bg-slate-200 px-4 py-2">
+                値の例
+              </th>
             </tr>
           </thead>
           <tbody>
