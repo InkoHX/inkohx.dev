@@ -206,6 +206,8 @@ const ProjectList: React.FC<{
 
 export const metadata: Metadata = {
   title: 'プロジェクト',
+  description:
+    '現在活発に開発してるものから、そうでないものまで紹介しちゃうぞ！',
 }
 
 export default function Projects() {

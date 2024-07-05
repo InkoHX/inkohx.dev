@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | InkoHX's portfolio",
     default: "InkoHX's portfolio",
   },
-  description: 'InkoHXのポートフォリオ的なやつ',
+  description: 'InkoHXのポートフォリオみたいなやつです。',
   twitter: {
     card: 'summary_large_image',
     creator: 'InkoHX',

@@ -183,6 +183,7 @@ const SkillSection: React.FC<{
 
 export const metadata: Metadata = {
   title: 'スキル',
+  description: '私が扱える言語やフレームワーク、ライブラリなどについて',
 }
 
 export default function Skills() {

@@ -18,10 +18,11 @@ export const generateMetadata = ({
 }: {
   params: StaticParams
 }): Metadata => {
-  const slug = parseSlug(params.slug)
+  const packageName = parseSlug(params.slug)
 
   return {
-    title: `Thanks! ${slug}`,
+    title: `Thanks! ${packageName}`,
+    description: `${packageName}はinkohx.devで使われています！感謝！`,
   }
 }
 

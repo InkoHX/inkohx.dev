@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'プライバシーポリシー',
+  description: 'アクセス解析やパフォーマンス測定の為のデータ収集について',
 }
 
 const vercelWebAnalyticsCollectedData = [
