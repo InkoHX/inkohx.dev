@@ -156,6 +156,18 @@ export default function PrivacyPolicy() {
           </tbody>
         </table>
       </section>
+      <section className="mt-8">
+        <h2 className="text-4xl font-semibold">FAQ</h2>
+        <dl className="mt-4">
+          <dt className="text-xl font-semibold">無効にできないんですか</dt>
+          <dd className="mt-2">
+            現時点で無効にする機能を実装する予定はないので、
+            <strong>無効化することはできません。</strong>
+            <br />
+            どうしても無理という場合は、このサイトから立ち去るかコンテンツブロッカーを使うことを推奨します。
+          </dd>
+        </dl>
+      </section>
     </main>
   )
 }
