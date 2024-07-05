@@ -1,13 +1,11 @@
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
-import Parser from 'rss-parser'
 
 import { Pagination } from '@/components/Pagination'
 import { chunk } from '@/utils/chunk'
 
 import { Article } from './Article'
-import { fetchFeeds, fetchFromRSS } from './feed'
-import * as Post from './posts'
+import { fetchFeeds } from './feed'
 
 export const revalidate = 3_600 // every hour
 
