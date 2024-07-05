@@ -10,6 +10,8 @@ import { ArticleStaticParams } from './page'
 
 export const runtime = 'nodejs'
 
+export const revalidate = 0
+
 export const size = {
   width: 1200,
   height: 630,
