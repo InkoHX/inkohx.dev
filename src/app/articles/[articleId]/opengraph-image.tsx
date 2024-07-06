@@ -1,16 +1,20 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 
+import { notFound } from 'next/navigation'
 import { ImageResponse } from 'next/og'
 
 import { NotoSansJP } from '@/utils/google-fonts'
+import { isSystemError } from '@/utils/system-error'
 
 import { readPost } from '../post'
 import { ArticleStaticParams } from './page'
 
 export const runtime = 'nodejs'
 
-export const revalidate = 0
+// 動作してないっぽい
+// export const dynamic = 'error'
+// export const dynamicParams = false
 
 export const size = {
   width: 1200,
@@ -19,12 +23,28 @@ export const size = {
 
 export const contentType = 'image/png'
 
+/**
+ * `dynamicParams`を`false`にできない為、`readPost`をラップして手動で`notFound`を呼び出す
+ * @param id `findAllPost`で得られる値
+ */
+const readPostOrNotFound = async (id: string) => {
+  try {
+    return await readPost(id)
+  } catch (error: unknown) {
+    if (isSystemError(error)) {
+      if (error.code === 'ENOENT') return notFound()
+    }
+
+    throw error
+  }
+}
+
 export default async function Image({
   params,
 }: {
   params: ArticleStaticParams
 }) {
-  const post = await readPost(params.articleId)
+  const post = await readPostOrNotFound(params.articleId)
   const [NotoSansJPRegular, NotoSansJPBold] = await Promise.all([
     NotoSansJP.Regular(post.metadata.categories.join('')),
     NotoSansJP.Bold(post.metadata.title),
