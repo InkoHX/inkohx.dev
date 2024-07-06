@@ -170,12 +170,13 @@ const SkillSection: React.FC<{
           >
             <div
               data-name={name}
+              aria-hidden
               className="relative cursor-help before:absolute before:-top-8 before:left-1/2 before:w-max before:-translate-x-1/2 before:rounded before:bg-slate-600/70 before:px-2 before:text-white before:opacity-0 before:transition-opacity before:content-[attr(data-name)] before:hover:opacity-100"
             >
               {icon}
             </div>
             <div className="text-lg font-semibold">
-              {getSkillMessage(level)}
+              <span className="sr-only">{name}</span> {getSkillMessage(level)}
             </div>
           </li>
         ))}
