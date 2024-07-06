@@ -2,7 +2,7 @@ import { cache } from 'react'
 import Parser from 'rss-parser'
 import RSSParser from 'rss-parser'
 
-import * as Post from './posts'
+import { findAllPost, PostMetadata, readPost } from './post'
 
 export const fetchFromRSS = cache((feedUrl: string) => {
   const parser = new RSSParser()
@@ -19,7 +19,7 @@ export type Feed =
     }
   | {
       type: 'local'
-      value: Post.PostMetadata & { id: string }
+      value: PostMetadata & { id: string }
     }
 
 export const fetchFeeds = async () => {
@@ -27,10 +27,10 @@ export const fetchFeeds = async () => {
     fetchFromRSS('https://zenn.dev/inkohx/feed'),
     //fetchFeed('https://qiita.com/inkohx/feed'),
   ])
-  const localPostIds = await Post.findAll()
+  const localPostIds = await findAllPost()
   const localPosts = await Promise.all(
     localPostIds.map(async id => ({
-      ...(await Post.read(id)).metadata,
+      ...(await readPost(id)).metadata,
       id: id,
     }))
   )

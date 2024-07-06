@@ -7,7 +7,7 @@ import { Hero } from '@/components/Hero'
 import { PostBody } from '@/components/PostBody/PostBody'
 import { isSystemError } from '@/utils/system-error'
 
-import * as Post from '../posts'
+import { findAllPost, readPost } from '../post'
 import { extractHeadings, markdownToHtml } from './markdown-parser'
 
 export interface ArticleStaticParams {
@@ -15,13 +15,13 @@ export interface ArticleStaticParams {
 }
 
 /**
- * `Post.read`のラッパー関数
+ * `readPost`のラッパー関数
  *
  * NOTE: 記事が存在しないと`notFound`関数を実行します。
  */
-const readPost = async (id: string) => {
+const readPostOrNotFound = async (id: string) => {
   try {
-    return await Post.read(id)
+    return await readPost(id)
   } catch (error: unknown) {
     if (isSystemError(error)) {
       if (error.code === 'ENOENT') return notFound()
@@ -32,7 +32,7 @@ const readPost = async (id: string) => {
 }
 
 export async function generateStaticParams(): Promise<ArticleStaticParams[]> {
-  const posts = await Post.findAll()
+  const posts = await findAllPost()
 
   return posts.map((id): ArticleStaticParams => ({ articleId: id }))
 }
@@ -42,7 +42,7 @@ export async function generateMetadata({
 }: {
   params: ArticleStaticParams
 }): Promise<Metadata> {
-  const post = await readPost(params.articleId)
+  const post = await readPostOrNotFound(params.articleId)
 
   return {
     title: post.metadata.title,
@@ -63,7 +63,7 @@ export default async function PostPage({
 }: {
   params: ArticleStaticParams
 }) {
-  const post = await readPost(params.articleId)
+  const post = await readPostOrNotFound(params.articleId)
   const html = await markdownToHtml(post.content)
   const isUpdated = post.metadata.publishedAt !== post.metadata.modifiedAt
   const headings = extractHeadings(post.content).filter(

@@ -21,7 +21,7 @@ export const PostMetadata = Type.Object({
 
 export const PostMetadataCompiler = TypeCompiler.Compile(PostMetadata)
 
-export const findAll = async () => {
+export const findAllPost = async () => {
   const extension = '.md'
   const files = await fs.readdir(postDir, { withFileTypes: true })
 
@@ -30,7 +30,7 @@ export const findAll = async () => {
     .map(dirent => dirent.name.replace(extension, ''))
 }
 
-export const read = async (id: string) => {
+export const readPost = async (id: string) => {
   const raw = await fs.readFile(path.join(postDir, `${id}.md`), 'utf-8')
   const parsed = grayMatter(raw)
 

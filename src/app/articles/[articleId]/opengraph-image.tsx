@@ -5,7 +5,7 @@ import { ImageResponse } from 'next/og'
 
 import { NotoSansJP } from '@/utils/google-fonts'
 
-import { read } from '../posts'
+import { readPost } from '../post'
 import { ArticleStaticParams } from './page'
 
 export const runtime = 'nodejs'
@@ -24,7 +24,7 @@ export default async function Image({
 }: {
   params: ArticleStaticParams
 }) {
-  const post = await read(params.articleId)
+  const post = await readPost(params.articleId)
   const [NotoSansJPRegular, NotoSansJPBold] = await Promise.all([
     NotoSansJP.Regular(post.metadata.categories.join('')),
     NotoSansJP.Bold(post.metadata.title),
