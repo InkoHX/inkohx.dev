@@ -2,6 +2,9 @@ import { Metadata } from 'next'
 
 import { Container } from '@/components/Container'
 import { Hero } from '@/components/Hero'
+import { Table } from '@/components/Table'
+import { TableCell } from '@/components/TableCell'
+import { TableHead } from '@/components/TableHead'
 
 export const metadata: Metadata = {
   title: 'プライバシーポリシー',
@@ -63,42 +66,39 @@ export default function PrivacyPolicy() {
           </a>
           のページからご覧ください。
         </p>
-        <table className="mt-4 w-full max-w-prose border-collapse border-2 border-slate-600">
-          <caption className="mb-2 font-bold">
-            収集するデータ（
-            <a
-              className="text-primary-600 hover:underline"
-              href="https://vercel.com/docs/analytics/privacy-policy#data-point-information"
-            >
-              公式から引用
-            </a>
-            ）
-          </caption>
-          <thead>
-            <tr>
-              <th className="border-2 border-slate-300 bg-slate-200 px-4 py-2">
-                項目
-              </th>
-              <th className="border-2 border-slate-300 bg-slate-200 px-4 py-2">
-                値の例
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {vercelWebAnalyticsCollectedData.map(
-              ([collectedValue, exampleValue]) => (
-                <tr key={collectedValue}>
-                  <td className="border-2 border-slate-300 px-4 py-2">
-                    {collectedValue}
-                  </td>
-                  <td className="border-2 border-slate-300 px-4 py-2">
-                    <code>{exampleValue}</code>
-                  </td>
-                </tr>
-              )
-            )}
-          </tbody>
-        </table>
+        <div className="mt-4">
+          <Table
+            caption={
+              <span>
+                収集するデータ（
+                <a
+                  className="text-primary-600 hover:underline"
+                  href="https://vercel.com/docs/analytics/privacy-policy#data-point-information"
+                >
+                  公式から引用
+                </a>
+                ）
+              </span>
+            }
+          >
+            <TableHead>
+              <TableCell as="th">項目</TableCell>
+              <TableCell as="th">値の例</TableCell>
+            </TableHead>
+            <tbody>
+              {vercelWebAnalyticsCollectedData.map(
+                ([collectedValue, exampleValue]) => (
+                  <tr key={collectedValue}>
+                    <TableCell>{collectedValue}</TableCell>
+                    <TableCell>
+                      <code>{exampleValue}</code>
+                    </TableCell>
+                  </tr>
+                )
+              )}
+            </tbody>
+          </Table>
+        </div>
       </section>
       <section className="mt-8">
         <h2 className="text-4xl font-semibold">パフォーマンス測定について</h2>
@@ -121,42 +121,41 @@ export default function PrivacyPolicy() {
           </a>
           のページをご覧ください。
         </p>
-        <table className="mt-4 w-full max-w-prose border-collapse border-2 border-slate-300">
-          <caption className="mb-2 font-bold">
-            収集するデータ（
-            <a
-              className="text-primary-600 hover:underline"
-              href="https://vercel.com/docs/speed-insights/privacy-policy#vercel-speed-insights-privacy-&-compliance"
-            >
-              公式から引用
-            </a>
-            ）
-          </caption>
-          <thead>
-            <tr>
-              <th className="border-2 border-slate-300 bg-slate-200 px-4 py-2">
-                項目
-              </th>
-              <th className="border-2 border-slate-300 bg-slate-200 px-4 py-2">
-                値の例
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {vercelSpeedInsightsCollectedData.map(
-              ([collectedValue, exampleValue]) => (
-                <tr key={collectedValue}>
-                  <td className="border-2 border-slate-300 px-4 py-2">
-                    {collectedValue}
-                  </td>
-                  <td className="border-2 border-slate-300 px-4 py-2">
-                    <code>{exampleValue}</code>
-                  </td>
-                </tr>
-              )
-            )}
-          </tbody>
-        </table>
+        <div className="mt-4">
+          <Table
+            caption={
+              <span>
+                収集するデータ（
+                <a
+                  className="text-primary-600 hover:underline"
+                  href="https://vercel.com/docs/speed-insights/privacy-policy#vercel-speed-insights-privacy-&-compliance"
+                >
+                  公式から引用
+                </a>
+                ）
+              </span>
+            }
+          >
+            <TableHead>
+              <tr>
+                <TableCell as="th">項目</TableCell>
+                <TableCell as="th">値の例</TableCell>
+              </tr>
+            </TableHead>
+            <tbody>
+              {vercelSpeedInsightsCollectedData.map(
+                ([collectedValue, exampleValue]) => (
+                  <tr key={collectedValue}>
+                    <TableCell>{collectedValue}</TableCell>
+                    <TableCell>
+                      <code>{exampleValue}</code>
+                    </TableCell>
+                  </tr>
+                )
+              )}
+            </tbody>
+          </Table>
+        </div>
       </section>
       <section className="mt-8">
         <h2 className="text-4xl font-semibold">FAQ</h2>
