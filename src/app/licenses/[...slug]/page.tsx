@@ -4,6 +4,10 @@ import { notFound } from 'next/navigation'
 import { Container } from '@/components/Container'
 import licenses from '@/generated/license.json' with { type: 'json' }
 
+export const dynamic = 'error'
+export const dynamicParams = false
+export const revalidate = false
+
 type StaticParams = { slug: string[] }
 
 const parseSlug = (slug: string[]) => decodeURIComponent(slug.join('/'))
