@@ -14,22 +14,10 @@ export interface ArticleStaticParams {
   articleId: string
 }
 
-/**
- * `readPost`のラッパー関数
- *
- * NOTE: 記事が存在しないと`notFound`関数を実行します。
- */
-const readPostOrNotFound = async (id: string) => {
-  try {
-    return await readPost(id)
-  } catch (error: unknown) {
-    if (isSystemError(error)) {
-      if (error.code === 'ENOENT') return notFound()
-    }
-
-    throw error
-  }
-}
+export const runtime = 'nodejs'
+export const revalidate = false
+export const dynamic = 'error'
+export const dynamicParams = false
 
 export async function generateStaticParams(): Promise<ArticleStaticParams[]> {
   const posts = await findAllPost()
@@ -42,7 +30,7 @@ export async function generateMetadata({
 }: {
   params: ArticleStaticParams
 }): Promise<Metadata> {
-  const post = await readPostOrNotFound(params.articleId)
+  const post = await readPost(params.articleId)
 
   return {
     title: post.metadata.title,
@@ -63,7 +51,7 @@ export default async function PostPage({
 }: {
   params: ArticleStaticParams
 }) {
-  const post = await readPostOrNotFound(params.articleId)
+  const post = await readPost(params.articleId)
   const html = await markdownToHtml(post.content)
   const isUpdated = post.metadata.publishedAt !== post.metadata.modifiedAt
   const headings = extractHeadings(post.content).filter(
