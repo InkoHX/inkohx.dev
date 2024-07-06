@@ -34,7 +34,7 @@ export const SocialMediaLinkIcon: React.FC<SocialMediaIconProps> = props => {
 
   return (
     <a href={socialAccount.link}>
-      {icons[props.name]}
+      <span aria-hidden>{icons[props.name]}</span>
       <span className="sr-only">{socialAccount.name}</span>
     </a>
   )
