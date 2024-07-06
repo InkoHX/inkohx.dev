@@ -1,4 +1,8 @@
+'use client'
+
 import React from 'react'
+
+import { mergeClassName } from '@/utils/mergeClassName'
 
 export interface ArticleProps {
   articleLink: string
@@ -7,23 +11,48 @@ export interface ArticleProps {
   imageUrl?: string
 }
 
+type ImageLoadingStatus = 'LOADING' | 'LOADED' | 'FAILED'
+
 export const Article: React.FC<ArticleProps> = props => {
   const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', {
     dateStyle: 'long',
   })
+  const [imageStatus, setImageStatus] =
+    React.useState<ImageLoadingStatus>('LOADING')
+  const imgRef = React.useRef<HTMLImageElement>(null)
+
+  React.useEffect(() => {
+    // キャッシュされている画像は、`load`イベントを発火させない為、その対策
+    if (imgRef.current?.complete) setImageStatus('LOADED')
+  }, [])
 
   return (
     <article className="group relative overflow-hidden rounded bg-slate-200 shadow-lg transition-shadow hover:shadow-xl">
-      {props.imageUrl ? (
-        <img
-          src={props.imageUrl}
-          alt=""
-          loading="lazy"
-          className="max-h-64 w-full"
-          height="256"
-          width="512"
-        />
-      ) : (
+      {props.imageUrl &&
+        (imageStatus === 'LOADING' || imageStatus === 'LOADED') && (
+          <img
+            src={props.imageUrl}
+            alt=""
+            loading="lazy"
+            height="256"
+            width="512"
+            className={mergeClassName(
+              'max-h-64 w-full',
+              imageStatus === 'LOADING' && 'animate-pulse bg-slate-400'
+            )}
+            onLoad={() => setImageStatus('LOADED')}
+            onError={() => setImageStatus('FAILED')}
+            ref={imgRef}
+          />
+        )}
+      {imageStatus === 'FAILED' && (
+        <div className="flex h-64 w-full items-center justify-center bg-red-200">
+          <div className="not-sr-only select-none text-xl font-semibold">
+            画像の読み込みに失敗しました。
+          </div>
+        </div>
+      )}
+      {!props.imageUrl && (
         <div className="flex h-64 w-full items-center justify-center bg-slate-300">
           <div className="not-sr-only select-none text-4xl font-semibold">
             NO IMAGE

@@ -37,7 +37,7 @@ export const WebsiteCard: React.FC<WebsiteProps> = props => {
       <img
         src={props.imageUrl}
         data-website-name={props.websiteName}
-        className="h-auto w-full group-hover:grayscale-0 sm:grayscale"
+        className="h-auto min-h-64 w-full group-hover:grayscale-0 sm:grayscale"
         alt=""
         ref={imgRef}
       />
