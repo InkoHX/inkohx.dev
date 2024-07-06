@@ -22,6 +22,9 @@ import {
 import { Metadata } from 'next'
 import React from 'react'
 
+import { Container } from '@/components/Container'
+import { Hero } from '@/components/Hero'
+
 type SkillLevel = 1 | 2 | 3
 type Skill = { icon: React.ReactElement; level: SkillLevel; name: string }
 
@@ -189,18 +192,12 @@ export const metadata: Metadata = {
 export default function Skills() {
   return (
     <article className="py-8">
-      <main className="mx-auto max-w-7xl px-4">
-        <div
-          className="bg-slate-100/90 bg-contain bg-right-bottom bg-no-repeat py-48 bg-blend-lighten lg:bg-blend-normal"
-          style={{ backgroundImage: "url('/img/undraw/certificate.svg')" }}
-        >
-          <div className="max-w-prose">
-            <h1 className="text-7xl font-bold">スキル</h1>
-            <p className="mt-8 text-4xl text-slate-700">
-              私が扱える言語やフレームワーク、ライブラリなどについて
-            </p>
-          </div>
-        </div>
+      <Container as="main">
+        <Hero
+          title="スキル"
+          subtitle="私が扱える言語やフレームワーク、ライブラリなどについて"
+          imageUrl="/img/undraw/certificate.svg"
+        />
         <SkillSection skills={languages} sectionName="言語" />
         <SkillSection
           skills={javascriptRuntime}
@@ -220,7 +217,7 @@ export default function Skills() {
             ))}
           </ul>
         </section>
-      </main>
+      </Container>
     </article>
   )
 }

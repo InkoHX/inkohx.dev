@@ -10,6 +10,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
 
+import { Container } from '@/components/Container'
+import { Hero } from '@/components/Hero'
 import licenses from '@/generated/license.json' with { type: 'json' }
 
 const LogoCopyrightNotice: React.FC<
@@ -36,13 +38,11 @@ export const metadata: Metadata = {
 export default function Licenses() {
   return (
     <article className="py-8">
-      <main className="mx-auto max-w-7xl px-4">
-        <section className="py-24">
-          <h1 className="text-7xl font-bold">ライセンス表記</h1>
-          <p className="mt-8 max-w-prose text-2xl text-slate-700">
-            このWebサイトで使用されているOSSのライセンス表記と、一部で使われてるブランドアイコンの著作権を表記しているページです。
-          </p>
-        </section>
+      <Container>
+        <Hero
+          title="ライセンス表記"
+          subtitle="このWebサイトで使用されているOSSのライセンス表記と、一部で使われてるブランドアイコンの著作権を表記しているページです。"
+        />
         <section>
           <h2 className="text-4xl font-semibold">オープンソースソフトウェア</h2>
           <ul className="mt-4 list-inside list-disc">
@@ -162,7 +162,7 @@ export default function Licenses() {
             trademarks of Valve Corporation in the U.S. and/or other countries.
           </LogoCopyrightNotice>
         </section>
-      </main>
+      </Container>
     </article>
   )
 }

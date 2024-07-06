@@ -5,6 +5,8 @@ import DJSJapanImage from '@/assets/img/websites/discordjs-japan-org.png'
 import PortfolioImage from '@/assets/img/websites/inkohx-dev.png'
 import NewsImage from '@/assets/img/websites/news-inkohx-dev.png'
 import NEXTERIASImage from '@/assets/img/websites/nexterias-dev.png'
+import { Container } from '@/components/Container'
+import { Hero } from '@/components/Hero'
 
 import { WebsiteCard } from './WebsiteCard'
 
@@ -212,18 +214,12 @@ export const metadata: Metadata = {
 
 export default function Projects() {
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8">
-      <div
-        className="bg-slate-100/90 bg-contain bg-right-bottom bg-no-repeat py-48 bg-blend-lighten lg:bg-blend-normal"
-        style={{ backgroundImage: "url('/img/undraw/projections.svg')" }}
-      >
-        <div className="max-w-prose">
-          <h1 className="text-7xl font-bold">プロジェクト</h1>
-          <p className="mt-8 text-4xl text-slate-700">
-            現在活発に開発してるものから、そうでないものまで紹介しちゃうぞ！
-          </p>
-        </div>
-      </div>
+    <Container className="py-8" as="main">
+      <Hero
+        title="プロジェクト"
+        subtitle="現在活発に開発してるものから、そうでないものまで紹介しちゃうぞ！"
+        imageUrl="/img/undraw/projections.svg"
+      />
       <ProjectList projects={packages} sectionName="パッケージ" />
       <ProjectList projects={tools} sectionName="ツール" />
       <ProjectList
@@ -241,6 +237,6 @@ export default function Projects() {
           ))}
         </ul>
       </section>
-    </main>
+    </Container>
   )
 }

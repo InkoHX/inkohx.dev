@@ -1,5 +1,8 @@
 import { Metadata } from 'next'
 
+import { Container } from '@/components/Container'
+import { Hero } from '@/components/Hero'
+
 export const metadata: Metadata = {
   title: 'プライバシーポリシー',
   description: 'アクセス解析やパフォーマンス測定の為のデータ収集について',
@@ -34,13 +37,11 @@ const vercelSpeedInsightsCollectedData = [
 
 export default function PrivacyPolicy() {
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8">
-      <div className="py-24">
-        <h1 className="text-7xl font-bold">プライバシーポリシー</h1>
-        <p className="mt-8 max-w-prose text-2xl text-slate-700">
-          アクセス解析やパフォーマンス測定の為のデータ収集について
-        </p>
-      </div>
+    <Container className="py-8" as="main">
+      <Hero
+        title="プライバシーポリシー"
+        subtitle="アクセス解析やパフォーマンス測定の為のデータ収集について"
+      />
       <section className="mt-8">
         <h2 className="text-4xl font-semibold">アクセス解析について</h2>
         <p className="mt-4">
@@ -169,6 +170,6 @@ export default function PrivacyPolicy() {
           </dd>
         </dl>
       </section>
-    </main>
+    </Container>
   )
 }

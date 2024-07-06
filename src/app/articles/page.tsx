@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 
+import { Container } from '@/components/Container'
+import { Hero } from '@/components/Hero'
 import { Pagination } from '@/components/Pagination'
 import { chunk } from '@/utils/chunk'
 
@@ -29,18 +31,15 @@ export default async function Articles({
   if (!Array.isArray(items)) redirect(`/articles?page=1`)
 
   return (
-    <main className="mx-auto min-h-[calc(100vh-var(--header-height)-var(--footer-height))] max-w-7xl px-4 py-8">
-      <div
-        className="bg-slate-100/90 bg-contain bg-right-bottom bg-no-repeat py-48 bg-blend-lighten lg:bg-blend-normal"
-        style={{ backgroundImage: "url('/img/undraw/blog-post.svg')" }}
-      >
-        <div className="max-w-prose">
-          <h1 className="text-7xl font-bold">記事一覧</h1>
-          <p className="mt-8 text-4xl text-slate-700">
-            Zennに投稿した記事と、このサイトに投稿されたメモ的なやつの一覧
-          </p>
-        </div>
-      </div>
+    <Container
+      className="min-h-[calc(100vh-var(--header-height)-var(--footer-height))] py-8"
+      as="main"
+    >
+      <Hero
+        title="記事一覧"
+        subtitle="Zennに投稿した記事と、このサイトに投稿されたメモ的なやつの一覧"
+        imageUrl="/img/undraw/blog-post.svg"
+      />
       <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) =>
           item.type === 'rss' ? (
@@ -68,6 +67,6 @@ export default async function Articles({
       >
         <Pagination totalPages={totalPages} defaultPage={page} maxPages={3} />
       </div>
-    </main>
+    </Container>
   )
 }

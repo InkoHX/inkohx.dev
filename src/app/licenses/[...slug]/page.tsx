@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { Container } from '@/components/Container'
 import licenses from '@/generated/license.json' with { type: 'json' }
 
 type StaticParams = { slug: string[] }
@@ -34,7 +35,7 @@ export default function PackageLicense({ params }: { params: StaticParams }) {
 
   return (
     <article className="min-h-[calc(100vh-var(--header-height)-var(--footer-height))] py-8">
-      <main className="mx-auto max-w-7xl px-4">
+      <Container>
         <h1 className="py-12 text-4xl sm:text-6xl">
           Thanks! <span className="font-bold">{packageName}</span>
         </h1>
@@ -70,7 +71,7 @@ export default function PackageLicense({ params }: { params: StaticParams }) {
         <pre className="mt-4 overflow-x-auto rounded bg-slate-200 p-4">
           {data.licenseBody}
         </pre>
-      </main>
+      </Container>
     </article>
   )
 }

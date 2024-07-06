@@ -2,6 +2,8 @@ import GitHubSlugger from 'github-slugger'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { Container } from '@/components/Container'
+import { Hero } from '@/components/Hero'
 import { PostBody } from '@/components/PostBody/PostBody'
 import { isSystemError } from '@/utils/system-error'
 
@@ -71,26 +73,30 @@ export default async function PostPage({
 
   return (
     <article className="py-8">
-      <header className="mx-auto max-w-7xl px-4 py-24">
-        <h1 className="text-6xl font-bold">{post.metadata.title}</h1>
-        <p className="mt-2 text-lg text-slate-600">
-          <span className="inline-block">
-            公開日:{' '}
-            <time dateTime={post.metadata.publishedAt}>
-              {post.metadata.publishedAt}
-            </time>{' '}
-          </span>
-          {isUpdated && (
-            <span className="inline-block">
-              （更新日:{' '}
-              <time dateTime={post.metadata.modifiedAt}>
-                {post.metadata.modifiedAt}
-              </time>
-              ）
-            </span>
-          )}
-        </p>
-      </header>
+      <Container as="header">
+        <Hero
+          title={post.metadata.title}
+          subtitle={
+            <>
+              <span className="inline-block">
+                公開日:{' '}
+                <time dateTime={post.metadata.publishedAt}>
+                  {post.metadata.publishedAt}
+                </time>{' '}
+              </span>
+              {isUpdated && (
+                <span className="inline-block">
+                  （更新日:{' '}
+                  <time dateTime={post.metadata.modifiedAt}>
+                    {post.metadata.modifiedAt}
+                  </time>
+                  ）
+                </span>
+              )}
+            </>
+          }
+        />
+      </Container>
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 px-4 sm:grid-cols-3 sm:gap-x-8">
         <div>
           <nav className="top-8 order-last rounded bg-slate-200 p-4 shadow-lg sm:sticky sm:order-last">
