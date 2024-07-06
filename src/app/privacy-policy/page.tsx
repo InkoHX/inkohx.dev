@@ -82,8 +82,10 @@ export default function PrivacyPolicy() {
             }
           >
             <TableHead>
-              <TableCell as="th">項目</TableCell>
-              <TableCell as="th">値の例</TableCell>
+              <tr>
+                <TableCell as="th">項目</TableCell>
+                <TableCell as="th">値の例</TableCell>
+              </tr>
             </TableHead>
             <tbody>
               {vercelWebAnalyticsCollectedData.map(
