@@ -18,7 +18,7 @@ export default function About() {
         />
         <h1 className="mt-4 text-6xl font-bold">InkoHX</h1>
         <p className="text-center text-xl text-slate-600 sm:text-left">
-          a.k.a HydraParrot
+          Programmer
         </p>
         <ul className="mt-4 flex space-x-4">
           <li>
