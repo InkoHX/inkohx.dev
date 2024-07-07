@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 48px;
+  --footer-height: 92px;
+}
+
+*:focus-visible {
+  @apply outline outline-4 outline-secondary-600;
+}
+
+@layer utilities {
+  .overflow-wrap-anywhere {
+    overflow-wrap: anywhere;
+  }
+}

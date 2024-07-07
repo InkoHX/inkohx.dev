@@ -1,4 +1,43 @@
-# inkohx.dev
+# InkoHX's portfolio
 
-> 🚧 このプロジェクトは**開発途中**であり、まだ inkohx.dev に反映されているわけではありません 🚧
-> 現在、最新のプレビューは[こちら](https://inkohx-dev.pages.dev)で確認することができます
+[inkohx.dev](https://inkohx.dev)のソースコード
+
+## 技術スタック
+
+- Next.js (App Router)
+- Tailwind CSS
+- TypeScript
+
+## セットアップ
+
+### 本番環境
+
+Vercelを利用してホスティングを行うことを推奨します。
+
+### 開発環境
+
+#### ツールチェーン
+
+`.tool-versions`に記載されているNode.jsのバージョンを用意して、`package.json`の`packageManager`フィールドに記載されているパッケージマネージャーをインストールしてください。
+
+> [!NOTE] > **corepack**と**asdf**を使用している場合は、以下のコマンドを実行してください。
+>
+> ```bash
+> $ asdf install
+> $ corepack enable
+> $ asdf reshim nodejs # https://github.com/asdf-vm/asdf-nodejs?tab=readme-ov-file#corepack
+> ```
+
+#### 依存関係
+
+必ず`pnpm`を使用してインストールしてください。
+
+```bash
+$ pnpm install
+```
+
+#### 開発サーバーの起動
+
+```bash
+$ pnpm dev
+```

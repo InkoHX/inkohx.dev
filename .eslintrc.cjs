@@ -1,25 +1,14 @@
 module.exports = {
   root: true,
-  env: {
-    es2022: true,
-    browser: true,
-  },
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:@typescript-eslint/strict',
-    'plugin:react-hooks/recommended',
-    'plugin:jsx-a11y/recommended',
-    'prettier',
-  ],
-  parserOptions: {
-    tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-  },
+  extends: ['next/core-web-vitals', 'plugin:tailwindcss/recommended'],
+  plugins: ['simple-import-sort'],
   rules: {
-    // TODO
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+    'tailwindcss/classnames-order': 'off',
+  },
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 'latest',
   },
 }
