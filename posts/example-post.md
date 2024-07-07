@@ -6,6 +6,12 @@ categories:
   - テスト
 ---
 
+**このページはテストページです。**
+
+内容は、[markdown-it demo](https://markdown-it.github.io/)からお借りしました。
+
+---
+
 # h1 Heading 8-)
 
 ## h2 Heading
