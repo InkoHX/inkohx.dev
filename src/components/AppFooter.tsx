@@ -8,7 +8,7 @@ const navLinks = [
   { text: 'ホーム', href: '/' },
   { text: 'スキル', href: '/skills' },
   { text: 'プロジェクト', href: '/projects' },
-  { text: '記事', href: '/articles' },
+  { text: '記事一覧', href: '/articles' },
   { text: 'ライセンス表記', href: '/licenses' },
   { text: 'プライバシーポリシー', href: '/privacy-policy' },
 ] satisfies { text: string; href: string }[]
