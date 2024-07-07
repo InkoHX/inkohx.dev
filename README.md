@@ -20,13 +20,15 @@ Vercelを利用してホスティングを行うことを推奨します。
 
 `.tool-versions`に記載されているNode.jsのバージョンを用意して、`package.json`の`packageManager`フィールドに記載されているパッケージマネージャーをインストールしてください。
 
-> [!NOTE] > **corepack**と**asdf**を使用している場合は、以下のコマンドを実行してください。
->
+<!-- prettier-ignore-start -->
+> [!NOTE]
+> **corepack**と**asdf**を使用している場合は、以下のコマンドを実行してください。
 > ```bash
 > $ asdf install
 > $ corepack enable
 > $ asdf reshim nodejs # https://github.com/asdf-vm/asdf-nodejs?tab=readme-ov-file#corepack
 > ```
+<!-- prettier-ignore-end -->
 
 #### 依存関係
 
