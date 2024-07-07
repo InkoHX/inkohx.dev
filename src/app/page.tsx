@@ -72,7 +72,7 @@ export default function About() {
         </ul>
       </div>
       <section>
-        <h1 className="text-4xl font-semibold">私について</h1>
+        <h2 className="text-4xl font-semibold">私について</h2>
         <div className="mt-4 space-y-4">
           <p className="overflow-wrap-anywhere break-keep text-lg">
             こんにちは！
