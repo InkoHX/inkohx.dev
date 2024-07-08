@@ -21,6 +21,12 @@
 
 Vercelを利用してホスティングを行うことを推奨します。
 
+現在、特にVercel側で設定すべき項目はないため、そのまま`vercel deploy --prod`を実行してください。
+
+```bash
+$ pnpm dlx vercel --prod
+```
+
 ### 開発環境
 
 #### ツールチェーン
