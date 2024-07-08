@@ -86,3 +86,4 @@ categories:
 
 - `# Heading 1`は使わないこと
   - HTMLでいう`h1`に相当するもの
+- Markdownファイルの名前は`^[a-z0-9-]+\.md`にすること
