@@ -6,8 +6,10 @@ import type { Metadata } from 'next'
 
 import { AppFooter } from '@/components/AppFooter'
 import { AppHeader } from '@/components/AppHeader'
+import { BASE_URL } from '@/constants'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     template: "%s | InkoHX's portfolio",
     default: "InkoHX's portfolio",
