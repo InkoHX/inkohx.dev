@@ -82,6 +82,9 @@ categories:
 | `modifiedAt`  | String   | 記事をアップデートした日付（アップデートしていない場合は`publishedAt`と同じ日付を入力する）、`\d\d\d\d-\d\d-\d\d`で書く必要があり、**必須項目**です。 |
 | `categories`  | String[] | 記事の大まかな分類、**必須項目**です。                                                                                                                |
 
+> [!TIP]
+> データ構造に何らかの間違いがある場合は、`TypeboxValidationError`エラーが発生します。
+
 ### 書くときの注意
 
 - `# Heading 1`は使わないこと
