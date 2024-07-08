@@ -6,7 +6,7 @@
     ":automergeTypes",
     ":maintainLockFilesWeekly",
     ":prConcurrentLimitNone",
-    ":prHourlyLimit",
+    ":prHourlyLimitNone",
     ":semanticCommits",
     ":separateMajorReleases",
     ":separatePatchReleases",
