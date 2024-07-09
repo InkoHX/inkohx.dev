@@ -188,6 +188,7 @@ export default function About() {
         dateModified={new Date()}
         structure={{
           '@type': 'Person',
+          name: 'InkoHX',
           birthDate: new Date('2003-08-16').toISOString(),
           image: 'https://github.com/InkoHX.png',
           description: 'Programmer',
