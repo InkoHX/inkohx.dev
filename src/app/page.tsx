@@ -189,7 +189,6 @@ export default function About() {
         structure={{
           '@type': 'Person',
           name: 'InkoHX',
-          birthDate: new Date('2003-08-16').toISOString(),
           image: 'https://github.com/InkoHX.png',
           description: 'Programmer',
           sameAs: [
