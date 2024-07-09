@@ -28,6 +28,7 @@ export const generateMetadata = ({
   return {
     title: `Thanks! ${packageName}`,
     description: `${packageName}はinkohx.devで使われています！感謝！`,
+    alternates: { canonical: `/licenses/${packageName}` },
   }
 }
 

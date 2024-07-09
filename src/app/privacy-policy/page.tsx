@@ -9,6 +9,7 @@ import { TableHead } from '@/components/TableHead'
 export const metadata: Metadata = {
   title: 'プライバシーポリシー',
   description: 'アクセス解析やパフォーマンス測定の為のデータ収集について',
+  alternates: { canonical: '/privacy-policy' },
 }
 
 const vercelWebAnalyticsCollectedData = [

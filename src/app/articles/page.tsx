@@ -14,6 +14,7 @@ export const revalidate = 3_600 // every hour
 export const metadata: Metadata = {
   title: '記事一覧',
   description: 'Zennに投稿した記事と、このサイトに投稿されたメモ的なやつの一覧',
+  alternates: { canonical: '/articles' },
 }
 
 export default async function Articles({

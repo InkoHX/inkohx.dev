@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   title: 'ライセンス表記',
   description:
     'このWebサイトで使用されているOSSのライセンス表記と、一部で使われてるブランドアイコンの著作権を表記しているページです。',
+  alternates: {
+    canonical: '/licenses',
+  },
 }
 
 export default function Licenses() {

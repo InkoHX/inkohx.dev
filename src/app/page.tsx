@@ -1,9 +1,16 @@
+import { type Metadata } from 'next'
 import React from 'react'
 
 import AvatarImage from '@/assets/img/InkoHX.jpeg'
 import { SocialMediaLinkIcon } from '@/components/SocialMediaLinkIcon'
 import { Timeline } from '@/components/Timeline'
 import { TimelineItem } from '@/components/TimelineItem'
+
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+} satisfies Metadata
 
 export default function About() {
   return (

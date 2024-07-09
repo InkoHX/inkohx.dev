@@ -34,6 +34,7 @@ export async function generateMetadata({
 
   return {
     title: post.metadata.title,
+    alternates: { canonical: `/articles/${params.articleId}` },
     openGraph: {
       type: 'article',
       publishedTime: new Date(post.metadata.publishedAt).toISOString(),

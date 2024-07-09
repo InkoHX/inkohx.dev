@@ -210,6 +210,7 @@ export const metadata: Metadata = {
   title: 'プロジェクト',
   description:
     '現在活発に開発してるものから、そうでないものまで紹介しちゃうぞ！',
+  alternates: { canonical: '/projects' },
 }
 
 export default function Projects() {
