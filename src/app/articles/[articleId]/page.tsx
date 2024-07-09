@@ -66,8 +66,8 @@ export default async function PostPage({
         structure={{
           '@type': 'BlogPosting',
           headline: post.metadata.title,
-          datePublished: post.metadata.publishedAt,
-          dateModified: post.metadata.modifiedAt,
+          datePublished: new Date(post.metadata.publishedAt).toISOString(),
+          dateModified: new Date(post.metadata.modifiedAt).toISOString(),
           image: new URL(
             `/articles/${params.articleId}/opengraph-image`,
             BASE_URL
