@@ -1,11 +1,11 @@
 import GitHubSlugger from 'github-slugger'
 import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 
 import { Container } from '@/components/Container'
 import { Hero } from '@/components/Hero'
+import { JSON_LD } from '@/components/JSON-LD'
 import { PostBody } from '@/components/PostBody/PostBody'
-import { isSystemError } from '@/utils/system-error'
+import { BASE_URL } from '@/constants'
 
 import { findAllPost, readPost } from '../post'
 import { extractHeadings, markdownToHtml } from './markdown-parser'
@@ -61,53 +61,72 @@ export default async function PostPage({
   const slugger = new GitHubSlugger()
 
   return (
-    <article className="py-8">
-      <Container as="header">
-        <Hero
-          title={post.metadata.title}
-          subtitle={
-            <>
-              <span className="inline-block">
-                公開日:{' '}
-                <time dateTime={post.metadata.publishedAt}>
-                  {post.metadata.publishedAt}
-                </time>{' '}
-              </span>
-              {isUpdated && (
+    <>
+      <JSON_LD.Article
+        structure={{
+          '@type': 'BlogPosting',
+          headline: post.metadata.title,
+          datePublished: new Date(post.metadata.publishedAt).toISOString(),
+          dateModified: new Date(post.metadata.modifiedAt).toISOString(),
+          image: new URL(
+            `/articles/${params.articleId}/opengraph-image`,
+            BASE_URL
+          ).toString(),
+          author: {
+            '@type': 'Person',
+            name: 'InkoHX',
+            url: 'https://inkohx.dev',
+          },
+        }}
+      />
+      <article className="py-8">
+        <Container as="header">
+          <Hero
+            title={post.metadata.title}
+            subtitle={
+              <>
                 <span className="inline-block">
-                  （更新日:{' '}
-                  <time dateTime={post.metadata.modifiedAt}>
-                    {post.metadata.modifiedAt}
-                  </time>
-                  ）
+                  公開日:{' '}
+                  <time dateTime={post.metadata.publishedAt}>
+                    {post.metadata.publishedAt}
+                  </time>{' '}
                 </span>
-              )}
-            </>
-          }
-        />
-      </Container>
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 px-4 sm:grid-cols-3 sm:gap-x-8">
-        <div>
-          <nav className="top-8 order-last rounded bg-slate-200 p-4 shadow-lg sm:sticky sm:order-last">
-            <div className="text-2xl font-semibold">目次</div>
-            <ul className="mt-2 list-inside list-disc">
-              {headings.map(({ text }) => (
-                <li key={text}>
-                  <a
-                    href={`#${slugger.slug(text)}`}
-                    className="font-semibold text-primary-600 hover:underline"
-                  >
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+                {isUpdated && (
+                  <span className="inline-block">
+                    （更新日:{' '}
+                    <time dateTime={post.metadata.modifiedAt}>
+                      {post.metadata.modifiedAt}
+                    </time>
+                    ）
+                  </span>
+                )}
+              </>
+            }
+          />
+        </Container>
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 px-4 sm:grid-cols-3 sm:gap-x-8">
+          <div>
+            <nav className="top-8 order-last rounded bg-slate-200 p-4 shadow-lg sm:sticky sm:order-last">
+              <div className="text-2xl font-semibold">目次</div>
+              <ul className="mt-2 list-inside list-disc">
+                {headings.map(({ text }) => (
+                  <li key={text}>
+                    <a
+                      href={`#${slugger.slug(text)}`}
+                      className="font-semibold text-primary-600 hover:underline"
+                    >
+                      {text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div className="order-last col-span-2 sm:order-first">
+            <PostBody content={html.toString()} />
+          </div>
         </div>
-        <div className="order-last col-span-2 sm:order-first">
-          <PostBody content={html.toString()} />
-        </div>
-      </div>
-    </article>
+      </article>
+    </>
   )
 }
