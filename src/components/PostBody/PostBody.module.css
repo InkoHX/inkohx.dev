@@ -35,7 +35,11 @@
 }
 
 .post-body blockquote {
-  @apply bg-slate-200 py-1 pl-2;
+  @apply mt-4 border-l-4 border-slate-600 bg-slate-200 py-2 pl-2;
+}
+
+.post-body :first-child {
+  @apply mt-0;
 }
 
 .post-body ul {
@@ -56,9 +60,9 @@
 }
 
 .post-body :global pre.shiki {
-  @apply overflow-x-auto p-2;
+  @apply mt-4 overflow-x-auto rounded p-2;
 }
 
 .post-body :not(:global pre.shiki) code {
-  @apply rounded bg-slate-200 px-1;
+  @apply rounded bg-slate-300/80 px-1;
 }
