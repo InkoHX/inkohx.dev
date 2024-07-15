@@ -1,5 +1,5 @@
 ---
-title: Spotifyでローカルファイル機能を使って音源を読ませる前にすること
+title: Spotifyのローカルファイル機能を使って音源を読ませる前にすること
 publishedAt: '2024-07-15'
 modifiedAt: '2024-07-15'
 categories:
