@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = props => {
         backgroundImage: props.imageUrl ? `url('${props.imageUrl}')` : void 0,
       }}
     >
-      <h1 className="text-7xl font-bold">{props.title}</h1>
+      <h1 className="text-7xl font-bold leading-snug">{props.title}</h1>
       <div className="max-w-prose">
         <p className="mt-8 text-2xl text-slate-700">{props.subtitle}</p>
       </div>
