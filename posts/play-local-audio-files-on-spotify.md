@@ -148,7 +148,7 @@ async function confirmOverwrite(filePath: string) {
     else if (answer === 'n' || !answer) confirm = false
     else
       console.error(
-        '上書きするなら「y」を、しないなら「n」を入力してください。。'
+        '上書きするなら「y」を、しないなら「n」を入力してください。'
       )
   }
 
