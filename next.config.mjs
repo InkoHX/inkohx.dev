@@ -36,6 +36,15 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        source: '/articles/cached-images-do-not-trigger-load-event',
+        destination: '/articles/htmlimageelement-load-event-not-catchable',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig
