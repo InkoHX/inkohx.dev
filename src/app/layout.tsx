@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | InkoHX's portfolio",
     default: "InkoHX's portfolio",
   },
-  description: 'InkoHXのポートフォリオみたいなやつです。',
+  description: 'InkoHXという名のプログラマーのポートフォリオとブログです。',
   twitter: {
     card: 'summary_large_image',
     creator: 'InkoHX',
