@@ -38,6 +38,6 @@ export const markdownToHtml = (markdown: string) =>
     .use(rehypeStringify)
     .use(rehypeSlug)
     .use(rehypeShiki, {
-      theme: 'min-light',
+      theme: 'one-light',
     })
     .process(markdown)
