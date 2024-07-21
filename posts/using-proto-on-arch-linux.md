@@ -65,7 +65,7 @@ v22.5.1
 
 Pacman hooksを使って、パッケージのアップグレード時に`proto outdated --include-global --update`を使ってツールチェーンを最新にするサンプル
 
-```conf
+```ini
 [Trigger]
 Operation = Upgrade
 Type = Package
