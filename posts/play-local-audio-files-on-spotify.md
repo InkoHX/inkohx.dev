@@ -1,7 +1,7 @@
 ---
 title: Spotifyのローカルファイル機能を使って音源を読ませる前にすること
 publishedAt: '2024-07-15'
-modifiedAt: '2024-07-22'
+modifiedAt: '2024-07-27'
 categories:
   - 'Spotify'
   - 'FFmpeg'
@@ -39,7 +39,13 @@ $ ffmpeg -i ./in.mp3 -codec copy -metadata artist="アーティスト名" ./out.
 
 FFmpegには[loudnormフィルタ](https://ffmpeg.org/ffmpeg-filters.html#loudnorm)というものがあり、EBU R 128というものに従ってノーマライゼーションを行ってくれるものがあります。
 
-私は[この記事](https://nico-lab.net/loudnorm_with_ffmpeg/)を参考にして、ノーマライゼーションを行っています。
+私は[この記事](https://nico-lab.net/loudnorm_with_ffmpeg/)を参考にして、ノーマライゼーションを行っています。  
+Spotifyだと、`loudnorm=I=-14:LRA=11:TP=-1`でちょうどいいくらいになります。
+
+えっ、Spotifyくんが勝手に調節してくれるんじゃないのかって？  
+答えは**いいえ**、私もSpotifyくんを信じてローカルファイルから再生したところ耳が破壊されかけた経験があります。
+
+Spotifyさん、お願いします！どうかローカルファイルの音量もノーマライズしてください！
 
 ## Bunで使えるスクリプト
 
