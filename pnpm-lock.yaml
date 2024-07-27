@@ -16,7 +16,7 @@ importers:
         version: 9.6.0(react@18.3.1)
       '@shikijs/rehype':
         specifier: ^1.10.3
-        version: 1.11.2
+        version: 1.12.0
       '@sinclair/typebox':
         specifier: ^0.32.34
         version: 0.32.35
@@ -267,14 +267,14 @@ packages:
   '@rushstack/eslint-patch@1.10.3':
     resolution: {integrity: sha512-qC/xYId4NMebE6w/V33Fh9gWxLgURiNYgVNObbJl2LZv0GUUItCcCqC5axQSwRaAgaxl2mELq1rMzlswaQ0Zxg==}
 
-  '@shikijs/core@1.11.2':
-    resolution: {integrity: sha512-9IBY31lvOo2uhrZjqRt2wTqfqfrXJnddnIx0PFL5E8a5RQUNOhkx+PD11PogZtyrIHlL4aTYDVlb+eyryzy+pQ==}
+  '@shikijs/core@1.12.0':
+    resolution: {integrity: sha512-mc1cLbm6UQ8RxLc0dZES7v5rkH+99LxQp/ZvTqV3NLyYsO/fD6JhEflP1H5b2SDq9gI0+0G36AVZWxvounfR9w==}
 
-  '@shikijs/rehype@1.11.2':
-    resolution: {integrity: sha512-yAKnFupWCclq5a3dpHsLkkv+uF62pLLJzkeGT+CO5EtlgJhJ9xk7UjoaeJnjtDWz/PK1W3dLscZdQr6m1UNm5A==}
+  '@shikijs/rehype@1.12.0':
+    resolution: {integrity: sha512-DX42LdI9OB/0X5euLjRJfgoYZukqGn1GBkgiyvQkv4bHDCST0BzQMcdL80erp5as9R6bp7+2/cKlA+TmQTySbQ==}
 
-  '@shikijs/transformers@1.11.2':
-    resolution: {integrity: sha512-5ge1XsuZvboCID8onSGe546iVHNiSZBZMTCk+CAgTbiLGst8j0KlYKq8aaDGIg7wCt5yntvXDEq1u+pu5rdbdA==}
+  '@shikijs/transformers@1.12.0':
+    resolution: {integrity: sha512-ZS6RzDCWbnDljViMaeuraGaoMesCzDxzO2Slhpvic6j+Wqq4RXfQgb2ITTSrtBjv2HGCLP22mvXydtWCOKea8g==}
 
   '@sinclair/typebox@0.32.35':
     resolution: {integrity: sha512-Ul3YyOTU++to8cgNkttakC0dWvpERr6RYoHO2W47DLbFvrwBDJUY31B1sImH6JZSYc4Kt4PyHtoPNu+vL2r2dA==}
@@ -1845,8 +1845,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki@1.11.2:
-    resolution: {integrity: sha512-WEHfKf+JWEKm/p8BoiE5F4m6VwV6LzY7nFfwRz0nAj+sVD1sRyWiODYScDu3Q8P/Dpi7xKe1TDJF3ZOQnhfT1g==}
+  shiki@1.12.0:
+    resolution: {integrity: sha512-BuAxWOm5JhRcbSOl7XCei8wGjgJJonnV0oipUupPY58iULxUGyHhW5CF+9FRMuM1pcJ5cGEJGll1LusX6FwpPA==}
 
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -2307,22 +2307,22 @@ snapshots:
 
   '@rushstack/eslint-patch@1.10.3': {}
 
-  '@shikijs/core@1.11.2':
+  '@shikijs/core@1.12.0':
     dependencies:
       '@types/hast': 3.0.4
 
-  '@shikijs/rehype@1.11.2':
+  '@shikijs/rehype@1.12.0':
     dependencies:
-      '@shikijs/transformers': 1.11.2
+      '@shikijs/transformers': 1.12.0
       '@types/hast': 3.0.4
       hast-util-to-string: 3.0.0
-      shiki: 1.11.2
+      shiki: 1.12.0
       unified: 11.0.5
       unist-util-visit: 5.0.0
 
-  '@shikijs/transformers@1.11.2':
+  '@shikijs/transformers@1.12.0':
     dependencies:
-      shiki: 1.11.2
+      shiki: 1.12.0
 
   '@sinclair/typebox@0.32.35': {}
 
@@ -4197,9 +4197,9 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki@1.11.2:
+  shiki@1.12.0:
     dependencies:
-      '@shikijs/core': 1.11.2
+      '@shikijs/core': 1.12.0
       '@types/hast': 3.0.4
 
   side-channel@1.0.6:
