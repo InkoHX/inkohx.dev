@@ -2,7 +2,7 @@ const developmentOnly = value =>
   process.env.NODE_ENV === 'development' ? value : ''
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' ${developmentOnly("'unsafe-eval'")} ${developmentOnly('https://va.vercel-scripts.com/v1/')}`,
+  `script-src 'self' 'unsafe-inline' ${developmentOnly("'unsafe-eval'")}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' https://res.cloudinary.com/zenn/image/upload/",
   "object-src 'none'",
