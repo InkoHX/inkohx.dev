@@ -1,6 +1,8 @@
 import GitHubSlugger from 'github-slugger'
 import { Metadata } from 'next'
 
+import AdSenseDisplayUnit from '@/components/AdSense/AdSenseDisplayUnit'
+import AdSenseScript from '@/components/AdSense/AdSenseScript'
 import { Container } from '@/components/Container'
 import { Hero } from '@/components/Hero'
 import { JSON_LD } from '@/components/JSON-LD'
@@ -9,8 +11,6 @@ import { adSenseSlots, BASE_URL } from '@/constants'
 
 import { findAllPost, readPost } from '../post'
 import { extractHeadings, markdownToHtml } from './markdown-parser'
-import AdSenseDisplayUnit from '@/components/AdSense/AdSenseDisplayUnit'
-import AdSenseScript from '@/components/AdSense/AdSenseScript'
 
 export interface ArticleStaticParams {
   articleId: string
