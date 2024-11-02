@@ -10,7 +10,7 @@ const navLinks = [
   { text: 'プロジェクト', href: '/projects' },
   { text: '記事一覧', href: '/articles' },
   { text: 'ライセンス表記', href: '/licenses' },
-  { text: 'プライバシーポリシー', href: '/privacy-policy' },
+  // { text: 'プライバシーポリシー', href: '/privacy-policy' },
 ] satisfies { text: string; href: string }[]
 
 export const AppFooter: React.FC = () => {
