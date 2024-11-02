@@ -5,10 +5,12 @@ import { Container } from '@/components/Container'
 import { Hero } from '@/components/Hero'
 import { JSON_LD } from '@/components/JSON-LD'
 import { PostBody } from '@/components/PostBody/PostBody'
-import { BASE_URL } from '@/constants'
+import { adSenseSlots, BASE_URL } from '@/constants'
 
 import { findAllPost, readPost } from '../post'
 import { extractHeadings, markdownToHtml } from './markdown-parser'
+import AdSenseDisplayUnit from '@/components/AdSense/AdSenseDisplayUnit'
+import AdSenseScript from '@/components/AdSense/AdSenseScript'
 
 export interface ArticleStaticParams {
   articleId: string
@@ -62,6 +64,7 @@ export default async function PostPage({
 
   return (
     <>
+      <AdSenseScript />
       <JSON_LD.Article
         structure={{
           '@type': 'BlogPosting',
@@ -105,24 +108,30 @@ export default async function PostPage({
           />
         </Container>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 px-4 sm:grid-cols-3 sm:gap-x-8">
-          <div>
-            <nav className="top-8 order-last rounded bg-slate-200 p-4 shadow-lg sm:sticky sm:order-last">
-              <div className="text-2xl font-semibold">目次</div>
-              <ul className="mt-2 list-inside list-disc">
-                {headings.map(({ text }) => (
-                  <li key={text}>
-                    <a
-                      href={`#${slugger.slug(text)}`}
-                      className="font-semibold text-primary-600 hover:underline"
-                    >
-                      {text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+          <div className="order-first col-span-1 sm:order-last">
+            <div className="top-8 space-y-4 sm:sticky">
+              <AdSenseDisplayUnit
+                className="block max-h-64 w-full"
+                slot={adSenseSlots.article}
+              />
+              <nav className="block rounded bg-slate-200 p-4 shadow-lg">
+                <div className="text-2xl font-semibold">目次</div>
+                <ul className="mt-2 list-inside list-disc">
+                  {headings.map(({ text }) => (
+                    <li key={text}>
+                      <a
+                        href={`#${slugger.slug(text)}`}
+                        className="font-semibold text-primary-600 hover:underline"
+                      >
+                        {text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
           </div>
-          <div className="order-last col-span-2 sm:order-first">
+          <div className="col-span-2">
             <PostBody content={html.toString()} />
           </div>
         </div>
