@@ -38,6 +38,7 @@ jobs:
     if: github.ref != 'refs/heads/main'
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
 
@@ -86,11 +87,11 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: thollander/actions-comment-pull-request@v3
         with:
+          comment-tag: 'netlify-deploy-preview'
+          mode: recreate
           message: |
             Deployed to ${{ steps.deploy-result.outputs.url }}
             Logs: ${{ steps.deploy-result.outputs.logs_url }}
-          comment-tag: 'netlify-deploy-preview'
-          mode: recreate
 
   deploy-prod:
     name: Deploy to production
