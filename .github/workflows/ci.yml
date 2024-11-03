@@ -86,7 +86,7 @@ jobs:
               body: [
                 `# Deployed to ${liveUrl}`,
                 '## Logs',
-                logsUrl.split('\n').map(url => `- ${url}`)
+                ...logsUrl.split('\n').map(url => `- ${url}`)
               ].join('\n')
             });
         env:
@@ -156,7 +156,7 @@ jobs:
               body: [
                 `# Deployed to ${liveUrl}`,
                 '## Logs',
-                logsUrl.split('\n').map(url => `- ${url}`)
+                ...logsUrl.split('\n').map(url => `- ${url}`)
               ].join('\n')
             });
         env:
