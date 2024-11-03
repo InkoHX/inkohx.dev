@@ -77,7 +77,7 @@ jobs:
             github.rest.repos.createCommitComment({
               ...context.repo,
               commit_sha: context.sha,
-              body: `Deployed to ${liveUrl}\n\nLogs: ${logsUrl}`
+              body: `Deployed to ${liveUrl}\nLogs: ${logsUrl}`
             });
         env:
           NETLIFY_URL: ${{ steps.deploy-result.outputs.url }}
@@ -137,7 +137,7 @@ jobs:
             github.rest.repos.createCommitComment({
               ...context.repo,
               commit_sha: context.sha,
-              body: `Deployed to ${liveUrl}\n\nLogs: ${logsUrl}`
+              body: `Deployed to ${liveUrl}\nLogs: ${logsUrl}`
             });
         env:
           NETLIFY_URL: ${{ steps.deploy-result.outputs.url }}
