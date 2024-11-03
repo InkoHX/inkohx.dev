@@ -1,3 +1,4 @@
+import { ComputerDesktopIcon, PencilIcon } from '@heroicons/react/24/solid'
 import {
   SiAstro,
   SiBun,
@@ -15,9 +16,7 @@ import {
   SiReact,
   SiRust,
   SiTypescript,
-  SiVisualstudiocode,
   SiVuedotjs,
-  SiWindows,
 } from '@icons-pack/react-simple-icons'
 import { Metadata } from 'next'
 import React from 'react'
@@ -67,7 +66,7 @@ const languages = [
 ] as const satisfies ReadonlyArray<Skill>
 const tools = [
   {
-    icon: <SiVisualstudiocode color="default" className="size-24" />,
+    icon: <PencilIcon className="size-24" />,
     level: 3,
     name: 'Visual Studio Code',
   },
@@ -94,7 +93,7 @@ const operatingSystems = [
     name: 'Linux',
   },
   {
-    icon: <SiWindows color="default" className="size-24" />,
+    icon: <ComputerDesktopIcon color="default" className="size-24" />,
     level: 2,
     name: 'Windows',
   },

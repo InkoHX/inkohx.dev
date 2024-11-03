@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
-    "@icons-pack/react-simple-icons": "^9.6.0",
+    "@icons-pack/react-simple-icons": "^10.1.0",
     "@shikijs/rehype": "^1.10.3",
     "@sinclair/typebox": "^0.33.0",
     "clsx": "^2.1.1",
