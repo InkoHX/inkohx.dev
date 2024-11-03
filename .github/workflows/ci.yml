@@ -84,10 +84,9 @@ jobs:
               ...context.repo,
               commit_sha: context.sha,
               body: [
-                `Deployed to ${liveUrl}`,
-                '',
-                'Logs:',
-                ...logsUrl.split('\n').map(url => `- ${url}`).join('\n')
+                `# Deployed to ${liveUrl}`,
+                '## Logs',
+                logsUrl.split('\n').map(url => `- ${url}`)
               ].join('\n')
             });
         env:
@@ -101,8 +100,9 @@ jobs:
           comment-tag: 'netlify-deploy-preview'
           mode: recreate
           message: |
-            Deployed to ${{ steps.deploy-result.outputs.url }}
-            Logs: ${{ steps.deploy-result.outputs.logs_url }}
+            # Deployed to ${{ steps.deploy-result.outputs.url }}
+            ## Logs
+            ${{ steps.deploy-result.outputs.logs_url }}
 
   deploy-prod:
     name: Deploy to production
@@ -154,10 +154,9 @@ jobs:
               ...context.repo,
               commit_sha: context.sha,
               body: [
-                `Deployed to ${liveUrl}`,
-                '',
-                'Logs:',
-                ...logsUrl.split('\n').map(url => `- ${url}`).join('\n')
+                `# Deployed to ${liveUrl}`,
+                '## Logs',
+                logsUrl.split('\n').map(url => `- ${url}`)
               ].join('\n')
             });
         env:
