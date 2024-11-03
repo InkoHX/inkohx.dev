@@ -1,0 +1,9 @@
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_ADSENSE_CLIENT_ID = "ca-pub-8934795537091878"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
