@@ -73,7 +73,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Comment to commit
-        uses: actions/github-script@v7
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
         if: github.event_name == 'push'
         with:
           script: |
@@ -95,7 +95,7 @@ jobs:
 
       - name: Comment to Pull Request
         if: github.event_name == 'pull_request'
-        uses: thollander/actions-comment-pull-request@v3
+        uses: thollander/actions-comment-pull-request@24bffb9b452ba05a4f3f77933840a6a841d1b32b # v3
         with:
           comment-tag: 'netlify-deploy-preview'
           mode: recreate
@@ -144,7 +144,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Comment to commit
-        uses: actions/github-script@v7
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
         with:
           script: |
             const liveUrl = process.env.NETLIFY_URL;
