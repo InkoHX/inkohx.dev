@@ -74,7 +74,7 @@ jobs:
             const liveUrl = process.env.NETLIFY_URL;
             const logsUrl = process.env.NETLIFY_LOGS_URL;
 
-            github.repo.createCommitComment({
+            github.rest.repos.createCommitComment({
               ...context.repo,
               commit_sha: context.sha,
               body: `Deployed to ${liveUrl}\n\nLogs: ${logsUrl}`
@@ -134,7 +134,7 @@ jobs:
             const liveUrl = process.env.NETLIFY_URL;
             const logsUrl = process.env.NETLIFY_LOGS_URL;
 
-            github.repo.createCommitComment({
+            github.rest.repos.createCommitComment({
               ...context.repo,
               commit_sha: context.sha,
               body: `Deployed to ${liveUrl}\n\nLogs: ${logsUrl}`
