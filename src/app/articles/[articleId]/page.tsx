@@ -109,9 +109,9 @@ export default async function PostPage({
         </Container>
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 px-4 sm:grid-cols-3 sm:gap-x-8">
           <div className="order-first col-span-1 sm:order-last">
-            <div className="top-8 space-y-4 sm:sticky">
+            <div className="top-8 sm:sticky">
               <AdSenseDisplayUnit
-                className="block max-h-64 w-full"
+                className="mb-4 block max-h-64 w-full"
                 slot={adSenseSlots.article}
               />
               <nav className="block rounded bg-slate-200 p-4 shadow-lg">
