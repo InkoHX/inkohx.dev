@@ -27,11 +27,10 @@ export async function generateStaticParams(): Promise<ArticleStaticParams[]> {
   return posts.map((id): ArticleStaticParams => ({ articleId: id }))
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: ArticleStaticParams
+export async function generateMetadata(props: {
+  params: Promise<ArticleStaticParams>
 }): Promise<Metadata> {
+  const params = await props.params
   const post = await readPost(params.articleId)
 
   return {
@@ -49,11 +48,10 @@ export async function generateMetadata({
   }
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: ArticleStaticParams
+export default async function PostPage(props: {
+  params: Promise<ArticleStaticParams>
 }) {
+  const params = await props.params
   const post = await readPost(params.articleId)
   const html = await markdownToHtml(post.content)
   const isUpdated = post.metadata.publishedAt !== post.metadata.modifiedAt
