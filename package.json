@@ -34,7 +34,7 @@
     "@types/mdast": "4.0.4",
     "@types/node": "22.8.7",
     "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0",
     "eslint": "8.57.1",
     "eslint-config-next": "15.0.2",
     "eslint-plugin-simple-import-sort": "12.1.1",
@@ -54,7 +54,7 @@
   "pnpm": {
     "overrides": {
       "@types/react": "npm:types-react@19.0.0-rc.1",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+      "@types/react-dom": "npm:types-react-dom@19.0.0"
     }
   }
 }
