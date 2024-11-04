@@ -30,12 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       lastModified: now,
     },
-    /* {
+    {
       url: new URL('/privacy-policy', BASE_URL).toString(),
       changeFrequency: 'weekly',
       priority: 0.8,
       lastModified: now,
-    }, */
+    },
     {
       url: new URL('/articles', BASE_URL).toString(),
       changeFrequency: 'daily',
