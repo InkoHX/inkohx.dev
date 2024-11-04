@@ -52,7 +52,7 @@
 
 .post-body ul ul,
 .post-body ol ol {
-  @apply ml-8 list-outside;
+  @apply ml-8 mt-0 list-outside;
 }
 
 .post-body ol li p {
