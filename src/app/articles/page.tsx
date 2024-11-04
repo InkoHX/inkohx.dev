@@ -17,12 +17,10 @@ export const metadata: Metadata = {
   alternates: { canonical: '/articles' },
 }
 
-export default async function Articles(
-  props: {
-    searchParams: Promise<Record<string, string | string[]>>
-  }
-) {
-  const searchParams = await props.searchParams;
+export default async function Articles(props: {
+  searchParams: Promise<Record<string, string | string[]>>
+}) {
+  const searchParams = await props.searchParams
   const chunkedItems = chunk(await fetchFeeds(), 9)
   const totalPages = chunkedItems.length
   const page = Array.isArray(searchParams.page)

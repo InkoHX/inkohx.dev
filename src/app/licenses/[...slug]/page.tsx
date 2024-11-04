@@ -18,12 +18,10 @@ export const generateStaticParams = (): StaticParams[] => {
   }))
 }
 
-export const generateMetadata = async (
-  props: {
-    params: Promise<StaticParams>
-  }
-): Promise<Metadata> => {
-  const params = await props.params;
+export const generateMetadata = async (props: {
+  params: Promise<StaticParams>
+}): Promise<Metadata> => {
+  const params = await props.params
   const packageName = parseSlug(params.slug)
 
   return {
@@ -33,8 +31,10 @@ export const generateMetadata = async (
   }
 }
 
-export default async function PackageLicense(props: { params: Promise<StaticParams> }) {
-  const params = await props.params;
+export default async function PackageLicense(props: {
+  params: Promise<StaticParams>
+}) {
+  const params = await props.params
   const packageName = parseSlug(params.slug)
   const data = licenses[packageName as keyof typeof licenses]
 
