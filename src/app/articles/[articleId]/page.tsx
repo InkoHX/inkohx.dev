@@ -105,14 +105,14 @@ export default async function PostPage(props: {
             }
           />
         </Container>
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 px-4 sm:grid-cols-3 sm:gap-x-8">
-          <div className="order-first col-span-1 sm:order-last">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8 md:px-4">
+          <div className="order-first col-span-1 px-4 md:order-last md:px-0">
             <div className="top-8 sm:sticky">
               <AdSenseDisplayUnit
                 className="mb-4 block max-h-64 w-full"
                 slot={adSenseSlots.article}
               />
-              <nav className="block rounded bg-slate-200 p-4 shadow-lg">
+              <nav className="block rounded bg-slate-200/50 p-4 shadow-lg">
                 <div className="text-2xl font-semibold">目次</div>
                 <ul className="mt-2 list-inside list-disc">
                   {headings.map(({ text }) => (
@@ -129,7 +129,7 @@ export default async function PostPage(props: {
               </nav>
             </div>
           </div>
-          <div className="col-span-2">
+          <div className="col-span-2 rounded bg-slate-200/50 p-4">
             <PostBody content={html.toString()} />
           </div>
         </div>
