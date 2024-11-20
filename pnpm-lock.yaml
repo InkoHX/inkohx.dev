@@ -23,7 +23,7 @@ importers:
         version: 1.23.1
       '@sinclair/typebox':
         specifier: ^0.34.0
-        version: 0.34.4
+        version: 0.34.5
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1127,8 +1127,8 @@ packages:
   '@shikijs/vscode-textmate@9.3.0':
     resolution: {integrity: sha512-jn7/7ky30idSkd/O5yDBfAnVt+JJpepofP/POZ1iMOxK59cOfqIgg/Dj0eFsjOTMw+4ycJN0uhZH/Eb0bs/EUA==}
 
-  '@sinclair/typebox@0.34.4':
-    resolution: {integrity: sha512-ZUV1+nYQHjkDy/L5YMy5BxUjSFX8PElhBzNjI4gyeN23XJa7PZbmj5eDWzLAK3oxVs99EQWc/h1qFYkxpM+AwQ==}
+  '@sinclair/typebox@0.34.5':
+    resolution: {integrity: sha512-reznWdUPaj/MXBRTZLGZyzcs93c+yJeJBOIu9fG2Yeey+8lC9kc9x4YMiQaBcTOqajRct/miWaroVWkvTBq6Rw==}
 
   '@sindresorhus/is@5.6.0':
     resolution: {integrity: sha512-TV7t8GKYaJWsn00tFDqBw8+Uqmr8A0fRU1tvTQhyZzGv0sJCGRQL3JGMI3ucuKo3XIZdUP+Lx7/gh2t3lewy7g==}
@@ -6843,7 +6843,7 @@ snapshots:
 
   '@shikijs/vscode-textmate@9.3.0': {}
 
-  '@sinclair/typebox@0.34.4': {}
+  '@sinclair/typebox@0.34.5': {}
 
   '@sindresorhus/is@5.6.0': {}
 
