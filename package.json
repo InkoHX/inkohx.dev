@@ -2,7 +2,7 @@
   "name": "inkohx-dev-astro",
   "type": "module",
   "version": "0.0.1",
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.14.2",
   "scripts": {
     "postinstall": "astro sync",
     "dev": "netlify dev",
