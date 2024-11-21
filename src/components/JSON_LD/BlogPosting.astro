@@ -1,0 +1,13 @@
+---
+import type { WithContext, BlogPosting } from 'schema-dts'
+
+type Props = Omit<WithContext<BlogPosting>, '@context' | '@type'>
+
+const structure = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  ...Astro.props,
+} satisfies WithContext<BlogPosting>
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(structure)} />

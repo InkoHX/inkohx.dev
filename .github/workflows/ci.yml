@@ -26,15 +26,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Restore Next.js cache
-        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
-        with:
-          key: ${{ runner.os }}-nextjs
-          path: ${{ github.workspace }}/.next/cache
-
-      - name: Run formatter
-        run: pnpm run format:check
-
       - name: Run linter
         run: pnpm run lint
 
@@ -59,17 +50,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Restore Next.js cache
-        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
-        with:
-          key: ${{ runner.os }}-nextjs
-          path: ${{ github.workspace }}/.next/cache
-
       - name: Deploy to preview
         id: deploy-result
         # 参考: https://github.com/netlify/actions/blob/3eff4d5cd9bf9f7ba528c1f1bbb94a37c3a3201d/cli/entrypoint.sh
         run: |
-          OUTPUT=$(sh -c "echo && pnpm netlify deploy --build")
+          OUTPUT=$(sh -c "echo && pnpm netlify deploy --build --context deploy-preview")
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
 
           echo "url=$NETLIFY_URL" >> $GITHUB_OUTPUT
@@ -83,6 +68,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          OG_IMAGE_SIGNATURE_KEY: ${{ secrets.OG_IMAGE_SIGNATURE_KEY_PREVIEW }}
 
       - name: Comment to commit
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
@@ -109,7 +95,7 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: thollander/actions-comment-pull-request@24bffb9b452ba05a4f3f77933840a6a841d1b32b # v3
         with:
-          comment-tag: 'netlify-deploy-preview'
+          comment-tag: netlify-deploy-preview
           mode: recreate
           message: |
             # Deployed to ${{ steps.deploy-result.outputs.url }}
@@ -136,17 +122,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Restore Next.js cache
-        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
-        with:
-          key: ${{ runner.os }}-nextjs
-          path: ${{ github.workspace }}/.next/cache
-
       - name: Deploy to production
         id: deploy-result
         # 参考: https://github.com/netlify/actions/blob/3eff4d5cd9bf9f7ba528c1f1bbb94a37c3a3201d/cli/entrypoint.sh
         run: |
-          OUTPUT=$(sh -c "echo && pnpm netlify deploy --prod --build")
+          OUTPUT=$(sh -c "echo && pnpm netlify deploy --prod --build --context production")
           NETLIFY_URL=$(echo "$OUTPUT" | grep 'Website URL:' | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*')
 
           echo "url=$NETLIFY_URL" >> $GITHUB_OUTPUT
@@ -160,6 +140,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          OG_IMAGE_SIGNATURE_KEY: ${{ secrets.OG_IMAGE_SIGNATURE_KEY_PROD }}
 
       - name: Comment to commit
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7

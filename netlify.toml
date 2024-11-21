@@ -1,9 +1,26 @@
 [build]
-  command = "pnpm build"
-  publish = ".next"
+command = "pnpm run build"
+publish = "dist"
 
-[build.environment]
-  NEXT_PUBLIC_ADSENSE_CLIENT_ID = "ca-pub-8934795537091878"
+# 開発環境の設定
+[dev]
+targetPort = 4321
+port = 8000
+command = "pnpm astro dev"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+[context.dev.environment]
+NODE_ENV = "development"
+OG_IMAGE_SIGNATURE_KEY = "this_is_a_secret_key"
+
+# リダイレクト設定
+[[redirects]]
+from = "/projects"
+to = "/#created-websites"
+
+[[redirects]]
+from = "/skills"
+to = "/#skills"
+
+[[redirects]]
+from = "/privacy-policy"
+to = "/policies/privacy"

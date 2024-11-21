@@ -1,0 +1,27 @@
+---
+interface Props {
+  imageUrl?: string
+  className?: string
+}
+
+const props = Astro.props
+---
+
+<div
+  class:list={[
+    'py-48 container',
+    props.imageUrl && 'bg-slate-200/90 bg-contain bg-right-bottom bg-no-repeat bg-blend-lighten lg:bg-blend-normal',
+  ]}
+  style={{
+    backgroundImage: props.imageUrl ? `url('${props.imageUrl}')` : void 0,
+  }}
+>
+  <h1 class="text-4xl font-bold leading-normal md:text-7xl">
+    <slot name="title" />
+  </h1>
+  <div class="max-w-prose">
+    <p class="mt-4 text-2xl text-slate-700 md:mt-8">
+      <slot name="subtitle" />
+    </p>
+  </div>
+</div>

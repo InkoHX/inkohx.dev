@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { icon } from '@fortawesome/fontawesome-svg-core'
+import { faFlask, faStar, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { Image } from 'astro:assets'
+import AvatarImage from '../assets/avatar.png'
+import constants from '../constants'
+import ProfilePage from '../components/JSON_LD/ProfilePage.astro'
+
+const starIcon = icon({ ...faStar })
+const flaskIcon = icon({ ...faFlask })
+const globeIcon = icon({ ...faGlobe })
+
+const hobbies = [
+  'プログラミング',
+  '音楽鑑賞',
+  'ゲーム',
+  '技術系の話題を追うこと',
+  '新しい技術を学ぶこと',
+  '色んな場所に行くこと',
+  '自動車を運転する',
+]
+
+const languages = {
+  id: 'languages',
+  name: '言語',
+  items: [
+    { name: 'JavaScript', comment: 'よく書く' },
+    { name: 'TypeScript', comment: 'よく書く' },
+    { name: 'HTML', comment: 'よく書く' },
+    { name: 'CSS', comment: 'よく書く' },
+    { name: 'Kotlin', comment: '少しだけ書ける' },
+    { name: 'Rust', comment: '少しだけ書ける' },
+    { name: 'Java', comment: '少しだけ触った' },
+    { name: 'php', comment: '最近はあんま触ってない' },
+  ],
+}
+const frameworks = {
+  id: 'frameworks',
+  name: 'フレームワーク',
+  items: [
+    { name: 'Next.js', comment: 'Reactで作るとき大体使う' },
+    { name: 'Astro', comment: '少しだけ書ける' },
+    { name: 'Hono', comment: 'まぁまぁ書ける' },
+  ],
+}
+const operatingSystems = {
+  id: 'operating-systems',
+  name: 'OS',
+  items: [
+    { name: 'Windows', comment: 'よく使う' },
+    { name: 'Linux', comment: 'メインで使用' },
+    { name: 'macOS', comment: '使ったことねぇ' },
+  ],
+}
+const skills = [languages, frameworks, operatingSystems]
+
+const websites = [
+  {
+    name: 'Discord.js Japan User Group',
+    url: 'https://discordjs-japan.org',
+    image: (await import('../assets/websites/discordjs-japan-org.png')).default,
+  },
+  {
+    name: 'Portfolio',
+    url: 'https://inkohx.dev',
+    image: (await import('../assets/websites/inkohx-dev.png')).default,
+  },
+  {
+    name: 'RSS Reader',
+    url: 'https://news.inkohx.dev',
+    image: (await import('../assets/websites/news-inkohx-dev.png')).default,
+  },
+  {
+    name: 'The NEXTERIAS',
+    url: 'https://nexterias.dev',
+    image: (await import('../assets/websites/nexterias-dev.png')).default,
+  },
+]
+---
+
+<BaseLayout>
+  <Fragment slot="head">
+    <meta property="og:type" content="website" />
+  </Fragment>
+  <main class="py-16">
+    <section class="flex flex-col items-center container pt-8 pb-24">
+      <Image
+        class="aspect-square w-48 rounded-full shadow-xl border-4 border-primary-300"
+        src={AvatarImage}
+        loading="eager"
+        alt=""
+      />
+      <h1 class="text-5xl tracking-widest font-bold leading-relaxed">InkoHX</h1>
+      <p class="font-semibold text-md sm:text-xl text-slate-600">JavaScriptとハードコア・テクノを愛する鳥</p>
+      <ul class="flex gap-x-4 mt-2">
+        {
+          constants.socialLinks.map((link) => (
+            <li>
+              <a class="text-2xl text-slate-600 transition-colors hover:text-black" href={link.href}>
+                <Fragment set:html={link.icon.html} />
+                <span class="sr-only">{link.name}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section class="mt-8 container">
+      <h2 class="text-2xl font-bold">
+        <Fragment set:html={starIcon.html} />
+        <span class="ml-4">趣味</span>
+      </h2>
+      <ul class="flex flex-wrap gap-4 mt-4">
+        {
+          hobbies.map((hobby) => (
+            <li class="shadow font-semibold text-nowrap bg-slate-300/50 px-4 py-1 rounded-full">{hobby}</li>
+          ))
+        }
+      </ul>
+    </section>
+    <section class="mt-4">
+      <div class="sticky top-0 bg-slate-200 p-4">
+        <div class="container">
+          <h2 id="skills" class="font-bold text-2xl">
+            <Fragment set:html={flaskIcon.html} />
+            <span class="ml-4">スキル</span>
+          </h2>
+          <ul class="mt-4 flex gap-4">
+            {
+              skills.map(({ id, name }) => (
+                <li>
+                  <a
+                    class="shadow font-semibold text-nowrap bg-slate-100 px-4 py-1 rounded-full transition-colors hover:bg-primary-300"
+                    href={`#${id}`}
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="space-y-8 mt-4">
+        {
+          skills.map((skill) => (
+            <section class="container">
+              <h3 class="font-bold text-xl scroll-mt-28" id={skill.id}>
+                {skill.name}
+              </h3>
+              <ul class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4">
+                {skill.items.map((item) => (
+                  <li class="bg-slate-100 shadow-lg px-4 py-8 rounded-xl">
+                    <h4 class="text-center text-2xl font-semibold">{item.name}</h4>
+                    <p class="mt-4 leading-relaxed text-center text-slate-700">{item.comment}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+      </div>
+    </section>
+    <section class="container mt-8">
+      <h2 id="created-websites" class="font-bold text-2xl">
+        <Fragment set:html={globeIcon.html} />
+        <span class="ml-4">作ったウェブサイト</span>
+      </h2>
+      <ul class="grid grid-cols-1 mt-4 md:grid-cols-2 gap-8">
+        {
+          websites.map((website) => (
+            <li class="group relative">
+              <Image
+                src={website.image}
+                alt=""
+                class="w-full h-auto rounded-lg shadow group-hover:shadow-lg transition group-hover:grayscale-0 md:grayscale"
+              />
+              <a
+                class="absolute inset-0 w-full h-full flex justify-center bg-slate-200/70 md:bg-transparent items-center transition-colors group-hover:bg-slate-200/70"
+                href={website.url}
+              >
+                <span class="text-2xl font-extrabold md:opacity-0 transition-opacity group-hover:opacity-100">
+                  {website.name}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+  <ProfilePage
+    dateCreated={new Date('2024-07-09').toISOString()}
+    mainEntity={{
+      '@type': 'Person',
+      name: 'InkoHX',
+      url: 'https://www.inkohx.dev',
+      image: 'https://www.inkohx.dev/favicon.png',
+      description: 'JavaScriptとハードコア・テクノを愛する鳥',
+      sameAs: constants.socialLinks.map((link) => link.href),
+    }}
+  />
+</BaseLayout>

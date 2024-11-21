@@ -1,0 +1,35 @@
+---
+import constants from '../../constants'
+
+interface Props {
+  slotId: string
+  class?: string
+}
+
+const { slotId, class: className } = Astro.props
+---
+
+{
+  import.meta.env.PROD ? (
+    <>
+      <ins
+        class:list={['adsbygoogle', className]}
+        data-ad-format="autorelaxed"
+        data-ad-client={constants.adSense.clientId}
+        data-ad-slot={slotId}
+      />
+      <script is:inline>;(adsbygoogle = window.adsbygoogle || []).push({})</script>
+    </>
+  ) : (
+    <div class:list={['grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8', className]}>
+      <div class="bg-slate-600 text-white flex justify-center items-center min-h-64 w-full">広告が表示されます</div>
+      <div class="bg-slate-600 text-white flex justify-center items-center min-h-64 w-full">広告が表示されます</div>
+      <div class="bg-slate-600 text-white flex justify-center items-center min-h-64 w-full">広告が表示されます</div>
+      <div class="bg-slate-600 text-white flex justify-center items-center min-h-64 w-full">広告が表示されます</div>
+      <div class="bg-slate-600 text-white flex justify-center items-center min-h-64 w-full">広告が表示されます</div>
+      <div class="bg-slate-600 text-white flex justify-center items-center min-h-64 w-full">広告が表示されます</div>
+      <div class="bg-slate-600 text-white flex justify-center items-center min-h-64 w-full">広告が表示されます</div>
+      <div class="bg-slate-600 text-white flex justify-center items-center min-h-64 w-full">広告が表示されます</div>
+    </div>
+  )
+}
