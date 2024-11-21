@@ -24,3 +24,7 @@ to = "/#skills"
 [[redirects]]
 from = "/privacy-policy"
 to = "/policies/privacy"
+
+[[redirects]]
+from = "/articles/cached-images-do-not-trigger-load-event"
+to = "/articles/htmlimageelement-load-event-not-catchable"
