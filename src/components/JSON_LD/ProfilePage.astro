@@ -1,0 +1,13 @@
+---
+import type { WithContext, ProfilePage } from 'schema-dts'
+
+type Props = Omit<WithContext<ProfilePage>, '@context' | '@type'>
+
+const structure = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  ...Astro.props,
+} satisfies WithContext<ProfilePage>
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(structure)} />

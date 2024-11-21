@@ -1,0 +1,12 @@
+---
+import constants from '../../constants'
+---
+
+{
+  import.meta.env.PROD && (
+    <script
+      is:inline
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${constants.adSense.clientId}`}
+    />
+  )
+}

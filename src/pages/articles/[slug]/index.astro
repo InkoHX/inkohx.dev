@@ -1,0 +1,116 @@
+---
+import type { GetStaticPaths } from 'astro'
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import Hero from '../../../components/Hero.astro'
+import AdSenseDisplayUnit from '../../../components/AdSense/AdSenseDisplayUnit.astro'
+import AdSenseMultiplexUnit from '../../../components/AdSense/AdSenseMultiplexUnit.astro'
+import AdSenseScript from '../../../components/AdSense/AdSenseScript.astro'
+import constants from '../../../constants'
+import { createOpenGraphImagePath } from '../../../lib/opengraph-image'
+import BlogPosting from '../../../components/JSON_LD/BlogPosting.astro'
+
+export const prerender = true
+
+export const getStaticPaths = (async () => {
+  const articles = await getCollection('articles')
+
+  return articles.map((article) => ({
+    params: {
+      slug: article.slug,
+    },
+    props: {
+      article,
+    },
+  }))
+}) satisfies GetStaticPaths
+
+const props = Astro.props
+const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP', { dateStyle: 'long' })
+const { Content, headings } = await props.article.render()
+const openGraphImageUrl = new URL(
+  createOpenGraphImagePath(props.article.data.title, props.article.data.categories),
+  Astro.site,
+)
+---
+
+<BaseLayout title={`${props.article.data.title} | 鳥頭ブログ`}>
+  <Fragment slot="head">
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content={openGraphImageUrl} />
+    <meta property="article:published_time" content={props.article.data.publishedAt.toISOString()} />
+    {
+      props.article.data.modifiedAt && (
+        <meta property="article:modified_time" content={props.article.data.modifiedAt.toISOString()} />
+      )
+    }
+    {props.article.data.categories.map((category) => <meta property="article:tag" content={category} />)}
+    <meta property="twitter:image" content={openGraphImageUrl} />
+  </Fragment>
+  <article class="py-16">
+    <header>
+      <Hero>
+        <span slot="title">{props.article.data.title}</span>
+        <span slot="subtitle">
+          <time datetime={props.article.data.publishedAt.toISOString()}
+            >{dateTimeFormatter.format(props.article.data.publishedAt)}</time
+          >
+          <span>に投稿</span>
+          {
+            props.article.data.modifiedAt && (
+              <span>
+                <span>（更新日: </span>
+                <>
+                  <time datetime={props.article.data.modifiedAt.toISOString()}>
+                    {dateTimeFormatter.format(props.article.data.modifiedAt)}
+                  </time>
+                  <span>）</span>
+                </>
+              </span>
+            )
+          }
+        </span>
+      </Hero>
+    </header>
+    <main>
+      <div class="container grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8">
+        <div class="order-first col-span-1 md:order-last md:px-0">
+          <div class="top-8 sm:sticky">
+            <AdSenseDisplayUnit slotId={constants.adSense.slotIds.display} responsive={false} class="mb-8 block" />
+            <nav class="block rounded-md bg-slate-100 p-4 shadow-lg">
+              <div class="text-2xl font-semibold mb-4">目次</div>
+              <ol class="space-y-4">
+                {
+                  headings
+                    .filter((heading) => heading.depth < 3)
+                    .map((heading) => (
+                      <li class="border-l-4 border-blue-500 pl-2 line-clamp-2">
+                        <a href={`#${heading.slug}`} class="text-blue-600 hover:underline">
+                          {heading.text}
+                        </a>
+                      </li>
+                    ))
+                }
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div class="col-span-2 md:prose-lg !max-w-full prose prose-primary p-4 rounded-md bg-slate-100">
+          <Content />
+        </div>
+      </div>
+    </main>
+    <div class="container">
+      <AdSenseMultiplexUnit slotId={constants.adSense.slotIds.multiplex} class="mt-8 block" />
+    </div>
+  </article>
+  <AdSenseScript />
+  <BlogPosting
+    headline={props.article.data.title}
+    datePublished={props.article.data.publishedAt.toISOString()}
+    dateModified={props.article.data.modifiedAt?.toISOString()}
+    image={openGraphImageUrl.toString()}
+    author={{ '@type': 'Person', name: 'InkoHX', url: 'https://www.inkohx.dev' }}
+    url={Astro.url.href}
+  />
+</BaseLayout>

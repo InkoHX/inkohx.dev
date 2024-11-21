@@ -1,0 +1,67 @@
+---
+import Hero from '../../components/Hero.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="プライバシーポリシー | 鳥頭" description="個人情報の取り扱いなど">
+  <Fragment slot="head">
+    <meta property="og:type" content="website" />
+  </Fragment>
+  <main class="py-16">
+    <Hero>
+      <span slot="title">プライバシーポリシー</span>
+      <span slot="subtitle">個人情報の取り扱いについて</span>
+    </Hero>
+    <section class="container mt-8">
+      <h2 class="text-4xl font-semibold">広告について</h2>
+      <p class="mt-4 text-slate-700">
+        当サイトでは、一部のページで第三者配信事業者であるGoogleが提供する広告を表示しています。
+        GoogleはCookieを使用して、あなたが当サイトや他のウェブサイトに過去にアクセスした情報に基づいて広告を配信します。
+      </p>
+      <h3 class="mt-4 text-2xl font-semibold">広告のCookieについて</h3>
+      <p class="mt-2 text-slate-700">
+        GoogleはCookieを利用して、あなたが当サイトや他のサイトにアクセスした際の情報に基づき、Googleやそのパートナーがユーザーに最適なパーソナライズされた広告を表示できるようにしています。
+        <br />
+        これを無効化したい場合、
+        <a href="https://adssettings.google.com/authenticated" class="text-primary-600 hover:underline">
+          Googleの広告設定
+        </a>
+        からパーソナライズ広告を無効にすることができます。
+        <br />
+        また、
+        <a href="https://www.aboutads.info/choices" class="text-primary-600 hover:underline"> www.aboutads.info </a>
+        にアクセスすることで、パーソナライズ広告に利用される第三者配信事業者のCookieを無効にすることもできます。
+      </p>
+    </section>
+    <section class="container mt-8">
+      <h2 class="text-4xl font-semibold">当サイトが収集する情報</h2>
+      <p class="mt-4 text-slate-700">
+        当サイトでは、Google Analyticsを利用してアクセス解析を行っています。
+        <br />
+        詳細は、
+        <a class="text-primary-600 hover:underline" href="https://policies.google.com/technologies/partner-sites"
+          >Google のサービスを使用するサイトやアプリから収集した情報の Google による使用
+        </a>
+        のページをご確認ください。
+      </p>
+    </section>
+    <section class="container mt-8">
+      <h2 class="text-4xl font-semibold">FAQ</h2>
+      <dl class="mt-4">
+        <dt class="text-2xl font-semibold">広告を見たくない</dt>
+        <dd class="mt-2 text-slate-700">
+          広告を非表示にする機能は実装しません。よって、
+          <strong class="text-black">無効化することはできません。</strong>
+          <br />
+          どうしても無理という場合は、このサイトから立ち去るか
+          <b class="text-black">コンテンツブロッカー</b>を使うことを推奨します。
+        </dd>
+        <dt class="mt-4 text-2xl font-semibold">具体的に広告が表示されるページとは</dt>
+        <dd class="mt-2 text-slate-700">
+          <a class="text-blue-600 hover:underline" href="/articles"> 記事一覧 </a>
+          から、当サイト内で閲覧できる記事のページのみ広告が表示されます。
+        </dd>
+      </dl>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import constants from '../constants'
+import MobileHeaderNavigation from './MobileHeaderNavigation'
+
+const pathname = Astro.url.pathname
+---
+
+<header class="h-[var(--header-height)] mx-auto flex container items-center justify-between px-4">
+  <a href="/" class="text-2xl font-bold transition-opacity hover:opacity-70">{constants.website.title}</a>
+  <!-- タブレット、デスクトップ用 -->
+  <nav class="hidden gap-x-4 sm:flex">
+    {
+      constants.navItems.map((item) => (
+        <a
+          class="data-[active]:text-primary-500 data-[active]:font-semibold"
+          href={item.href}
+          data-active={pathname === item.href}
+        >
+          {item.text}
+        </a>
+      ))
+    }
+  </nav>
+  <MobileHeaderNavigation client:load />
+</header>

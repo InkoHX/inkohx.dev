@@ -1,0 +1,31 @@
+---
+import constants from '../../constants'
+
+interface Props {
+  slotId: string
+  format?: 'rectangle' | 'horizontal' | 'vertical' | 'auto'
+  responsive?: boolean
+  class?: string
+}
+
+const { slotId, format = 'auto', responsive = true, class: className } = Astro.props
+---
+
+{
+  import.meta.env.PROD ? (
+    <>
+      <ins
+        class:list={['adsbygoogle', className]}
+        data-ad-client={constants.adSense.clientId}
+        data-ad-slot={slotId}
+        data-ad-format={format}
+        data-full-width-responsive={responsive}
+      />
+      <script is:inline>;(adsbygoogle = window.adsbygoogle || []).push({})</script>
+    </>
+  ) : (
+    <div class={`adsbygoogle flex min-h-64 w-full items-center justify-center bg-slate-600 text-white ${className}`}>
+      広告が表示されます
+    </div>
+  )
+}

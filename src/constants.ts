@@ -1,37 +1,30 @@
-export const socialAccounts = {
-  x: {
-    name: 'X (formerly Twitter)',
-    link: 'https://x.com/intent/user?screen_name=InkoHX',
-  },
-  bluesky: {
-    name: 'Bluesky',
-    link: 'https://bsky.app/profile/inkohx.dev',
-  },
-  steam: {
-    name: 'Steam',
-    link: 'https://steamcommunity.com/id/InkoHX',
-  },
-  github: {
-    name: 'GitHub',
-    link: 'https://github.com/InkoHX',
-  },
-  keybase: {
-    name: 'Keybase',
-    link: 'https://keybase.io/inkohx',
-  },
-  zenn: {
-    name: 'Zenn',
-    link: 'https://zenn.dev/inkohx',
-  },
-} as const satisfies Readonly<
-  Record<string, Readonly<Record<'name' | 'link', string>>>
->
+import { icon, type Icon } from '@fortawesome/fontawesome-svg-core'
+import { faBluesky, faGithub, faKeybase, faSteam, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
-export const BASE_URL =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || 'www.inkohx.dev'}`
-
-export const adSenseSlots = {
-  article: '8549599354',
-}
+export default {
+  website: {
+    title: '鳥頭',
+    description: '鳥頭エンジニアの自己紹介と、気まぐれでブログ書いたりしてるサイトです。',
+  },
+  navItems: [
+    { href: '/', text: 'プロフィール' },
+    { href: '/articles', text: '投稿記事' },
+  ] satisfies Array<{ href: string, text: string }>,
+  socialLinks: [
+    { name: 'Bluesky', href: 'https://bsky.app/profile/inkohx.dev', icon: icon({ ...faBluesky }) },
+    { name: 'X (Twitter)', href: 'https://x.com/InkoHX', icon: icon({ ...faXTwitter }) },
+    { name: 'GitHub', href: 'https://github.com/InkoHX', icon: icon({ ...faGithub }) },
+    { name: 'Steam', href: 'https://steamcommunity.com/id/InkoHX', icon: icon({ ...faSteam }) },
+    { name: 'Keybase', href: 'https://keybase.io/inkohx', icon: icon({ ...faKeybase }) },
+  ] satisfies Array<{ name: string, href: string, icon: Icon }>,
+  adSense: {
+    clientId: 'ca-pub-8934795537091878',
+    slotIds: {
+      display: '8549599354',
+      multiplex: '3138705827',
+    },
+  },
+  analytics: {
+    id: 'G-X6SPC2Z76Q',
+  },
+} as const

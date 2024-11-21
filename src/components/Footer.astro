@@ -1,0 +1,36 @@
+---
+import constants from '../constants'
+
+const navLinks = [...constants.navItems, { href: '/policies/privacy', text: 'プライバシーポリシー' }] satisfies Array<{
+  href: string
+  text: string
+}>
+---
+
+<footer class="container px-4 mx-auto pt-4 border-t py-4 border-slate-300">
+  <nav class="flex flex-wrap gap-x-2 justify-center">
+    {
+      navLinks.map((link) => (
+        <a href={link.href} class="text-sm leading-loose transition-colors hover:text-black text-slate-600">
+          {link.text}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="flex flex-col items-center sm:flex-row sm:justify-between sm:items-end">
+    <small class="leading-loose text-xs">Copyright &copy; {new Date().getFullYear()} InkoHX. All rights reserved.</small
+    >
+    <ul class="flex gap-2">
+      {
+        constants.socialLinks.map((link) => (
+          <li>
+            <a class="text-2xl text-slate-600 transition-colors hover:text-black" href={link.href}>
+              <Fragment set:html={link.icon.html} />
+              <span class="sr-only">{link.name}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
