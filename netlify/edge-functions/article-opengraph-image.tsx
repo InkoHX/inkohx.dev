@@ -174,6 +174,7 @@ export default async function handler(request: Request, _context: Context) {
       headers: {
         'cache-control': 'public, max-age=0, must-revalidate',
         'Netlify-CDN-Cache-Control': 'public, max-age=3600, stale-while-revalidate=86400',
+        'Netlify-Vary': 'query=title|category|signature',
       },
     },
   )
