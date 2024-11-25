@@ -18,6 +18,7 @@ const { title = constants.website.title, description = constants.website.descrip
 <!doctype html>
 <html lang="ja" class="scroll-smooth has-[nav[data-mobile-nav-open=true]]:overflow-hidden">
   <head>
+    {import.meta.env.PROD && <GoogleAnalytics />}
     <BaseHead title={title} description={description} />
     <slot name="head" />
   </head>
@@ -25,6 +26,5 @@ const { title = constants.website.title, description = constants.website.descrip
     <Header />
     <slot />
     <Footer />
-    {import.meta.env.PROD && <GoogleAnalytics />}
   </body>
 </html>
