@@ -8,7 +8,7 @@ export default {
   },
   navItems: [
     { href: '/', text: 'プロフィール' },
-    { href: '/articles', text: '投稿記事' },
+    { href: '/articles/', text: '投稿記事' },
   ] satisfies Array<{ href: string, text: string }>,
   socialLinks: [
     { name: 'Bluesky', href: 'https://bsky.app/profile/inkohx.dev', icon: icon({ ...faBluesky }) },
