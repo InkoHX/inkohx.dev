@@ -57,7 +57,6 @@ jobs:
         run: |
           set +e
           OUTPUT=$(pnpm netlify deploy --build --context deploy-preview 2>&1)
-          set -e
           OUTPUT_EXIT_CODE=$?
 
           if [ $OUTPUT_EXIT_CODE -ne 0 ]; then
@@ -139,7 +138,6 @@ jobs:
         run: |
           set +e
           OUTPUT=$(pnpm netlify deploy --prod --build --context production 2>&1)
-          set -e
           OUTPUT_EXIT_CODE=$?
 
           if [ $OUTPUT_EXIT_CODE -ne 0 ]; then
