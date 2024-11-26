@@ -54,12 +54,14 @@ jobs:
         id: deploy-result
         # 参考: https://github.com/netlify/actions/blob/3eff4d5cd9bf9f7ba528c1f1bbb94a37c3a3201d/cli/entrypoint.sh
         run: |
+          set +e
           OUTPUT=$(pnpm netlify deploy --build --context deploy-preview 2>&1)
-          COMMAND_EXIT_CODE=$?
+          set -e
+          OUTPUT_EXIT_CODE=$?
 
-          if [ $COMMAND_EXIT_CODE -ne 0 ]; then
+          if [ $OUTPUT_EXIT_CODE -ne 0 ]; then
             echo "$OUTPUT"
-            exit $COMMAND_EXIT_CODE
+            exit $OUTPUT_EXIT_CODE
           fi
 
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
@@ -133,12 +135,14 @@ jobs:
         id: deploy-result
         # 参考: https://github.com/netlify/actions/blob/3eff4d5cd9bf9f7ba528c1f1bbb94a37c3a3201d/cli/entrypoint.sh
         run: |
+          set +e
           OUTPUT=$(pnpm netlify deploy --prod --build --context production 2>&1)
-          COMMAND_EXIT_CODE=$?
+          set -e
+          OUTPUT_EXIT_CODE=$?
 
-          if [ $COMMAND_EXIT_CODE -ne 0 ]; then
+          if [ $OUTPUT_EXIT_CODE -ne 0 ]; then
             echo "$OUTPUT"
-            exit $COMMAND_EXIT_CODE
+            exit $OUTPUT_EXIT_CODE
           fi
 
           NETLIFY_URL=$(echo "$OUTPUT" | grep 'Website URL:' | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*')
