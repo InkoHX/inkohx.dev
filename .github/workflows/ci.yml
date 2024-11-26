@@ -52,6 +52,7 @@ jobs:
 
       - name: Deploy to preview
         id: deploy-result
+        shell: /usr/bin/bash {0}
         # 参考: https://github.com/netlify/actions/blob/3eff4d5cd9bf9f7ba528c1f1bbb94a37c3a3201d/cli/entrypoint.sh
         run: |
           OUTPUT=$(pnpm netlify deploy --build --context deploy-preview 2>&1)
@@ -131,6 +132,7 @@ jobs:
 
       - name: Deploy to production
         id: deploy-result
+        shell: /usr/bin/bash {0}
         # 参考: https://github.com/netlify/actions/blob/3eff4d5cd9bf9f7ba528c1f1bbb94a37c3a3201d/cli/entrypoint.sh
         run: |
           OUTPUT=$(pnpm netlify deploy --prod --build --context production 2>&1)
