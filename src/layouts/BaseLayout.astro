@@ -5,7 +5,7 @@ import BaseHead from '../components/BaseHead.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import constants from '../constants'
-import GoogleAnalytics from '../components/GoogleAnalytics.astro'
+import CloudflareWebAnalytics from '../components/CloudflareWebAnalytics.astro'
 
 interface Props {
   title?: string
@@ -18,7 +18,7 @@ const { title = constants.website.title, description = constants.website.descrip
 <!doctype html>
 <html lang="ja" class="scroll-smooth has-[nav[data-mobile-nav-open=true]]:overflow-hidden">
   <head>
-    {import.meta.env.PROD && <GoogleAnalytics />}
+    {import.meta.env.PROD && <CloudflareWebAnalytics />}
     <BaseHead title={title} description={description} />
     <slot name="head" />
   </head>

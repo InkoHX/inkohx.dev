@@ -1,0 +1,10 @@
+---
+import constants from '../constants'
+
+const data = {
+  token: constants.analytics.token,
+}
+---
+
+<script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify(data)}
+></script>

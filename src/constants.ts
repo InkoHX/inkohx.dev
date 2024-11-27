@@ -25,6 +25,6 @@ export default {
     },
   },
   analytics: {
-    id: 'G-X6SPC2Z76Q',
+    token: '11fa421043ab4d86a84ae3ef8864df59',
   },
 } as const
