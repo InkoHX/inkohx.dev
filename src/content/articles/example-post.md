@@ -1,5 +1,6 @@
 ---
 title: Example Post (テストページ)
+draft: true
 publishedAt: '1970-01-01'
 modifiedAt: '1970-01-02'
 categories:

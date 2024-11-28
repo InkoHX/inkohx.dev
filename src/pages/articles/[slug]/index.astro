@@ -1,6 +1,5 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import { getCollection } from 'astro:content'
 import BaseLayout from '../../../layouts/BaseLayout.astro'
 import Hero from '../../../components/Hero.astro'
 import AdSenseDisplayUnit from '../../../components/AdSense/AdSenseDisplayUnit.astro'
@@ -9,11 +8,12 @@ import AdSenseScript from '../../../components/AdSense/AdSenseScript.astro'
 import constants from '../../../constants'
 import { createOpenGraphImagePath } from '../../../lib/opengraph-image'
 import BlogPosting from '../../../components/JSON_LD/BlogPosting.astro'
+import { findArticles } from '../../../lib/articles'
 
 export const prerender = true
 
 export const getStaticPaths = (async () => {
-  const articles = await getCollection('articles')
+  const articles = await findArticles()
 
   return articles.map((article) => ({
     params: {
