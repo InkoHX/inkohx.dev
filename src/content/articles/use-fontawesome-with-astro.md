@@ -1,5 +1,5 @@
 ---
-title: Font Awesome 5をAstroで使う
+title: Font Awesome 6をAstroで使う
 publishedAt: '2024-11-27'
 modifiedAt: '2024-11-29'
 categories:
