@@ -1,4 +1,4 @@
-import { icon, type Icon, type IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { faBluesky, faGithub, faKeybase, faSteam, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
 export default {
