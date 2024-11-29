@@ -76,10 +76,14 @@ const openGraphImageUrl = new URL(
       <div class="container grid grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8">
         <div class="order-first col-span-1 md:order-last md:px-0">
           <div class="top-8 sm:sticky">
-            <AdSenseDisplayUnit slotId={constants.adSense.slotIds.display} responsive={false} class="mb-8 block" />
+            <AdSenseDisplayUnit
+              slotId={constants.adSense.slotIds.display}
+              responsive={false}
+              class="mb-8 block max-h-64"
+            />
             <nav class="block rounded-md bg-slate-100 p-4 shadow-lg">
               <div class="text-2xl font-semibold mb-4">目次</div>
-              <ol class="space-y-4">
+              <ol class="space-y-4 overflow-y-auto max-h-64">
                 {
                   headings
                     .filter((heading) => heading.depth < 3)
