@@ -1,7 +1,7 @@
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import constants from '../constants'
+import FontAwesomeIcon from './FontAwesomeIcon'
 import NavLink from './NavLink'
 
 const MobileHeaderNavigation: React.FC = () => {
