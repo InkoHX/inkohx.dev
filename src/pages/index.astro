@@ -6,10 +6,7 @@ import { Image } from 'astro:assets'
 import AvatarImage from '../assets/avatar.png'
 import constants from '../constants'
 import ProfilePage from '../components/JSON_LD/ProfilePage.astro'
-
-const starIcon = icon({ ...faStar })
-const flaskIcon = icon({ ...faFlask })
-const globeIcon = icon({ ...faGlobe })
+import FontAwesomeIcon from '../components/FontAwesomeIcon.astro'
 
 const hobbies = [
   'プログラミング',
@@ -98,7 +95,7 @@ const websites = [
           constants.socialLinks.map((link) => (
             <li>
               <a class="text-2xl text-slate-600 transition-colors hover:text-black" href={link.href}>
-                <Fragment set:html={link.icon.html} />
+                <FontAwesomeIcon icon={link.icon} />
                 <span class="sr-only">{link.name}</span>
               </a>
             </li>
@@ -108,7 +105,7 @@ const websites = [
     </section>
     <section class="mt-8 container">
       <h2 class="text-2xl font-bold">
-        <Fragment set:html={starIcon.html} />
+        <FontAwesomeIcon icon={faStar} />
         <span class="ml-4">趣味</span>
       </h2>
       <ul class="flex flex-wrap gap-4 mt-4">
@@ -123,7 +120,7 @@ const websites = [
       <div class="sticky top-0 bg-slate-200 p-4">
         <div class="container">
           <h2 id="skills" class="font-bold text-2xl">
-            <Fragment set:html={flaskIcon.html} />
+            <FontAwesomeIcon icon={faFlask} />
             <span class="ml-4">スキル</span>
           </h2>
           <ul class="mt-4 flex gap-4">
@@ -164,7 +161,7 @@ const websites = [
     </section>
     <section class="container mt-8">
       <h2 id="created-websites" class="font-bold text-2xl">
-        <Fragment set:html={globeIcon.html} />
+        <FontAwesomeIcon icon={faGlobe} />
         <span class="ml-4">作ったウェブサイト</span>
       </h2>
       <ul class="grid grid-cols-1 mt-4 md:grid-cols-2 gap-8">

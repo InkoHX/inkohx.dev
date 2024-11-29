@@ -1,5 +1,6 @@
 ---
 import constants from '../constants'
+import FontAwesomeIcon from './FontAwesomeIcon.astro'
 
 const navLinks = [...constants.navItems, { href: '/policies/privacy', text: 'プライバシーポリシー' }] satisfies Array<{
   href: string
@@ -25,7 +26,7 @@ const navLinks = [...constants.navItems, { href: '/policies/privacy', text: 'プ
         constants.socialLinks.map((link) => (
           <li>
             <a class="text-2xl text-slate-600 transition-colors hover:text-black" href={link.href}>
-              <Fragment set:html={link.icon.html} />
+              <FontAwesomeIcon icon={link.icon} />
               <span class="sr-only">{link.name}</span>
             </a>
           </li>
