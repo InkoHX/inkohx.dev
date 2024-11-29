@@ -11,7 +11,7 @@ categories:
 
 ## インストールするもの
 
-[Using a Package Manager | Font Awesome Docs](https://docs.fontawesome.com/web/setup/packages#svg-icon-packages)を参考に、`@fortawesome/fontawesome-svg-core`と用途に合わせて`@fortawesome/free-solid-svg-icons`等のパッケージをインストールしましょう。
+[Using a Package Manager | Font Awesome Docs](https://docs.fontawesome.com/web/setup/packages#svg-icon-packages)を参考に、必須パッケージである`@fortawesome/fontawesome-svg-core`と、使用したいアイコンのパッケージをインストールします。
 
 ```sh
 # 必須
