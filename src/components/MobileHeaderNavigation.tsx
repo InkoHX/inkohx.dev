@@ -12,10 +12,10 @@ const MobileHeaderNavigation: React.FC = () => {
       <button type="button" className="sm:hidden" aria-label={isOpen ? 'メニューを閉じる' : 'メニューを開く'} onClick={() => setOpen(it => !it)}>
         {isOpen
           ? (
-              <FontAwesomeIcon icon={faXmark} className="size-8" />
+              <FontAwesomeIcon icon={faXmark} className="!size-8" />
             )
           : (
-              <FontAwesomeIcon icon={faBars} className="size-8" />
+              <FontAwesomeIcon icon={faBars} className="!size-8" />
             )}
       </button>
       <nav
