@@ -17,6 +17,11 @@ export default defineConfig({
   server: {
     port: 4321,
   },
+  vite: {
+    css: {
+      transformer: 'lightningcss',
+    },
+  },
   site: process.env.CONTEXT === 'production'
     ? process.env.URL
     : process.env.CONTEXT === 'deploy-preview'
