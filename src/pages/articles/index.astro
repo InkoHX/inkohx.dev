@@ -2,7 +2,7 @@
 import Hero from '../../components/Hero.astro'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { createOpenGraphImagePath } from '../../lib/opengraph-image'
-import { Image } from 'astro:assets'
+import Image from 'astro/components/Image.astro'
 import { findArticles } from '../../lib/articles'
 
 const articles = (await findArticles()).sort(
@@ -28,7 +28,7 @@ const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP', {
           {
             articles.map((article) => (
               <li class="bg-slate-100 shadow-md rounded-lg hover:shadow-lg transition-shadow">
-                <a href={`/articles/${article.id}`} class="block">
+                <a href={`/articles/${article.slug}`} class="block">
                   <Image
                     src={createOpenGraphImagePath(article.data.title, article.data.categories)}
                     alt=""

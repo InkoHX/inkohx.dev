@@ -12,7 +12,7 @@ const pathname = Astro.url.pathname
     {
       constants.navItems.map((item) => (
         <a
-          class="data-[active=true]:text-primary-600 data-[active=true]:font-semibold"
+          class="data-[active]:text-primary-600 data-[active]:font-semibold"
           href={item.href}
           data-active={pathname === item.href}
         >
