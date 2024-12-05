@@ -9,7 +9,6 @@ import constants from '../../../constants'
 import { createOpenGraphImagePath } from '../../../lib/opengraph-image'
 import BlogPosting from '../../../components/JSON_LD/BlogPosting.astro'
 import { findArticles } from '../../../lib/articles'
-import { render } from 'astro:content'
 
 export const prerender = true
 
@@ -18,7 +17,7 @@ export const getStaticPaths = (async () => {
 
   return articles.map((article) => ({
     params: {
-      slug: article.id,
+      slug: article.slug,
     },
     props: {
       article,
@@ -28,7 +27,7 @@ export const getStaticPaths = (async () => {
 
 const props = Astro.props
 const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP', { dateStyle: 'long' })
-const { Content, headings } = await render(props.article)
+const { Content, headings } = await props.article.render()
 const openGraphImageUrl = new URL(
   createOpenGraphImagePath(props.article.data.title, props.article.data.categories),
   Astro.site,
@@ -55,15 +54,18 @@ const openGraphImageUrl = new URL(
         <span slot="subtitle">
           <time datetime={props.article.data.publishedAt.toISOString()}
             >{dateTimeFormatter.format(props.article.data.publishedAt)}</time
-          >に投稿
+          >
+          <span>に投稿</span>
           {
             props.article.data.modifiedAt && (
               <span>
-                （更新日:
-                <time datetime={props.article.data.modifiedAt.toISOString()}>
-                  {dateTimeFormatter.format(props.article.data.modifiedAt)}
-                </time>
-                ）
+                <span>（更新日: </span>
+                <>
+                  <time datetime={props.article.data.modifiedAt.toISOString()}>
+                    {dateTimeFormatter.format(props.article.data.modifiedAt)}
+                  </time>
+                  <span>）</span>
+                </>
               </span>
             )
           }

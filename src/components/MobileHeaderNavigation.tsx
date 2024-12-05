@@ -2,29 +2,20 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import constants from '../constants'
 import FontAwesomeIcon from './FontAwesomeIcon'
+import NavLink from './NavLink'
 
 const MobileHeaderNavigation: React.FC = () => {
   const [isOpen, setOpen] = React.useState(false)
-  const [pathname, setPathname] = React.useState<string | undefined>()
-
-  React.useEffect(() => {
-    setPathname(window.location.pathname)
-
-    const listener = () => setPathname(window.location.pathname)
-    window.addEventListener('popstate', listener)
-
-    return () => window.removeEventListener('popstate', listener)
-  }, [])
 
   return (
     <>
       <button type="button" className="sm:hidden" aria-label={isOpen ? 'メニューを閉じる' : 'メニューを開く'} onClick={() => setOpen(it => !it)}>
         {isOpen
           ? (
-              <FontAwesomeIcon icon={faXmark} className="!size-8" />
+              <FontAwesomeIcon icon={faXmark} className="size-8" />
             )
           : (
-              <FontAwesomeIcon icon={faBars} className="!size-8" />
+              <FontAwesomeIcon icon={faBars} className="size-8" />
             )}
       </button>
       <nav
@@ -32,15 +23,14 @@ const MobileHeaderNavigation: React.FC = () => {
         data-mobile-nav-open={isOpen}
       >
         {constants.navItems.map(({ text, href }) => (
-          <a
+          <NavLink
             key={text}
             href={href}
             onClick={() => setOpen(false)}
-            data-active={pathname === href}
-            className="block rounded-lg p-4 text-center font-semibold transition-colors hover:bg-primary-100 data-[active=true]:bg-primary-200"
+            className="block rounded-lg p-4 text-center font-semibold transition-colors hover:bg-primary-100 data-[is-active=true]:bg-primary-200"
           >
             {text}
-          </a>
+          </NavLink>
         ))}
       </nav>
     </>
