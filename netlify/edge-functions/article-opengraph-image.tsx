@@ -52,7 +52,7 @@ async function verifySignature({ signature, title, categories }: { signature: st
     throw new Error('Environment variable "OG_IMAGE_SIGNATURE_KEY" is required.')
 
   const encoder = new TextEncoder()
-  const data = encoder.encode(title + categories.join(''))
+  const data = encoder.encode(title + categories.sort().join(''))
   const key = await crypto.subtle.importKey(
     'raw',
     encoder.encode(signatureKey),

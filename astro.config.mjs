@@ -3,7 +3,7 @@ import process from 'node:process'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import { defineConfig } from 'astro/config'
+import { defineConfig, envField } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +16,11 @@ export default defineConfig({
   },
   server: {
     port: 4321,
+  },
+  env: {
+    schema: {
+      OG_IMAGE_SIGNATURE_KEY: envField.string({ access: 'secret', context: 'server' }),
+    },
   },
   site: process.env.CONTEXT === 'production'
     ? process.env.URL
