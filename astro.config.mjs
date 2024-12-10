@@ -17,6 +17,15 @@ export default defineConfig({
   server: {
     port: 4321,
   },
+  env: {
+    schema: {
+      OG_IMAGE_SIGNATURE_KEY: {
+        access: 'secret',
+        context: 'server',
+        type: 'string',
+      },
+    },
+  },
   site: process.env.CONTEXT === 'production'
     ? process.env.URL
     : process.env.CONTEXT === 'deploy-preview'
