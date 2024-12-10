@@ -1,6 +1,5 @@
 ---
 title: GitHub ActionsとPackagesのストレージ使用状況を調べる
-draft: true
 publishedAt: '2024-12-11'
 categories:
   - GitHub
