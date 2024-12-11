@@ -6,6 +6,8 @@
     "strictNullChecks": true
   },
   "include": [
-    "src"
-  ]
+    "src",
+    ".astro/types.d.ts"
+  ],
+  "exclude": ["dist"]
 }
