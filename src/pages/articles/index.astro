@@ -28,7 +28,7 @@ const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP', {
           {
             articles.map((article) => (
               <li class="bg-slate-100 shadow-md rounded-lg hover:shadow-lg transition-shadow">
-                <a href={`/articles/${article.slug}`} class="block">
+                <a href={`/articles/${article.id}`} class="block">
                   <Image
                     src={createOpenGraphImagePath(article.data.title, article.data.categories)}
                     alt=""
