@@ -103,11 +103,11 @@ async function main() {
   const outputFilePath = parsedArgs.values.output
     ? path.resolve(parsedArgs.values.output)
     : path.join(
-      process.cwd(),
-      `${path.basename(inputFilePath, inputFileExtension)
-      }_normalized${
-        inputFileExtension}`
-    )
+        process.cwd(),
+        `${path.basename(inputFilePath, inputFileExtension)
+        }_normalized${
+          inputFileExtension}`
+      )
 
   if (
     (await fs.exists(outputFilePath))
