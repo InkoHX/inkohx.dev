@@ -37,14 +37,14 @@ importers:
         specifier: 4.1.2
         version: 4.1.2(@types/node@22.10.3)(@types/react-dom@19.0.2(@types/react@19.0.2))(@types/react@19.0.2)(jiti@2.4.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(yaml@2.6.1)
       '@astrojs/rss':
-        specifier: 4.0.10
-        version: 4.0.10
+        specifier: 4.0.11
+        version: 4.0.11
       '@astrojs/sitemap':
         specifier: 3.2.1
         version: 3.2.1
       '@astrojs/tailwind':
         specifier: 5.1.4
-        version: 5.1.4(astro@5.1.1(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3))
+        version: 5.1.4(astro@5.1.2(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3))
       '@eslint-react/eslint-plugin':
         specifier: 1.23.0
         version: 1.23.0(eslint@9.17.0(jiti@2.4.2))(typescript@5.6.3)
@@ -61,8 +61,8 @@ importers:
         specifier: 19.0.2
         version: 19.0.2(@types/react@19.0.2)
       astro:
-        specifier: 5.1.1
-        version: 5.1.1(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1)
+        specifier: 5.1.2
+        version: 5.1.2(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1)
       astro-eslint-parser:
         specifier: 1.1.0
         version: 1.1.0(typescript@5.6.3)
@@ -202,8 +202,8 @@ packages:
       react: ^17.0.2 || ^18.0.0 || ^19.0.0
       react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0
 
-  '@astrojs/rss@4.0.10':
-    resolution: {integrity: sha512-2gFdHM763uUAySkdwPYrpi6dppOBJr9ddg5VbkKXctWze8d1JHgIBBY78zWIYs7KBJT58zxadsObVAVt55RDaw==}
+  '@astrojs/rss@4.0.11':
+    resolution: {integrity: sha512-3e3H8i6kc97KGnn9iaZBJpIkdoQi8MmR5zH5R+dWsfCM44lLTszOqy1OBfGGxDt56mpQkYVtZJWoxMyWuUZBfw==}
 
   '@astrojs/sitemap@3.2.1':
     resolution: {integrity: sha512-uxMfO8f7pALq0ADL6Lk68UV6dNYjJ2xGUzyjjVj60JLBs5a6smtlkBYv3tQ0DzoqwS7c9n4FUx5lgv0yPo/fgA==}
@@ -2274,8 +2274,8 @@ packages:
     resolution: {integrity: sha512-F6NW1RJo5pp2kPnnM97M5Ohw8zAGjv83MpxHqfAochH68n/kiXN57+hYaNUCA7XkScoVNr6yzvly3hsY34TGfQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@5.1.1:
-    resolution: {integrity: sha512-prpWC2PRs4P3FKQg6gZaU+VNMqbZi5pDvORGB2nrjfRjkrvF6/l4BqhvkJ6YQ0Ohm5rIMVz8ljgaRI77mLHbwg==}
+  astro@5.1.2:
+    resolution: {integrity: sha512-+U5lXPEJZ6cQx0botGbPhzN6XGWRgDtXgy/RUkpTmUj18LW6pbzYo0O0k3hFWOazlI039bZ+4P2e/oSNlKzm0Q==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -7211,7 +7211,7 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/rss@4.0.10':
+  '@astrojs/rss@4.0.11':
     dependencies:
       fast-xml-parser: 4.5.1
       kleur: 4.1.5
@@ -7222,9 +7222,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.24.1
 
-  '@astrojs/tailwind@5.1.4(astro@5.1.1(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3))':
+  '@astrojs/tailwind@5.1.4(astro@5.1.2(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3))':
     dependencies:
-      astro: 5.1.1(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1)
+      astro: 5.1.2(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1)
       autoprefixer: 10.4.20(postcss@8.4.49)
       postcss: 8.4.49
       postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.6.3))
@@ -9421,7 +9421,7 @@ snapshots:
       - supports-color
       - typescript
 
-  astro@5.1.1(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1):
+  astro@5.1.2(@netlify/blobs@8.1.0)(@types/node@22.10.3)(jiti@2.4.2)(rollup@4.29.1)(typescript@5.6.3)(yaml@2.6.1):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
