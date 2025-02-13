@@ -1,6 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@config '../../tailwind.config.mjs';
+
+@theme {
+  --color-primary-50: #eff5ff;
+  --color-primary-100: #dae7ff;
+  --color-primary-200: #bed6ff;
+  --color-primary-300: #83b4ff;
+  --color-primary-400: #5d99fd;
+  --color-primary-500: #3772fa;
+  --color-primary-600: #2152ef;
+  --color-primary-700: #193ddc;
+  --color-primary-800: #1b33b2;
+  --color-primary-900: #1c308c;
+  --color-primary-950: #161f55;
+
+  --color-secondary-50: #fff9ed;
+  --color-secondary-100: #fff1d4;
+  --color-secondary-200: #ffdfa9;
+  --color-secondary-300: #ffce83;
+  --color-secondary-400: #fea439;
+  --color-secondary-500: #fc8813;
+  --color-secondary-600: #ed6c09;
+  --color-secondary-700: #c55209;
+  --color-secondary-800: #9c4010;
+  --color-secondary-900: #7e3610;
+  --color-secondary-950: #441a06;
+}
+
+@utility container {
+  @apply mx-auto max-w-6xl px-4;
+}
 
 :root {
   --header-height: 48px;
@@ -9,10 +39,4 @@
 
 *:focus-visible {
   @apply outline outline-4 outline-secondary-600;
-}
-
-@layer components {
-  .container {
-    @apply mx-auto max-w-6xl px-4;
-  }
 }
