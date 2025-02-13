@@ -110,7 +110,7 @@ const websites = [
       <ul class="flex flex-wrap gap-4 mt-4">
         {
           hobbies.map((hobby) => (
-            <li class="shadow font-semibold text-nowrap bg-slate-300/50 px-4 py-1 rounded-full">{hobby}</li>
+            <li class="shadow-sm font-semibold text-nowrap bg-slate-300/50 px-4 py-1 rounded-full">{hobby}</li>
           ))
         }
       </ul>
@@ -127,7 +127,7 @@ const websites = [
               skills.map(({ id, name }) => (
                 <li>
                   <a
-                    class="shadow font-semibold text-nowrap bg-slate-100 px-4 py-1 rounded-full transition-colors hover:bg-primary-300"
+                    class="shadow-sm font-semibold text-nowrap bg-slate-100 px-4 py-1 rounded-full transition-colors hover:bg-primary-300"
                     href={`#${id}`}
                   >
                     {name}
@@ -170,7 +170,7 @@ const websites = [
               <Image
                 src={website.image}
                 alt=""
-                class="w-full h-auto rounded-lg shadow group-hover:shadow-lg transition group-hover:grayscale-0 md:grayscale"
+                class="w-full h-auto rounded-lg shadow-sm group-hover:shadow-lg transition group-hover:grayscale-0 md:grayscale"
               />
               <a
                 class="absolute inset-0 w-full h-full flex justify-center bg-slate-200/70 md:bg-transparent items-center transition-colors group-hover:bg-slate-200/70"
