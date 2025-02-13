@@ -2,13 +2,16 @@
 import process from 'node:process'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, envField } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  integrations: [sitemap(), tailwind(), react()],
+  integrations: [sitemap(), react()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   markdown: {
     shikiConfig: {
       theme: 'dark-plus',
