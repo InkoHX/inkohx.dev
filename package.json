@@ -37,7 +37,7 @@
     "eslint-plugin-format": "1.0.1",
     "eslint-plugin-react-hooks": "5.1.0",
     "eslint-plugin-react-refresh": "0.4.19",
-    "netlify-cli": "17.37.2",
+    "netlify-cli": "18.1.0",
     "prettier-plugin-astro": "0.14.1",
     "schema-dts": "1.1.2",
     "sharp": "0.33.5",
