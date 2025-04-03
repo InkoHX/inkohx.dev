@@ -61,8 +61,8 @@ importers:
         specifier: 19.1.1
         version: 19.1.1(@types/react@19.1.0)
       astro:
-        specifier: 5.5.6
-        version: 5.5.6(@netlify/blobs@8.1.0)(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.0)(typescript@5.8.2)(yaml@2.7.0)
+        specifier: 5.6.0
+        version: 5.6.0(@netlify/blobs@8.1.0)(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.0)(typescript@5.8.2)(yaml@2.7.0)
       astro-eslint-parser:
         specifier: 1.2.2
         version: 1.2.2
@@ -2266,8 +2266,8 @@ packages:
     resolution: {integrity: sha512-JepyLROIad6f44uyqMF6HKE2QbunNzp3mYKRcPoDGt0QkxXmH222FAFC64WTyQu2Kg8NNEXHTN/sWuUId9sSxw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@5.5.6:
-    resolution: {integrity: sha512-SjU6zAlRe/gQrZ558Qhm211Yl8XOZBfjMpZig3XtQpG6zlyHJkElbWQIWXAVPzMg17cFVdv/qZPVHfcP2YOGGw==}
+  astro@5.6.0:
+    resolution: {integrity: sha512-ZzHqdTQ4qtCnXzN9bVb75p/F0UweZYubmijjo++frn4E4KxLX8E7fizbX5Wbo2flvA6z/tUsoDwnYASxLHiM1Q==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -9451,7 +9451,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.5.6(@netlify/blobs@8.1.0)(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.0)(typescript@5.8.2)(yaml@2.7.0):
+  astro@5.6.0(@netlify/blobs@8.1.0)(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.0)(typescript@5.8.2)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
