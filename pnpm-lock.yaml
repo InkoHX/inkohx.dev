@@ -61,8 +61,8 @@ importers:
         specifier: 19.1.1
         version: 19.1.1(@types/react@19.1.0)
       astro:
-        specifier: 5.6.0
-        version: 5.6.0(@netlify/blobs@8.1.0)(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.0)(typescript@5.8.2)(yaml@2.7.0)
+        specifier: 5.6.1
+        version: 5.6.1(@netlify/blobs@8.1.0)(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.0)(typescript@5.8.2)(yaml@2.7.0)
       astro-eslint-parser:
         specifier: 1.2.2
         version: 1.2.2
@@ -2266,8 +2266,8 @@ packages:
     resolution: {integrity: sha512-JepyLROIad6f44uyqMF6HKE2QbunNzp3mYKRcPoDGt0QkxXmH222FAFC64WTyQu2Kg8NNEXHTN/sWuUId9sSxw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@5.6.0:
-    resolution: {integrity: sha512-ZzHqdTQ4qtCnXzN9bVb75p/F0UweZYubmijjo++frn4E4KxLX8E7fizbX5Wbo2flvA6z/tUsoDwnYASxLHiM1Q==}
+  astro@5.6.1:
+    resolution: {integrity: sha512-aQ2TV7wIf+q2Oi6gGWMINHWEAZqoP0eH6/mihodfTJYATPWyd03JIGVfjtYUJlkNdNSKxDXwEe/r/Zx4CZ1FPg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -6460,6 +6460,9 @@ packages:
   ultrahtml@1.5.3:
     resolution: {integrity: sha512-GykOvZwgDWZlTQMtp5jrD4BVL+gNn2NVlVafjcFUJ7taY20tqYdwdoWBFy6GBJsNTZe1GkGPkSl5knQAjtgceg==}
 
+  ultrahtml@1.6.0:
+    resolution: {integrity: sha512-R9fBn90VTJrqqLDwyMph+HGne8eqY1iPfYhPzZrvKpIfwkWZbcYlfpsb8B9dTvBfpy1/hqAD7Wi8EKfP9e8zdw==}
+
   unbzip2-stream@1.4.3:
     resolution: {integrity: sha512-mlExGW4w71ebDJviH16lQLtZS32VKqsSfk80GCfUlwT/4/hNRFsoscrF/c++9xinkMzECL1uL9DDwXqFWkruPg==}
 
@@ -9451,7 +9454,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.6.0(@netlify/blobs@8.1.0)(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.0)(typescript@5.8.2)(yaml@2.7.0):
+  astro@5.6.1(@netlify/blobs@8.1.0)(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.0)(typescript@5.8.2)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -9498,7 +9501,7 @@ snapshots:
       tinyexec: 0.3.2
       tinyglobby: 0.2.12
       tsconfck: 3.1.5(typescript@5.8.2)
-      ultrahtml: 1.5.3
+      ultrahtml: 1.6.0
       unist-util-visit: 5.0.0
       unstorage: 1.15.0(@netlify/blobs@8.1.0)
       vfile: 6.0.3
@@ -14461,6 +14464,8 @@ snapshots:
   ulid@2.3.0: {}
 
   ultrahtml@1.5.3: {}
+
+  ultrahtml@1.6.0: {}
 
   unbzip2-stream@1.4.3:
     dependencies:
