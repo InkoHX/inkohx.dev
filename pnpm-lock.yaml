@@ -35,7 +35,7 @@ importers:
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.8.3)
       '@astrojs/react':
         specifier: 4.2.7
-        version: 4.2.7(@types/node@22.15.33)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yaml@2.7.0)
+        version: 4.2.7(@types/node@22.15.34)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yaml@2.7.0)
       '@astrojs/rss':
         specifier: 4.0.12
         version: 4.0.12
@@ -50,10 +50,10 @@ importers:
         version: 0.5.16(tailwindcss@4.1.11)
       '@tailwindcss/vite':
         specifier: 4.1.11
-        version: 4.1.11(vite@6.2.6(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))
+        version: 4.1.11(vite@6.2.6(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))
       '@types/node':
-        specifier: 22.15.33
-        version: 22.15.33
+        specifier: 22.15.34
+        version: 22.15.34
       '@types/react':
         specifier: 19.1.8
         version: 19.1.8
@@ -62,7 +62,7 @@ importers:
         version: 19.1.6(@types/react@19.1.8)
       astro:
         specifier: 5.6.2
-        version: 5.6.2(@netlify/blobs@8.1.0)(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.40.1)(typescript@5.8.3)(yaml@2.7.0)
+        version: 5.6.2(@netlify/blobs@8.1.0)(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.40.1)(typescript@5.8.3)(yaml@2.7.0)
       astro-eslint-parser:
         specifier: 1.2.2
         version: 1.2.2
@@ -83,7 +83,7 @@ importers:
         version: 0.4.20(eslint@9.22.0(jiti@2.4.2))
       netlify-cli:
         specifier: 17.37.2
-        version: 17.37.2(@types/node@22.15.33)(picomatch@4.0.2)(rollup@4.40.1)
+        version: 17.37.2(@types/node@22.15.34)(picomatch@4.0.2)(rollup@4.40.1)
       prettier-plugin-astro:
         specifier: 0.14.1
         version: 0.14.1
@@ -1903,8 +1903,8 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
-  '@types/node@22.15.33':
-    resolution: {integrity: sha512-wzoocdnnpSxZ+6CjW4ADCK1jVmd1S/J3ArNWfn8FDDQtRm8dkDg7TA+mvek2wNrfCgwuZxqEOiB9B1XCJ6+dbw==}
+  '@types/node@22.15.34':
+    resolution: {integrity: sha512-8Y6E5WUupYy1Dd0II32BsWAx5MWdcnRd8L84Oys3veg1YrYtNtzgO4CFhiBg6MDSjk7Ay36HYOnU7/tuOzIzcw==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -7309,15 +7309,15 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@4.2.7(@types/node@22.15.33)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yaml@2.7.0)':
+  '@astrojs/react@4.2.7(@types/node@22.15.34)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(yaml@2.7.0)':
     dependencies:
       '@types/react': 19.1.8
       '@types/react-dom': 19.1.6(@types/react@19.1.8)
-      '@vitejs/plugin-react': 4.4.1(vite@6.3.4(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))
+      '@vitejs/plugin-react': 4.4.1(vite@6.3.4(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       ultrahtml: 1.6.0
-      vite: 6.3.4(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
+      vite: 6.3.4(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -8151,7 +8151,7 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.15.33
+      '@types/node': 22.15.34
       '@types/yargs': 16.0.9
       chalk: 4.1.2
 
@@ -8225,7 +8225,7 @@ snapshots:
       yaml: 2.7.0
       yargs: 17.7.2
 
-  '@netlify/build@29.56.0(@opentelemetry/api@1.8.0)(@types/node@22.15.33)(picomatch@4.0.2)(rollup@4.40.1)':
+  '@netlify/build@29.56.0(@opentelemetry/api@1.8.0)(@types/node@22.15.34)(picomatch@4.0.2)(rollup@4.40.1)':
     dependencies:
       '@bugsnag/js': 7.25.0
       '@netlify/blobs': 7.4.0
@@ -8282,7 +8282,7 @@ snapshots:
       strip-ansi: 7.1.0
       supports-color: 9.4.0
       terminal-link: 3.0.0
-      ts-node: 10.9.2(@types/node@22.15.33)(typescript@5.8.3)
+      ts-node: 10.9.2(@types/node@22.15.34)(typescript@5.8.3)
       typescript: 5.8.3
       uuid: 9.0.1
       yargs: 17.7.2
@@ -8965,12 +8965,12 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.1.11
 
-  '@tailwindcss/vite@4.1.11(vite@6.2.6(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))':
+  '@tailwindcss/vite@4.1.11(vite@6.2.6(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))':
     dependencies:
       '@tailwindcss/node': 4.1.11
       '@tailwindcss/oxide': 4.1.11
       tailwindcss: 4.1.11
-      vite: 6.2.6(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
+      vite: 6.2.6(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
 
   '@tokenizer/token@0.3.0': {}
 
@@ -9028,7 +9028,7 @@ snapshots:
 
   '@types/http-proxy@1.17.15':
     dependencies:
-      '@types/node': 22.15.33
+      '@types/node': 22.15.34
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -9054,7 +9054,7 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
-  '@types/node@22.15.33':
+  '@types/node@22.15.34':
     dependencies:
       undici-types: 6.21.0
 
@@ -9072,7 +9072,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 22.15.33
+      '@types/node': 22.15.34
 
   '@types/triple-beam@1.3.5': {}
 
@@ -9086,7 +9086,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.15.33
+      '@types/node': 22.15.34
     optional: true
 
   '@typescript-eslint/eslint-plugin@8.24.0(@typescript-eslint/parser@8.24.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.3)':
@@ -9289,14 +9289,14 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vitejs/plugin-react@4.4.1(vite@6.3.4(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))':
+  '@vitejs/plugin-react@4.4.1(vite@6.3.4(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.10)
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 6.3.4(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
+      vite: 6.3.4(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -9638,7 +9638,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.6.2(@netlify/blobs@8.1.0)(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.40.1)(typescript@5.8.3)(yaml@2.7.0):
+  astro@5.6.2(@netlify/blobs@8.1.0)(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.40.1)(typescript@5.8.3)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -9689,8 +9689,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.15.0(@netlify/blobs@8.1.0)
       vfile: 6.0.3
-      vite: 6.2.6(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
-      vitefu: 1.0.6(vite@6.2.6(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))
+      vite: 6.2.6(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
+      vitefu: 1.0.6(vite@6.2.6(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.1
@@ -12897,12 +12897,12 @@ snapshots:
 
   nested-error-stacks@2.1.1: {}
 
-  netlify-cli@17.37.2(@types/node@22.15.33)(picomatch@4.0.2)(rollup@4.40.1):
+  netlify-cli@17.37.2(@types/node@22.15.34)(picomatch@4.0.2)(rollup@4.40.1):
     dependencies:
       '@bugsnag/js': 7.25.0
       '@fastify/static': 7.0.4
       '@netlify/blobs': 8.1.0
-      '@netlify/build': 29.56.0(@opentelemetry/api@1.8.0)(@types/node@22.15.33)(picomatch@4.0.2)(rollup@4.40.1)
+      '@netlify/build': 29.56.0(@opentelemetry/api@1.8.0)(@types/node@22.15.34)(picomatch@4.0.2)(rollup@4.40.1)
       '@netlify/build-info': 7.15.2
       '@netlify/config': 20.19.0
       '@netlify/edge-bundler': 12.2.3(rollup@4.40.1)(supports-color@9.4.0)
@@ -14604,14 +14604,14 @@ snapshots:
       picomatch: 4.0.2
       typescript: 5.8.3
 
-  ts-node@10.9.2(@types/node@22.15.33)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@22.15.34)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.15.33
+      '@types/node': 22.15.34
       acorn: 8.14.1
       acorn-walk: 8.3.4
       arg: 4.1.3
@@ -14861,19 +14861,19 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.2.6(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0):
+  vite@6.2.6(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0):
     dependencies:
       esbuild: 0.25.0
       postcss: 8.5.3
       rollup: 4.34.0
     optionalDependencies:
-      '@types/node': 22.15.33
+      '@types/node': 22.15.34
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.30.1
       yaml: 2.7.0
 
-  vite@6.3.4(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0):
+  vite@6.3.4(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0):
     dependencies:
       esbuild: 0.25.0
       fdir: 6.4.4(picomatch@4.0.2)
@@ -14882,15 +14882,15 @@ snapshots:
       rollup: 4.40.1
       tinyglobby: 0.2.13
     optionalDependencies:
-      '@types/node': 22.15.33
+      '@types/node': 22.15.34
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.30.1
       yaml: 2.7.0
 
-  vitefu@1.0.6(vite@6.2.6(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)):
+  vitefu@1.0.6(vite@6.2.6(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)):
     optionalDependencies:
-      vite: 6.2.6(@types/node@22.15.33)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
+      vite: 6.2.6(@types/node@22.15.34)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.0)
 
   volar-service-css@0.0.62(@volar/language-service@2.4.11):
     dependencies:
