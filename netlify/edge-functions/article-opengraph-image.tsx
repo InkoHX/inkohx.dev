@@ -38,7 +38,6 @@ async function fetchGoogleFont(family: string, text: string) {
   return response.arrayBuffer()
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 const NotoSansJP = {
   Regular: (text: string) => fetchGoogleFont('Noto+Sans+JP', text),
   Bold: (text: string) => fetchGoogleFont('Noto+Sans+JP:wght@700', text),
