@@ -13,4 +13,8 @@ export default antfu({
     '**/src/components/AdSense/AdSenseDisplayUnit.astro',
     '**/src/components/AdSense/AdSenseMultiplexUnit.astro',
   ],
+}, {
+  rules: {
+    'antfu/top-level-function': 'off',
+  },
 })
