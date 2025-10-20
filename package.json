@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "5.2.2",
-    "@astrojs/check": "0.9.4",
+    "@astrojs/check": "0.9.5",
     "@astrojs/react": "4.3.1",
     "@astrojs/rss": "4.0.12",
     "@astrojs/sitemap": "3.5.1",
