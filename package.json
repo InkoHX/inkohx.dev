@@ -40,7 +40,7 @@
     "netlify-cli": "17.37.2",
     "prettier-plugin-astro": "0.14.1",
     "schema-dts": "1.1.5",
-    "sharp": "0.34.4",
+    "sharp": "0.34.5",
     "tailwindcss": "4.1.16",
     "typescript": "5.8.3"
   },
