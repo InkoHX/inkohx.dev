@@ -1,13 +1,14 @@
+import type * as React from 'react'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
-import React from 'react'
+import { useEffect, useState } from 'react'
 import constants from '../constants'
 import FontAwesomeIcon from './FontAwesomeIcon'
 
 const MobileHeaderNavigation: React.FC = () => {
-  const [isOpen, setOpen] = React.useState(false)
-  const [pathname, setPathname] = React.useState<string | undefined>()
+  const [open, setOpen] = useState(false)
+  const [pathname, setPathname] = useState<string | undefined>()
 
-  React.useEffect(() => {
+  useEffect(() => {
     // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
     setPathname(location.pathname)
 
@@ -22,8 +23,8 @@ const MobileHeaderNavigation: React.FC = () => {
 
   return (
     <>
-      <button type="button" className="sm:hidden" aria-label={isOpen ? 'メニューを閉じる' : 'メニューを開く'} onClick={() => setOpen(it => !it)}>
-        {isOpen
+      <button type="button" className="sm:hidden" aria-label={open ? 'メニューを閉じる' : 'メニューを開く'} onClick={() => setOpen(it => !it)}>
+        {open
           ? (
               <FontAwesomeIcon icon={faXmark} className="!size-8" />
             )
@@ -33,7 +34,7 @@ const MobileHeaderNavigation: React.FC = () => {
       </button>
       <nav
         className="fixed right-0 top-[var(--header-height)] z-50 h-[calc(100vh-var(--header-height))] w-full translate-x-full space-y-2 overflow-x-hidden bg-slate-200 p-4 transition-transform ease-in-out data-[mobile-nav-open=true]:translate-x-0 sm:hidden"
-        data-mobile-nav-open={isOpen}
+        data-mobile-nav-open={open}
       >
         {constants.navItems.map(({ text, href }) => (
           <a

@@ -35,7 +35,8 @@ categories:
 DiscordでDevToolsを開き、要素に適用されている`font-family`を調べてみたところ、以下のような記述を見つけました。
 
 ```css
-font-family: 'gg sans', 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, Osaka,
+font-family:
+  'gg sans', 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, Osaka,
   'MS PGothic', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
 
