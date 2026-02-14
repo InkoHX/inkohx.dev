@@ -18,7 +18,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "5.2.2",
+    "@antfu/eslint-config": "7.4.3",
     "@astrojs/check": "0.9.6",
     "@astrojs/react": "4.4.2",
     "@astrojs/rss": "4.0.15",
