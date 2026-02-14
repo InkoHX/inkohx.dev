@@ -31,3 +31,6 @@ pnpm-debug.log*
 
 # VS Code
 .vscode/settings.json
+
+# direnv
+.direnv/
