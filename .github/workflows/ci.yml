@@ -18,17 +18,17 @@ jobs:
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+      - uses: cachix/install-nix-action@v31
 
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version-file: .node-version
-          cache: pnpm
+      - name: Pre-build devShell
+        run: nix build --no-link .#devShells.$(nix eval --impure --raw --expr 'builtins.currentSystem').default
 
       - name: Install dependencies
+        shell: 'nix develop -c bash -e {0}'
         run: pnpm install
 
       - name: Run linter
+        shell: 'nix develop -c bash -e {0}'
         run: pnpm run lint
 
   deploy-preview:
@@ -42,19 +42,18 @@ jobs:
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+      - uses: cachix/install-nix-action@v31
 
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version-file: .node-version
-          cache: pnpm
+      - name: Pre-build devShell
+        run: nix build --no-link .#devShells.$(nix eval --impure --raw --expr 'builtins.currentSystem').default
 
       - name: Install dependencies
+        shell: 'nix develop -c bash -e {0}'
         run: pnpm install
 
       - name: Deploy to preview
         id: deploy-result
-        shell: /usr/bin/bash {0}
+        shell: 'nix develop -c bash -e {0}'
         # 参考: https://github.com/netlify/actions/blob/3eff4d5cd9bf9f7ba528c1f1bbb94a37c3a3201d/cli/entrypoint.sh
         run: |
           OUTPUT=$(pnpm netlify deploy --build --context deploy-preview 2>&1)
@@ -122,19 +121,18 @@ jobs:
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
-      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+      - uses: cachix/install-nix-action@v31
 
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
-        with:
-          node-version-file: .node-version
-          cache: pnpm
+      - name: Pre-build devShell
+        run: nix build --no-link .#devShells.$(nix eval --impure --raw --expr 'builtins.currentSystem').default
 
       - name: Install dependencies
+        shell: 'nix develop -c bash -e {0}'
         run: pnpm install
 
       - name: Deploy to production
         id: deploy-result
-        shell: /usr/bin/bash {0}
+        shell: 'nix develop -c bash -e {0}'
         # 参考: https://github.com/netlify/actions/blob/3eff4d5cd9bf9f7ba528c1f1bbb94a37c3a3201d/cli/entrypoint.sh
         run: |
           OUTPUT=$(pnpm netlify deploy --prod --build --context production 2>&1)
