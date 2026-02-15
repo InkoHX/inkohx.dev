@@ -11,5 +11,8 @@
     ":separateMajorReleases",
     ":separatePatchReleases",
     ":timezone(Asia/Tokyo)"
-  ]
+  ],
+  "nix": {
+    "enabled": false
+  }
 }
