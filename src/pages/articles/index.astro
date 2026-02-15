@@ -1,8 +1,6 @@
 ---
 import Hero from '../../components/Hero.astro'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { createOpenGraphImagePath } from '../../lib/opengraph-image'
-import { Image } from 'astro:assets'
 import { findArticles } from '../../lib/articles'
 
 const articles = (await findArticles()).sort(
@@ -27,22 +25,24 @@ const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP', {
         <ul class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {
             articles.map((article) => (
-              <li class="bg-slate-100 shadow-md rounded-lg hover:shadow-lg transition-shadow">
-                <a href={`/articles/${article.id}`} class="block">
-                  <Image
-                    src={createOpenGraphImagePath(article.data.title, article.data.categories)}
-                    alt=""
-                    class="w-full h-full"
-                    height="256"
-                    width="512"
-                  />
-                  <h2 class="sr-only">{article.data.title}</h2>
-                  <p class="p-4 text-slate-700">
-                    <time datetime={article.data.publishedAt.toISOString()}>
-                      {dateTimeFormatter.format(article.data.publishedAt)}
-                    </time>
-                    に投稿
-                  </p>
+              <li class="bg-slate-100 shadow-md rounded-lg hover:shadow-lg transition-shadow group">
+                <a href={`/articles/${article.id}`}>
+                  <div class="p-4 flex flex-col justify-between w-full h-full">
+                    <h2 class="font-semibold text-xl group-hover:text-primary-600">{article.data.title}</h2>
+                    <div class="mt-4">
+                      <ul class="flex gap-2 flex-wrap">
+                        {article.data.categories.map((category) => (
+                          <li class="text-sm px-2 py-1 rounded-sm bg-slate-200">{category}</li>
+                        ))}
+                      </ul>
+                      <p class="text-slate-700 text-sm mt-2">
+                        <time datetime={article.data.publishedAt.toISOString()}>
+                          {dateTimeFormatter.format(article.data.publishedAt)}
+                        </time>
+                        に投稿
+                      </p>
+                    </div>
+                  </div>
                 </a>
               </li>
             ))

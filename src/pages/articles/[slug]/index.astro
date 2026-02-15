@@ -6,7 +6,6 @@ import AdSenseDisplayUnit from '../../../components/AdSense/AdSenseDisplayUnit.a
 import AdSenseMultiplexUnit from '../../../components/AdSense/AdSenseMultiplexUnit.astro'
 import AdSenseScript from '../../../components/AdSense/AdSenseScript.astro'
 import constants from '../../../constants'
-import { createOpenGraphImagePath } from '../../../lib/opengraph-image'
 import BlogPosting from '../../../components/JSON_LD/BlogPosting.astro'
 import { findArticles } from '../../../lib/articles'
 import { render as renderContent } from 'astro:content'
@@ -29,16 +28,11 @@ export const getStaticPaths = (async () => {
 const props = Astro.props
 const dateTimeFormatter = new Intl.DateTimeFormat('ja-JP', { dateStyle: 'long' })
 const { Content, headings } = await renderContent(props.article)
-const openGraphImageUrl = new URL(
-  createOpenGraphImagePath(props.article.data.title, props.article.data.categories),
-  Astro.site,
-)
 ---
 
 <BaseLayout title={`${props.article.data.title} | 鳥頭ブログ`}>
   <Fragment slot="head">
     <meta property="og:type" content="article" />
-    <meta property="og:image" content={openGraphImageUrl} />
     <meta property="article:published_time" content={props.article.data.publishedAt.toISOString()} />
     {
       props.article.data.modifiedAt && (
@@ -46,7 +40,6 @@ const openGraphImageUrl = new URL(
       )
     }
     {props.article.data.categories.map((category) => <meta property="article:tag" content={category} />)}
-    <meta property="twitter:image" content={openGraphImageUrl} />
   </Fragment>
   <article class="py-16">
     <header>
@@ -116,7 +109,6 @@ const openGraphImageUrl = new URL(
     headline={props.article.data.title}
     datePublished={props.article.data.publishedAt.toISOString()}
     dateModified={props.article.data.modifiedAt?.toISOString()}
-    image={openGraphImageUrl.toString()}
     author={{ '@type': 'Person', name: 'InkoHX', url: 'https://www.inkohx.dev' }}
     url={Astro.url.href}
   />
