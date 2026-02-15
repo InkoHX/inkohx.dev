@@ -10,7 +10,6 @@ command = "pnpm astro dev"
 
 [context.dev.environment]
 NODE_ENV = "development"
-OG_IMAGE_SIGNATURE_KEY = "this_is_a_secret_key"
 
 # リダイレクト設定
 [[redirects]]
