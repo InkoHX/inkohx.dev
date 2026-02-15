@@ -142,7 +142,7 @@ jobs:
             exit $COMMAND_EXIT_CODE
           fi
 
-          NETLIFY_URL=$(echo "$OUTPUT" | grep 'Unique deploy URL:' | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*')
+          NETLIFY_URL=$(echo "$OUTPUT" | grep 'netlify.app' | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*')
 
           echo "url=$NETLIFY_URL" >> $GITHUB_OUTPUT
 
