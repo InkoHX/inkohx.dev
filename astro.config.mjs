@@ -17,15 +17,6 @@ export default defineConfig({
       theme: 'dark-plus',
     },
   },
-  env: {
-    validateSecrets: true,
-    schema: {
-      OG_IMAGE_SIGNATURE_KEY: envField.string({
-        access: 'secret',
-        context: 'server',
-      }),
-    },
-  },
   server: {
     port: 4321,
   },
