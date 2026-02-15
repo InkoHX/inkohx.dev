@@ -77,7 +77,6 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          OG_IMAGE_SIGNATURE_KEY: ${{ secrets.OG_IMAGE_SIGNATURE_KEY_PREVIEW }}
 
       - name: Comment to commit
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
@@ -156,7 +155,6 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          OG_IMAGE_SIGNATURE_KEY: ${{ secrets.OG_IMAGE_SIGNATURE_KEY_PROD }}
 
       - name: Comment to commit
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
