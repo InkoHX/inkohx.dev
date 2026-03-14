@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - uses: cachix/install-nix-action@4e002c8ec80594ecd40e759629461e26c8abed15 # v31
+      - uses: cachix/install-nix-action@1ca7d21a94afc7c957383a2d217460d980de4934 # v31
 
       - name: Pre-build devShell
         run: nix build --no-link .#devShells.$(nix eval --impure --raw --expr 'builtins.currentSystem').default
@@ -42,7 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - uses: cachix/install-nix-action@4e002c8ec80594ecd40e759629461e26c8abed15 # v31
+      - uses: cachix/install-nix-action@1ca7d21a94afc7c957383a2d217460d980de4934 # v31
 
       - name: Pre-build devShell
         run: nix build --no-link .#devShells.$(nix eval --impure --raw --expr 'builtins.currentSystem').default
@@ -120,7 +120,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - uses: cachix/install-nix-action@4e002c8ec80594ecd40e759629461e26c8abed15 # v31
+      - uses: cachix/install-nix-action@1ca7d21a94afc7c957383a2d217460d980de4934 # v31
 
       - name: Pre-build devShell
         run: nix build --no-link .#devShells.$(nix eval --impure --raw --expr 'builtins.currentSystem').default
