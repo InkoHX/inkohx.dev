@@ -9,7 +9,7 @@ const MobileHeaderNavigation: React.FC = () => {
   const [pathname, setPathname] = useState<string | undefined>()
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
+    // eslint-disable-next-line react/set-state-in-effect
     setPathname(location.pathname)
 
     const handlePopstate = () => {
