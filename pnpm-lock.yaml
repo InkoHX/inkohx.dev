@@ -82,8 +82,8 @@ importers:
         specifier: 0.5.2
         version: 0.5.2(eslint@10.2.1(jiti@2.6.1))
       netlify-cli:
-        specifier: 25.0.1
-        version: 25.0.1(@types/node@25.6.0)(picomatch@4.0.4)(rollup@4.60.2)
+        specifier: 25.3.0
+        version: 25.3.0(@types/node@25.6.0)(picomatch@4.0.4)(rollup@4.60.2)
       prettier-plugin-astro:
         specifier: 0.14.1
         version: 0.14.1
@@ -5037,8 +5037,8 @@ packages:
     resolution: {integrity: sha512-Z4SmBUweYa09+o6pG+eASabEpP6QkQ70yHj351pQoEXIs8uHbaU2DWVmzBANKgflPa47A50PtB2+NgRpQvr7vA==}
     engines: {node: '>= 10'}
 
-  netlify-cli@25.0.1:
-    resolution: {integrity: sha512-DVv+3CYXgp/u0YLlGUxnRmDRDa6HLr7Y0yL9HigMrQFuaU2iV+j9EfZvmeCZaX7FElebFfb+cU0NWJEOmb5AHg==}
+  netlify-cli@25.3.0:
+    resolution: {integrity: sha512-Mtri/S2sm1iCr6k1O0lp2I9w9D4ZNbE4DnVL4ERBD/Hcp5gWcQY+obuoc0Sept1mgww96dni/9IMBiMmqh8ZAQ==}
     engines: {node: '>=20.12.2'}
     hasBin: true
 
@@ -12761,7 +12761,7 @@ snapshots:
 
   neotraverse@0.6.18: {}
 
-  netlify-cli@25.0.1(@types/node@25.6.0)(picomatch@4.0.4)(rollup@4.60.2):
+  netlify-cli@25.3.0(@types/node@25.6.0)(picomatch@4.0.4)(rollup@4.60.2):
     dependencies:
       '@fastify/static': 9.0.0
       '@netlify/ai': 0.4.1
