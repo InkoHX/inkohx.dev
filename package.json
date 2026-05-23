@@ -27,7 +27,7 @@
     "@tailwindcss/typography": "0.5.19",
     "@tailwindcss/vite": "4.2.4",
     "@types/node": "25.9.1",
-    "@types/react": "19.2.14",
+    "@types/react": "19.2.15",
     "@types/react-dom": "19.2.3",
     "astro": "6.1.10",
     "astro-eslint-parser": "1.4.0",
