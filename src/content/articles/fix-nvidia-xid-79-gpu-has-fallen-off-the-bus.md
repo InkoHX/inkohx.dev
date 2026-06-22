@@ -1,7 +1,6 @@
 ---
 title: '「Xid 79: GPU has fallen off the bus」をどうにかできた'
 publishedAt: '2026-06-22'
-modifiedAt: '2026-06-22'
 categories:
   - Linux
   - NVIDIA
