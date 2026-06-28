@@ -32,7 +32,7 @@
     "astro": "6.1.10",
     "astro-eslint-parser": "1.4.0",
     "eslint": "10.2.1",
-    "eslint-plugin-astro": "1.7.0",
+    "eslint-plugin-astro": "2.1.1",
     "eslint-plugin-format": "2.0.1",
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-react-refresh": "0.5.3",
