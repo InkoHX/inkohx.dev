@@ -101,14 +101,43 @@ jobs:
 
       - name: Comment to Pull Request
         if: github.event_name == 'pull_request'
-        uses: thollander/actions-comment-pull-request@24bffb9b452ba05a4f3f77933840a6a841d1b32b # v3
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
-          comment-tag: netlify-deploy-preview
-          mode: recreate
-          message: |
-            # Deployed to ${{ steps.deploy-result.outputs.url }}
-            ## Logs
-            ${{ steps.deploy-result.outputs.logs_url }}
+          script: |
+            const commentTag = '<!-- thollander/actions-comment-pull-request "netlify-deploy-preview" -->';
+            const issueNumber = context.issue.number;
+            const { owner, repo } = context.repo;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner,
+              repo,
+              issue_number: issueNumber,
+            });
+            const existingComment = comments.find((comment) => comment.body?.includes(commentTag));
+            const logsUrl = process.env.NETLIFY_LOGS_URL ?? '';
+            const body = [
+              `# Deployed to ${process.env.NETLIFY_URL}`,
+              '## Logs',
+              ...logsUrl.split('\n').map((url) => `- ${url}`),
+              commentTag,
+            ].join('\n');
+
+            if (existingComment) {
+              await github.rest.issues.deleteComment({
+                owner,
+                repo,
+                comment_id: existingComment.id,
+              });
+            }
+
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: issueNumber,
+              body,
+            });
+        env:
+          NETLIFY_URL: ${{ steps.deploy-result.outputs.url }}
+          NETLIFY_LOGS_URL: ${{ steps.deploy-result.outputs.logs_url }}
 
   deploy-prod:
     name: Deploy to production
