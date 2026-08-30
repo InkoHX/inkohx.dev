@@ -61,8 +61,8 @@ importers:
         specifier: 19.2.5
         version: 19.2.5(@types/react@19.2.18)
       astro:
-        specifier: 7.2.8
-        version: 7.2.8(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.13(supports-color@10.2.2))(@types/node@25.9.5)(jiti@2.7.0)(yaml@2.9.0)
+        specifier: 7.2.9
+        version: 7.2.9(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.13(supports-color@10.2.2))(@types/node@25.9.5)(jiti@2.7.0)(yaml@2.9.0)
       astro-eslint-parser:
         specifier: 3.1.0
         version: 3.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(supports-color@10.2.2)
@@ -2635,8 +2635,8 @@ packages:
     resolution: {integrity: sha512-lS5qlx401Q1ZUhQ44XQnM4uT2qI6hA0H+vstrd841xGVxunFOs0ut3DWJGYHK1l7mxRxQdDi1j53pfE7/AyGlA==}
     engines: {node: ^22.22.3 || ^24.16.0 || >=26.3.0}
 
-  astro@7.2.8:
-    resolution: {integrity: sha512-19nfgzl1IHNYzIfamUIr4dYSQcovWfMO5JGlN7Ahlg6Q6R+nzSPWAh+VO/mSg0hhcea35JHY0wL5ADZUi0WiYQ==}
+  astro@7.2.9:
+    resolution: {integrity: sha512-o5nZFo/bieF6rp4x9sQSLhI7GO7Bahpld38Y4LvX27nFoxNiuttjI+Hea81w5ksORLHgdPUlQpU9obPz5QRa8g==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     peerDependencies:
@@ -9863,7 +9863,7 @@ snapshots:
       - '@emnapi/runtime'
       - supports-color
 
-  astro@7.2.8(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.13(supports-color@10.2.2))(@types/node@25.9.5)(jiti@2.7.0)(yaml@2.9.0):
+  astro@7.2.9(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@netlify/blobs@10.7.13(supports-color@10.2.2))(@types/node@25.9.5)(jiti@2.7.0)(yaml@2.9.0):
     dependencies:
       '@astrojs/compiler-rs': 0.4.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)
       '@astrojs/internal-helpers': 0.10.4
