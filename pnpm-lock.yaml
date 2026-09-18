@@ -29,7 +29,7 @@ importers:
     devDependencies:
       '@antfu/eslint-config':
         specifier: 9.3.0
-        version: 9.3.0(65047c2b2678f7c4a4dbbe9e0a69df98)
+        version: 9.3.0(97ae1d45f9cc186e4244930da6e304bb)
       '@astrojs/check':
         specifier: 0.9.10
         version: 0.9.10(prettier-plugin-astro@0.14.1)(prettier@3.9.6)(typescript@6.0.3)
@@ -79,8 +79,8 @@ importers:
         specifier: 7.1.1
         version: 7.1.1(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
       eslint-plugin-react-refresh:
-        specifier: 0.5.6
-        version: 0.5.6(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))
+        specifier: 0.5.7
+        version: 0.5.7(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))
       netlify-cli:
         specifier: 27.1.2
         version: 27.1.2(@types/node@25.9.6)(picomatch@4.0.5)(supports-color@10.2.2)
@@ -3694,8 +3694,8 @@ packages:
       eslint: '*'
       typescript: '*'
 
-  eslint-plugin-react-refresh@0.5.6:
-    resolution: {integrity: sha512-uZnh24On2bk478AkaDAKcpRiYhS3qFSaSNvpXxV6/Ek/BBDICkWGG7MnBSfjnIlCVBei5vsLlIeQYxbF22+Udg==}
+  eslint-plugin-react-refresh@0.5.7:
+    resolution: {integrity: sha512-XhJSzLljuYD4UjNuFGJu2v7aD3sqNVK12w5/DCUfrNfHWegZo2+TsavNx8MuxMwEquuFAzNbNfXKU0WoZ+YUIg==}
     peerDependencies:
       eslint: ^9 || ^10
 
@@ -7242,7 +7242,7 @@ packages:
 
 snapshots:
 
-  '@antfu/eslint-config@9.3.0(65047c2b2678f7c4a4dbbe9e0a69df98)':
+  '@antfu/eslint-config@9.3.0(97ae1d45f9cc186e4244930da6e304bb)':
     dependencies:
       '@antfu/install-pkg': 2.0.1
       '@clack/prompts': 1.7.0
@@ -7286,7 +7286,7 @@ snapshots:
       astro-eslint-parser: 3.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(supports-color@10.2.2)
       eslint-plugin-astro: 3.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@typescript-eslint/parser@8.67.0(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)
       eslint-plugin-format: 2.0.1(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))
-      eslint-plugin-react-refresh: 0.5.6(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))
+      eslint-plugin-react-refresh: 0.5.7(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))
       prettier-plugin-astro: 0.14.1
     transitivePeerDependencies:
       - '@eslint/json'
@@ -11140,7 +11140,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-refresh@0.5.6(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2)):
+  eslint-plugin-react-refresh@0.5.7(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2)):
     dependencies:
       eslint: 10.8.1(jiti@2.7.0)(supports-color@10.2.2)
 
