@@ -1,6 +1,5 @@
 minimumReleaseAge: 1440
 minimumReleaseAgeStrict: true
-trustPolicy: no-downgrade
 
 allowBuilds:
   '@parcel/watcher': true

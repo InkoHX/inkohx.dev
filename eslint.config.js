@@ -24,7 +24,6 @@ export default antfu({
       settings: {
         minimumReleaseAge: 1440,
         minimumReleaseAgeStrict: true,
-        trustPolicy: 'no-downgrade',
       },
     }],
   },
