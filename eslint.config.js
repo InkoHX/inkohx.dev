@@ -17,4 +17,15 @@ export default antfu({
   rules: {
     'antfu/top-level-function': 'off',
   },
+}, {
+  files: ['pnpm-workspace.yaml'],
+  rules: {
+    'pnpm/yaml-enforce-settings': ['error', {
+      settings: {
+        minimumReleaseAge: 1440,
+        minimumReleaseAgeStrict: true,
+        trustPolicy: 'no-downgrade',
+      },
+    }],
+  },
 })
