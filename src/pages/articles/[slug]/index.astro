@@ -34,35 +34,33 @@ const { Content, headings } = await renderContent(props.article)
   <Fragment slot="head">
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content={props.article.data.publishedAt.toISOString()} />
-    {
-      props.article.data.modifiedAt && (
-        <meta property="article:modified_time" content={props.article.data.modifiedAt.toISOString()} />
-      )
-    }
-    {props.article.data.categories.map((category) => <meta property="article:tag" content={category} />)}
+    {props.article.data.modifiedAt && (
+      <meta property="article:modified_time" content={props.article.data.modifiedAt.toISOString()} />
+    )}
+    {props.article.data.categories.map((category) => (
+      <meta property="article:tag" content={category} />
+    ))}
   </Fragment>
   <article class="py-16">
     <header>
       <Hero>
         <span slot="title">{props.article.data.title}</span>
         <span slot="subtitle">
-          <time datetime={props.article.data.publishedAt.toISOString()}
-            >{dateTimeFormatter.format(props.article.data.publishedAt)}</time
-          >
+          <time datetime={props.article.data.publishedAt.toISOString()}>
+            {dateTimeFormatter.format(props.article.data.publishedAt)}
+          </time>
           <span>に投稿</span>
-          {
-            props.article.data.modifiedAt && (
-              <span>
-                <span>（更新日: </span>
-                <>
-                  <time datetime={props.article.data.modifiedAt.toISOString()}>
-                    {dateTimeFormatter.format(props.article.data.modifiedAt)}
-                  </time>
-                  <span>）</span>
-                </>
-              </span>
-            )
-          }
+          {props.article.data.modifiedAt && (
+            <span>
+              <span>（更新日: </span>
+              <>
+                <time datetime={props.article.data.modifiedAt.toISOString()}>
+                  {dateTimeFormatter.format(props.article.data.modifiedAt)}
+                </time>
+                <span>）</span>
+              </>
+            </span>
+          )}
         </span>
       </Hero>
     </header>
@@ -78,24 +76,20 @@ const { Content, headings } = await renderContent(props.article)
             <nav class="block rounded-md bg-slate-100 p-4 shadow-lg">
               <div class="text-2xl font-semibold mb-4">目次</div>
               <ol class="space-y-4 overflow-y-auto max-h-64">
-                {
-                  headings
-                    .filter((heading) => heading.depth < 3)
-                    .map((heading) => (
-                      <li class="border-l-4 border-blue-500 pl-2 line-clamp-2">
-                        <a href={`#${heading.slug}`} class="text-blue-600 hover:underline">
-                          {heading.text}
-                        </a>
-                      </li>
-                    ))
-                }
+                {headings
+                  .filter((heading) => heading.depth < 3)
+                  .map((heading) => (
+                    <li class="border-l-4 border-blue-500 pl-2 line-clamp-2">
+                      <a href={`#${heading.slug}`} class="text-blue-600 hover:underline">
+                        {heading.text}
+                      </a>
+                    </li>
+                  ))}
               </ol>
             </nav>
           </div>
         </div>
-        <div
-          class="col-span-2 md:prose-lg !max-w-full prose prose-primary prose-table:overflow-x-auto prose-table:block p-4 rounded-md bg-slate-100"
-        >
+        <div class="col-span-2 md:prose-lg !max-w-full prose prose-primary prose-table:overflow-x-auto prose-table:block p-4 rounded-md bg-slate-100">
           <Content />
         </div>
       </div>

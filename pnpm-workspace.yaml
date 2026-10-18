@@ -1,0 +1,10 @@
+minimumReleaseAge: 1440
+minimumReleaseAgeStrict: true
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@tailwindcss/oxide': true
+  esbuild: true
+  netlify-cli: true
+  sharp: true
+  unix-dgram: false

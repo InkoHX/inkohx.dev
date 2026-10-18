@@ -2,6 +2,7 @@
   "name": "inkohx.dev",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@12.14.0",
   "scripts": {
     "postinstall": "astro sync",
     "dev": "netlify dev",
@@ -14,42 +15,33 @@
     "@fortawesome/free-brands-svg-icons": "7.3.1",
     "@fortawesome/free-solid-svg-icons": "7.3.1",
     "@fortawesome/react-fontawesome": "3.5.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "9.3.0",
+    "@antfu/eslint-config": "9.5.1",
     "@astrojs/check": "0.9.10",
-    "@astrojs/react": "6.0.6",
+    "@astrojs/react": "7.1.0",
     "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.4",
-    "@eslint-react/eslint-plugin": "5.18.10",
+    "@eslint-react/eslint-plugin": "5.28.0",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
-    "@types/node": "25.9.9",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.7",
-    "astro": "7.2.10",
-    "astro-eslint-parser": "3.1.0",
-    "eslint": "10.8.1",
-    "eslint-plugin-astro": "3.1.0",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "astro": "7.4.0",
+    "astro-eslint-parser": "3.2.0",
+    "eslint": "10.13.0",
+    "eslint-plugin-astro": "3.2.1",
     "eslint-plugin-format": "2.0.1",
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-react-refresh": "0.5.7",
     "netlify-cli": "27.1.2",
-    "prettier-plugin-astro": "0.14.1",
-    "schema-dts": "2.0.0",
+    "prettier-plugin-astro": "1.1.1",
+    "schema-dts": "2.1.0",
     "sharp": "0.35.5",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@tailwindcss/oxide",
-      "esbuild",
-      "netlify-cli",
-      "sharp"
-    ]
   }
 }
