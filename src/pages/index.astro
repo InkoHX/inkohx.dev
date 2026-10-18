@@ -90,16 +90,14 @@ const websites = [
       <h1 class="text-5xl tracking-widest font-bold leading-relaxed">InkoHX</h1>
       <p class="font-semibold text-md sm:text-xl text-slate-600">JavaScriptとハードコア・テクノを愛する鳥</p>
       <ul class="flex gap-x-4 mt-2">
-        {
-          constants.socialLinks.map((link) => (
-            <li>
-              <a class="text-2xl text-slate-600 transition-colors hover:text-black" href={link.href}>
-                <FontAwesomeIcon icon={link.icon} />
-                <span class="sr-only">{link.name}</span>
-              </a>
-            </li>
-          ))
-        }
+        {constants.socialLinks.map((link) => (
+          <li>
+            <a class="text-2xl text-slate-600 transition-colors hover:text-black" href={link.href}>
+              <FontAwesomeIcon icon={link.icon} />
+              <span class="sr-only">{link.name}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
     <section class="mt-8 container">
@@ -108,11 +106,9 @@ const websites = [
         <span class="ml-4">趣味</span>
       </h2>
       <ul class="flex flex-wrap gap-4 mt-4">
-        {
-          hobbies.map((hobby) => (
-            <li class="shadow-sm font-semibold text-nowrap bg-slate-300/50 px-4 py-1 rounded-full">{hobby}</li>
-          ))
-        }
+        {hobbies.map((hobby) => (
+          <li class="shadow-sm font-semibold text-nowrap bg-slate-300/50 px-4 py-1 rounded-full">{hobby}</li>
+        ))}
       </ul>
     </section>
     <section class="mt-4">
@@ -123,39 +119,35 @@ const websites = [
             <span class="ml-4">スキル</span>
           </h2>
           <ul class="mt-4 flex gap-4">
-            {
-              skills.map(({ id, name }) => (
-                <li>
-                  <a
-                    class="shadow-sm font-semibold text-nowrap bg-slate-100 px-4 py-1 rounded-full transition-colors hover:bg-primary-300"
-                    href={`#${id}`}
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))
-            }
+            {skills.map(({ id, name }) => (
+              <li>
+                <a
+                  class="shadow-sm font-semibold text-nowrap bg-slate-100 px-4 py-1 rounded-full transition-colors hover:bg-primary-300"
+                  href={`#${id}`}
+                >
+                  {name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
       <div class="space-y-8 mt-4">
-        {
-          skills.map((skill) => (
-            <section class="container">
-              <h3 class="font-bold text-xl scroll-mt-28" id={skill.id}>
-                {skill.name}
-              </h3>
-              <ul class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4">
-                {skill.items.map((item) => (
-                  <li class="bg-slate-100 shadow-lg px-4 py-8 rounded-xl">
-                    <h4 class="text-center text-2xl font-semibold">{item.name}</h4>
-                    <p class="mt-4 leading-relaxed text-center text-slate-700">{item.comment}</p>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))
-        }
+        {skills.map((skill) => (
+          <section class="container">
+            <h3 class="font-bold text-xl scroll-mt-28" id={skill.id}>
+              {skill.name}
+            </h3>
+            <ul class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4">
+              {skill.items.map((item) => (
+                <li class="bg-slate-100 shadow-lg px-4 py-8 rounded-xl">
+                  <h4 class="text-center text-2xl font-semibold">{item.name}</h4>
+                  <p class="mt-4 leading-relaxed text-center text-slate-700">{item.comment}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
       </div>
     </section>
     <section class="container mt-8">
@@ -164,25 +156,23 @@ const websites = [
         <span class="ml-4">作ったウェブサイト</span>
       </h2>
       <ul class="grid grid-cols-1 mt-4 md:grid-cols-2 gap-8">
-        {
-          websites.map((website) => (
-            <li class="group relative">
-              <Image
-                src={website.image}
-                alt=""
-                class="w-full h-auto rounded-lg shadow-sm group-hover:shadow-lg transition group-hover:grayscale-0 md:grayscale"
-              />
-              <a
-                class="absolute inset-0 w-full h-full flex justify-center bg-slate-200/70 md:bg-transparent items-center transition-colors group-hover:bg-slate-200/70"
-                href={website.url}
-              >
-                <span class="text-2xl font-extrabold md:opacity-0 transition-opacity group-hover:opacity-100">
-                  {website.name}
-                </span>
-              </a>
-            </li>
-          ))
-        }
+        {websites.map((website) => (
+          <li class="group relative">
+            <Image
+              src={website.image}
+              alt=""
+              class="w-full h-auto rounded-lg shadow-sm group-hover:shadow-lg transition group-hover:grayscale-0 md:grayscale"
+            />
+            <a
+              class="absolute inset-0 w-full h-full flex justify-center bg-slate-200/70 md:bg-transparent items-center transition-colors group-hover:bg-slate-200/70"
+              href={website.url}
+            >
+              <span class="text-2xl font-extrabold md:opacity-0 transition-opacity group-hover:opacity-100">
+                {website.name}
+              </span>
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
   </main>
