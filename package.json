@@ -30,7 +30,7 @@
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "astro": "7.4.5",
+    "astro": "7.4.7",
     "astro-eslint-parser": "3.2.0",
     "eslint": "10.13.0",
     "eslint-plugin-astro": "3.2.1",
