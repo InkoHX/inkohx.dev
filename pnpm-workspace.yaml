@@ -8,3 +8,6 @@ allowBuilds:
   netlify-cli: true
   sharp: true
   unix-dgram: false
+minimumReleaseAgeExclude:
+  # Renovate security update: astro@7.4.7
+  - astro@7.4.7
