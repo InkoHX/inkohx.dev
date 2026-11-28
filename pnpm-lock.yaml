@@ -192,7 +192,7 @@ importers:
         version: 0.9.12(@emnapi/runtime@1.11.3)(prettier-plugin-astro@1.1.2(prettier@3.9.10))(prettier@3.9.10)(typescript@6.0.3)
       '@astrojs/react':
         specifier: 7.1.9
-        version: 7.1.9(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
+        version: 7.1.9(@types/react-dom@19.3.0(@types/react@19.3.2))(@types/react@19.3.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
       '@astrojs/rss':
         specifier: 4.0.19
         version: 4.0.19
@@ -212,11 +212,11 @@ importers:
         specifier: 26.6.10
         version: 26.6.10
       '@types/react':
-        specifier: 19.3.0
-        version: 19.3.0
+        specifier: 19.3.2
+        version: 19.3.2
       '@types/react-dom':
         specifier: 19.3.0
-        version: 19.3.0(@types/react@19.3.0)
+        version: 19.3.0(@types/react@19.3.2)
       astro:
         specifier: 7.4.5
         version: 7.4.5(@netlify/blobs@10.7.13(supports-color@10.2.2))(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1)
@@ -2371,8 +2371,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.3.0
 
-  '@types/react@19.3.0':
-    resolution: {integrity: sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==}
+  '@types/react@19.3.2':
+    resolution: {integrity: sha512-0QJbb58RxWJL3VAa5tvk7QhJamz0S+MpFL2xDuF/+THRR+kldyhPjRZ1iwvK45AEHZ1BVGS3otPsl7QlNVRizQ==}
 
   '@types/retry@0.12.2':
     resolution: {integrity: sha512-XISRgDJ2Tc5q4TRqvgJtzsRkFYNJzZrhTdtMoGVBttwzzQJkPnS3WWTFc7kuDRoPtPakl+T+OfdEUjYJj7Jbow==}
@@ -7665,12 +7665,12 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/react-renderer@0.1.3(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))':
+  '@astrojs/react-renderer@0.1.3(@types/react-dom@19.3.0(@types/react@19.3.2))(@types/react@19.3.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@astrojs/internal-helpers': 0.13.2
       '@astrojs/runtime': 0.1.1
-      '@types/react': 19.3.0
-      '@types/react-dom': 19.3.0(@types/react@19.3.0)
+      '@types/react': 19.3.2
+      '@types/react-dom': 19.3.0(@types/react@19.3.2)
       '@vitejs/plugin-react': 6.3.0(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
@@ -7681,12 +7681,12 @@ snapshots:
       - oxc-transform-react
       - vite
 
-  '@astrojs/react@7.1.9(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))':
+  '@astrojs/react@7.1.9(@types/react-dom@19.3.0(@types/react@19.3.2))(@types/react@19.3.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@astrojs/internal-helpers': 0.13.2
-      '@astrojs/react-renderer': 0.1.3(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
-      '@types/react': 19.3.0
-      '@types/react-dom': 19.3.0(@types/react@19.3.0)
+      '@astrojs/react-renderer': 0.1.3(@types/react-dom@19.3.0(@types/react@19.3.2))(@types/react@19.3.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
+      '@types/react': 19.3.2
+      '@types/react-dom': 19.3.0(@types/react@19.3.2)
       '@vitejs/plugin-react': 6.3.0(vite@8.3.5(@types/node@26.6.10)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.1))
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
@@ -9659,11 +9659,11 @@ snapshots:
 
   '@types/normalize-package-data@2.4.4': {}
 
-  '@types/react-dom@19.3.0(@types/react@19.3.0)':
+  '@types/react-dom@19.3.0(@types/react@19.3.2)':
     dependencies:
-      '@types/react': 19.3.0
+      '@types/react': 19.3.2
 
-  '@types/react@19.3.0':
+  '@types/react@19.3.2':
     dependencies:
       csstype: 3.2.3
 
